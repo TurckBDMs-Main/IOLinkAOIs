@@ -1,0 +1,1449 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--TBEN_L_8IOL AOI for managing all data to/from IOL blocks including process/acyclic data.-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_L_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="2.5 Support TBIP" TargetLastEdited="2023-05-25T15:45:40.183Z" ContainsContext="true" ExportDate="Thu May 25 12:16:19 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="Kollmeyer_LiveDemo_TBENLX8IOL_TBIL">
+<DataTypes Use="Context">
+<DataType Name="IOLRequest" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZIOLRequest0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="None"/>
+<Member Name="Enable_Multiple_Nodes" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZIOLRequest0" BitNumber="0" ExternalAccess="None">
+<Description>
+<![CDATA[Set to 1 to enable multiple nodes]]>
+</Description>
+</Member>
+<Member Name="ApplicationPath" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[Set Path for following IOL Instructions]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZIOLRequest3" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="None"/>
+<Member Name="Read" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZIOLRequest3" BitNumber="0" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Write" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZIOLRequest3" BitNumber="1" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Reset" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZIOLRequest3" BitNumber="2" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZIOLRequest3" BitNumber="3" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Error" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZIOLRequest3" BitNumber="4" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Slot" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Port" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Index" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SubIndex" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Length" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Handle" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Status" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="NextHandle" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="ReceiveData" DataType="SINT" Dimension="145" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SendData" DataType="SINT" Dimension="145" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="WriteData" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="ActivePath" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Name="IOL_ReadString" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="true" CreatedDate="2009-07-07T18:39:04.362Z" CreatedBy="USMS\BKollm" EditedDate="2017-10-02T19:26:10.420Z" EditedBy="NIDLAB01\Turck User"
+ SoftwareRevision="v27.00">
+<RevisionNote>
+<![CDATA[V1_0 Initial Release
+V1_1 Documentation update
+V1_2 Added multiple EIP node support
+V2_5 Support TBIP]]>
+</RevisionNote>
+<AdditionalHelpText>
+<![CDATA[IOL_ReadString - used with Turck BL20, BL67, BLC and TBEN IOLink masters to read string data from IOLink devices.  Use in conjuction with IOLService AOI which processes all IOL read and write requests.
+
+Status	Description
+0	Operation completed successfully
+	Status = 100 - 102, Ethernet IP MSG instruction errors - check communication parameters
+100	IOL_SendMSG completed with error, check communication parameters
+101	IOL_RecevieMSG completed with error, check communication parameters
+110	IOL_Service Retry Limit exceeded
+111	Slot specified not an IOLink master
+	
+	Status = 1000 to 1255, no response from device, connection error
+1016	Device not connected or Port not configured as IOLink port
+	
+	Status = 2000 to 2255,  device response indicates error
+2000	Device error, no details
+2017	Device error, Index not available
+2018	Device error, Subindex not available
+2032	Device error, Service temporarily not available
+2033	Device error, Service temporarily not available - local control
+2034	Device error, Service temporarily not available - device control
+2035	Device error, Index not writeable
+2048	Device error, Parameter value out of range
+2049	Device error, Parameter value above limit
+2050	Device error, Parameter value below limit
+2051	Device error, Parameter value length overrun (check IOLWrite precision/string length)
+2052	Device error, Parameter value length underrun (check IOLWrite precision/string length)
+2053	Device error, Function not available
+2054	Device error, Function temporarily not available
+2064	Device error, Parameter set invalid
+2065	Device error, Inconsistent parameter set
+2130	Device error, Application not ready
+	
+	Status = 3000 to 3255,   device response indicates vendor specific error
+3000	Vendor specific error, no details
+3001	Vendor specific error, vendor specific error number
+3255	Vendor specific error, vendor specific error number
+	
+	Status = 7000 to 7255,  IOL-M Error Codes
+7000	Unexpected write request instead of read request
+7001	Decode error
+7002	Port occupied by another task
+	
+	Status = 8000 to 8255,  IOL-M Error Codes
+8000	Timeout when IOL-Ds or IOL-M ports are busy
+8001	IOL Index out of range
+8002	Port address greater than maximum
+8003	Port function not supported
+]]>
+</AdditionalHelpText>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="Done" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[IOLRead completed successfully]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Error" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[IOLRead completed with error, check status]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Pending" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[IOLRead waiting to be processed]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Active" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[IOLRead in progress]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="IOLData" TagType="Base" DataType="IOLRequest" Usage="InOut" Required="true" Visible="true" Constant="false">
+<Description>
+<![CDATA[Shared IOL Data Area - must be identical on all requests]]>
+</Description>
+</Parameter>
+<Parameter Name="DoneCount" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Number of operations completed successfully]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="ErrorCount" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Number of operations competed with error]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Status" TagType="Base" DataType="INT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Status of last IOLRead]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Read" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Rising edge triggers IOLink Read]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Read_Continuous" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Set to trigger IOLink Read repeatedly]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Slot" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[IOLink Master slot number]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[IOLink Master Port number, 1,2,3 or 4]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Index" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[IOL Index number]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="SubIndex" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[IOL Subindex number]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="StringData" TagType="Base" DataType="SINT" Dimensions="82" Usage="InOut" Radix="Decimal" Required="true" Visible="true" Constant="false">
+<Description>
+<![CDATA[Data returned from IOLink device]]>
+</Description>
+</Parameter>
+<Parameter Name="StringLength" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="true" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Length of string data returned]]>
+</Description>
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="MyHandle" DataType="INT" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="StartupDone" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Pending_or_Active" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Read_ONS" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="StartupCount" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ReadRequest" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="EnableInFalse" Type="RLL"/>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+IOL_ReadString
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)OTU(Done)OTU(Error)OTU(Active)OTU(Pending)OTU(Pending_or_Active);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)ADD(StartupCount,1,StartupCount);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(IOLData.NextHandle,MyHandle) ,ADD(IOLData.NextHandle,1,IOLData.NextHandle) ,EQU(IOLData.NextHandle,30000) MOV(0,IOLData.NextHandle) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[XIC(Read)ONS(Read_ONS)OTL(ReadRequest);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[[XIC(ReadRequest) ,XIC(Read_Continuous) ]XIO(Pending_or_Active)XIC(StartupDone)[OTU(Active) ,OTL(Pending) ,OTL(Pending_or_Active) ,OTU(ReadRequest) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(Pending)EQU(IOLData.Handle,MyHandle)XIC(IOLData.Enable_Multiple_Nodes)[COP(IOLData.ApplicationPath,IOLData.ActivePath,1) ,MOV(IOLData.ApplicationPath.LEN,IOLData.ActivePath.LEN) ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[XIC(Pending)EQU(IOLData.Handle,MyHandle)[OTU(Done) ,OTU(Error) ,OTL(Active) ,OTU(Pending) ,MOV(Slot,IOLData.Slot) ,MOV(Port,IOLData.Port) ,MOV(Index,IOLData.Index) ,MOV(SubIndex,IOLData.SubIndex) ,OTL(IOLData.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[XIC(Active)XIC(IOLData.Done)[OTL(Done) ,ADD(DoneCount,1,DoneCount) ,OTU(Error) ,OTU(Active) ,OTU(Pending) ,OTU(Pending_or_Active) ,OTU(IOLData.Done) ,COP(IOLData.ReceiveData[10],StringData[0],IOLData.Length) ,MOV(IOLData.Length,StringLength) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[XIC(Active)XIC(IOLData.Error)[OTU(Done) ,OTL(Error) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active) ,OTU(Pending) ,OTU(Pending_or_Active) ,OTU(IOLData.Error) ,MOV(IOLData.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)OTL(StartupDone);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="Prescan" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[OTU(Done)OTU(Error)OTU(Active)OTU(Pending)OTU(StartupDone)OTU(Pending_or_Active);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="IOLRequest"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+<AddOnInstructionDefinition Use="Target" Name="TBEN_L_8IOL_AOI" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-05-25T15:45:40.183Z"
+ EditedBy="AMER-turck-info\jose.sanchez" SoftwareRevision="v32.00">
+<Description>
+<![CDATA[TBEN_L_8IOL AOI for managing all data to/from IOL blocks including process/acyclic data.]]>
+</Description>
+<RevisionNote>
+<![CDATA[V1_0 Initial Release
+V1_1 Added error checking for IOLWrite operations
+V1_2 Added multiple EIP node support
+V2_5 Support TBIP]]>
+</RevisionNote>
+<AdditionalHelpText>
+<![CDATA[IOL_Service - used with Turck BL20, BL67, BLC and TBEN IOLink masters to process requests from IOL_ReadString, IOL_WriteString, IOL_ReadData and IOL_WriteData AOI's.
+
+Status	Description
+0	Operation completed successfully
+	Status = 100 - 102, Ethernet IP MSG instruction errors - check communication parameters
+100	IOL_SendMSG completed with error, check communication parameters
+101	IOL_RecevieMSG completed with error, check communication parameters
+110	IOL_Service Retry Limit exceeded
+111	Slot specified not an IOLink master
+	
+	Status = 1000 to 1255, no response from device, connection error
+1016	Device not connected or Port not configured as IOLink port
+	
+	Status = 2000 to 2255,  device response indicates error
+2000	Device error, no details
+2017	Device error, Index not available
+2018	Device error, Subindex not available
+2032	Device error, Service temporarily not available
+2033	Device error, Service temporarily not available - local control
+2034	Device error, Service temporarily not available - device control
+2035	Device error, Index not writeable
+2048	Device error, Parameter value out of range
+2049	Device error, Parameter value above limit
+2050	Device error, Parameter value below limit
+2051	Device error, Parameter value length overrun (check IOLWrite precision/string length)
+2052	Device error, Parameter value length underrun (check IOLWrite precision/string length)
+2053	Device error, Function not available
+2054	Device error, Function temporarily not available
+2064	Device error, Parameter set invalid
+2065	Device error, Inconsistent parameter set
+2130	Device error, Application not ready
+	
+	Status = 3000 to 3255,   device response indicates vendor specific error
+3000	Vendor specific error, no details
+3001	Vendor specific error, vendor specific error number
+3255	Vendor specific error, vendor specific error number
+	
+	Status = 7000 to 7255,  IOL-M Error Codes
+7000	Unexpected write request instead of read request
+7001	Decode error
+7002	Port occupied by another task
+	
+	Status = 8000 to 8255,  IOL-M Error Codes
+8000	Timeout when IOL-Ds or IOL-M ports are busy
+8001	IOL Index out of range
+8002	Port address greater than maximum
+8003	Port function not supported
+]]>
+</AdditionalHelpText>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="COMMON_DATA" TagType="Base" DataType="IOLRequest" Usage="InOut" Required="true" Visible="true" Constant="false">
+<Comments>
+<Comment Operand=".RECEIVEDATA[2]">
+<![CDATA[KH changed from -9 (f7) to -4 (Fd)]]>
+</Comment>
+<Comment Operand=".SENDDATA[1]">
+<![CDATA[For internal use to integrate IOLRead and IOLWrite with IOLService]]>
+</Comment>
+</Comments>
+</Parameter>
+<Parameter Name="IOL_SendMSG" TagType="Base" DataType="MESSAGE" Usage="InOut" Required="true" Visible="true"/>
+<Parameter Name="IOL_ReceiveMSG" TagType="Base" DataType="MESSAGE" Usage="InOut" Required="true" Visible="true"/>
+<Parameter Name="Port1_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port1_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port2_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port2_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port3_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port3_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port4_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port4_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port5_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port5_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port6_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port6_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port7_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port7_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port8_VID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port8_DID" TagType="Base" DataType="DINT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="IOLS1" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS2" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS3" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS4" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS5" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS6" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS7" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLReadActive" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLWriteActive" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Retry" DataType="BOOL" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="RetryCount" DataType="DINT" Radix="Decimal" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_SendMSG_Request" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_ReceiveMSG_Request" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS4_Bad" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S2_0_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S6_0_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Busy_Retry" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S2_0_Total" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S3_Retry" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S1_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S2_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S3_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S5_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S6_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ER1" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ER2" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S6_NotBusy_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="RetryTotal" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S4_Bad_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S2_Error_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_Done_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_Error_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLReset_ONS" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ABS_RD_11" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ABS_RD_12" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ABS_RD_13" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_SendMSG_DN" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_ReceiveMSG_DN" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS2A" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Generate_Status" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOLS5A" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Busy_Response" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Done_Response" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S6_Done_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Wait" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="IOL_S6_Busy_Count" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="READ_DATA" DataType="IOL_ReadString" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[1,0,0,0,1,1,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="IOL_ReadString">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Done" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Error" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Pending" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Active" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DoneCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ErrorCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Status" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Read" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Read_Continuous" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Slot" DataType="INT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Port" DataType="INT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Index" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SubIndex" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="StringLength" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="PORT_DATA" DataType="SINT" Dimensions="82" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="SINT" Dimensions="82" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+<Element Index="[32]" Value="0"/>
+<Element Index="[33]" Value="0"/>
+<Element Index="[34]" Value="0"/>
+<Element Index="[35]" Value="0"/>
+<Element Index="[36]" Value="0"/>
+<Element Index="[37]" Value="0"/>
+<Element Index="[38]" Value="0"/>
+<Element Index="[39]" Value="0"/>
+<Element Index="[40]" Value="0"/>
+<Element Index="[41]" Value="0"/>
+<Element Index="[42]" Value="0"/>
+<Element Index="[43]" Value="0"/>
+<Element Index="[44]" Value="0"/>
+<Element Index="[45]" Value="0"/>
+<Element Index="[46]" Value="0"/>
+<Element Index="[47]" Value="0"/>
+<Element Index="[48]" Value="0"/>
+<Element Index="[49]" Value="0"/>
+<Element Index="[50]" Value="0"/>
+<Element Index="[51]" Value="0"/>
+<Element Index="[52]" Value="0"/>
+<Element Index="[53]" Value="0"/>
+<Element Index="[54]" Value="0"/>
+<Element Index="[55]" Value="0"/>
+<Element Index="[56]" Value="0"/>
+<Element Index="[57]" Value="0"/>
+<Element Index="[58]" Value="0"/>
+<Element Index="[59]" Value="0"/>
+<Element Index="[60]" Value="0"/>
+<Element Index="[61]" Value="0"/>
+<Element Index="[62]" Value="0"/>
+<Element Index="[63]" Value="0"/>
+<Element Index="[64]" Value="0"/>
+<Element Index="[65]" Value="0"/>
+<Element Index="[66]" Value="0"/>
+<Element Index="[67]" Value="0"/>
+<Element Index="[68]" Value="0"/>
+<Element Index="[69]" Value="0"/>
+<Element Index="[70]" Value="0"/>
+<Element Index="[71]" Value="0"/>
+<Element Index="[72]" Value="0"/>
+<Element Index="[73]" Value="0"/>
+<Element Index="[74]" Value="0"/>
+<Element Index="[75]" Value="0"/>
+<Element Index="[76]" Value="0"/>
+<Element Index="[77]" Value="0"/>
+<Element Index="[78]" Value="0"/>
+<Element Index="[79]" Value="0"/>
+<Element Index="[80]" Value="0"/>
+<Element Index="[81]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="PORT_DATA_LENGHT" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+IOL_Service
+***************************************************************************************************************************
+Start IOLink Read or Write Operation
+Step 1 - Send Delete Datastream]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(COMMON_DATA.Write) XIO(IOLWriteActive) OTL(IOLWriteActive) MOV(0,RetryCount) ,XIC(Retry) XIC(COMMON_DATA.Write) ADD(RetryCount,1,RetryCount) ,XIC(COMMON_DATA.Read) XIO(IOLReadActive) OTL(IOLReadActive) MOV(0,RetryCount) ,XIC(Retry) XIC(COMMON_DATA.Read) ADD(RetryCount,1,RetryCount) ][OTL(IOLS1) ,OTU(IOLS2) OTU(IOLS2A) ,OTU(IOLS3) ,OTU(IOLS4) ,OTU(IOLS5) OTU(IOLS5A) ,OTU(IOLS6) ,OTU(IOLS7) ,OTU(IOLS4_Bad) ,MOV(0,IOL_S2_0_Count) ,MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,MOV(2,IOL_SendMSG.REQ_LEN) ,MOV(0,COMMON_DATA.SendData[0]) ,MOV(0,COMMON_DATA.SendData[1]) ,OTL(IOL_SendMSG_Request) ,OTU(Retry) ,ADD(IOL_S1_Count,1,IOL_S1_Count) ,XIC(COMMON_DATA.Enable_Multiple_Nodes) COP(COMMON_DATA.ActivePath,IOL_SendMSG.Path,1) ,XIC(COMMON_DATA.Enable_Multiple_Nodes) COP(COMMON_DATA.ActivePath,IOL_ReceiveMSG.Path,1) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[XIC(IOL_SendMSG.DN)OTE(IOL_SendMSG_DN);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XIC(IOL_ReceiveMSG.DN)OTE(IOL_ReceiveMSG_DN);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[XIC(IOLS2A)[OTU(IOLS2A) ,OTL(IOLS2) ,OTL(IOL_SendMSG_Request) ];]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[Step 1 - After Delete Stream sent then Send IOLink Read or Write Request]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS1)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS1) ,OTL(IOLS2A) ,MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,MOV(0,COMMON_DATA.SendData[0]) ,MOV(16#fc,COMMON_DATA.SendData[1]) ,MOV(16#11,COMMON_DATA.SendData[2]) ,MOV(16#08,COMMON_DATA.SendData[3]) ,MOV(COMMON_DATA.Port,COMMON_DATA.SendData[4]) ,MOV(16#fe,COMMON_DATA.SendData[5]) ,MOV(16#4a,COMMON_DATA.SendData[6]) ,XIC(IOLReadActive) MOV(16#03,COMMON_DATA.SendData[7]) ,XIC(IOLWriteActive) MOV(16#02,COMMON_DATA.SendData[7]) ,BTD(COMMON_DATA.Index,8,COMMON_DATA.SendData[8],0,8) ,BTD(COMMON_DATA.Index,0,COMMON_DATA.SendData[9],0,8) ,MOV(COMMON_DATA.SubIndex,COMMON_DATA.SendData[10]) ,XIC(IOLReadActive) MOV(11,IOL_SendMSG.REQ_LEN) ,XIC(IOLWriteActive) ADD(11,COMMON_DATA.Length,IOL_SendMSG.REQ_LEN) ,ADD(IOL_S2_Count,1,IOL_S2_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[Step 2 - After IOL Read or Write request is sent to the Datastream then do Get Attribute to check for busy/status]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS2)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS2) ,OTL(IOLS3) ,MOV(COMMON_DATA.Slot,IOL_ReceiveMSG.Instance) ,OTL(IOL_ReceiveMSG_Request) ,ADD(IOL_S3_Count,1,IOL_S3_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[Step 3 - Evaluate busy/status response - retry if response length is 0]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS3)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,0)[OTU(IOLS3) ,ADD(IOL_S2_0_Total,1,IOL_S2_0_Total) ,ADD(IOL_S2_0_Count,1,IOL_S2_0_Count) ,LEQ(IOL_S2_0_Count,10) OTL(IOLS2) ,XIO(IOLS2) [OTL(COMMON_DATA.Error) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(0,IOL_S2_0_Count) ,MOV(666,COMMON_DATA.Status) ,ADD(IOL_S2_Error_Count,1,IOL_S2_Error_Count) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Comment>
+<![CDATA[Step 3 - Evaluate busy/status response if length = 8]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS3)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS3) ,OTL(IOLS4) ,NEQ(COMMON_DATA.ReceiveData[0],-2) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[1],31) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[2],-4) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[3],17) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[4],16#00) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[5],16#00) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[7],16#00) OTL(IOLS4_Bad) ,XIO(IOLS4_Bad) MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,XIO(IOLS4_Bad) MOV(2,IOL_SendMSG.REQ_LEN) ,XIO(IOLS4_Bad) MOV(0,COMMON_DATA.SendData[0]) ,XIO(IOLS4_Bad) MOV(0,COMMON_DATA.SendData[1]) ,XIO(IOLS4_Bad) OTL(IOL_SendMSG_Request) ];]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[Step 3 - Evaluate busy/status response if length in not 0 and is not 8 (this is an irregular response and is usually an old reply message)]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS3)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)NEQ(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS3) ,OTL(Retry) ,ADD(IOL_S3_Retry,1,IOL_S3_Retry) ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Comment>
+<![CDATA[If erroneous response received then retry
+]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS4_Bad)[ADD(IOL_S4_Bad_Count,1,IOL_S4_Bad_Count) ,OTL(Retry) ];]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[XIC(IOLS5A)[OTU(IOLS5A) ,OTL(IOLS5) ,OTL(IOL_SendMSG_Request) ];]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[During IOL read operation if expected response received send request for read data
+During IOL write operation if expected response received send request for operation status]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(IOLS4) [XIC(IOLReadActive) ,XIC(IOLWriteActive) ] XIC(IOL_SendMSG_DN) XIO(IOL_SendMSG_Request) ,XIC(Busy_Retry) OTU(Busy_Retry) ][OTU(IOLS4) ,OTL(IOLS5A) ,MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,MOV(16#00,COMMON_DATA.SendData[0]) ,MOV(16#FD,COMMON_DATA.SendData[1]) ,MOV(16#11,COMMON_DATA.SendData[2]) ,MOV(3,IOL_SendMSG.REQ_LEN) ,ADD(IOL_S5_Count,1,IOL_S5_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Comment>
+<![CDATA[During IOL Read operation when request for read data has been sent do Get Attrbute to bring in the read data]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS5)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS5) ,MOV(COMMON_DATA.Slot,IOL_ReceiveMSG.Instance) OTL(IOLS6) ,OTL(IOL_ReceiveMSG_Request) ,ADD(IOL_S6_Count,1,IOL_S6_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Comment>
+<![CDATA[If the returned message length is 0 request it again]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,0)[OTU(IOLS6) ,OTL(IOLS5) ,ADD(IOL_S6_0_Count,1,IOL_S6_0_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Comment>
+<![CDATA[During read operation if a Datastream busy response is received then retry the request for data]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS6) ,OTL(Busy_Response) OTL(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[0],-1) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[1],31) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[2],-3) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[3],17) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[4],-62) OTU(Busy_Response) ,NEQ(COMMON_DATA.ReceiveData[5],-128) OTU(Busy_Response) ,NEQ(COMMON_DATA.ReceiveData[4],0) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[5],0) OTU(Done_Response) ,[XIC(Busy_Response) ,XIC(Done_Response) ] OTL(Busy_Retry) ,XIO(Busy_Response) XIO(Done_Response) [OTL(Retry) ,ADD(IOL_S6_NotBusy_Count,1,IOL_S6_NotBusy_Count) ] ,XIC(Done_Response) ADD(IOL_S6_Done_Count,1,IOL_S6_Done_Count) ,XIC(Busy_Response) ADD(IOL_S6_Busy_Count,1,IOL_S6_Busy_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[XIC(Wait)OTU(Wait);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Comment>
+<![CDATA[During read operation if a Datastream error response is received then terminate in error]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,14)NEQ(COMMON_DATA.ReceiveData[6],0)[OTL(COMMON_DATA.Error) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ,OTE(Generate_Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[XIC(Generate_Status)[ABS(COMMON_DATA.ReceiveData[11],ABS_RD_11) ,ABS(COMMON_DATA.ReceiveData[12],ABS_RD_12) ,ABS(COMMON_DATA.ReceiveData[13],ABS_RD_13) ];]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Text>
+<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],0)NEQ(COMMON_DATA.ReceiveData[12],-128)ADD(1000,ABS_RD_12,COMMON_DATA.Status);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Text>
+<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],0)EQU(COMMON_DATA.ReceiveData[12],-128)ADD(2000,ABS_RD_13,COMMON_DATA.Status);]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-127)EQU(COMMON_DATA.ReceiveData[10],0)EQU(COMMON_DATA.ReceiveData[12],-128)ADD(3000,ABS_RD_13,COMMON_DATA.Status);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Text>
+<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],112)ADD(7000,ABS_RD_11,COMMON_DATA.Status);]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],-128)ADD(8000,ABS_RD_11,COMMON_DATA.Status);]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Text>
+<![CDATA[XIC(Generate_Status)OTU(IOLS6);]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Text>
+<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)GRT(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS6) ,SUB(IOL_ReceiveMSG.DN_LEN,10,COMMON_DATA.Length) ,OTL(COMMON_DATA.Done) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(0,COMMON_DATA.Status) ,ADD(IOL_Done_Count,1,IOL_Done_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="25" Type="N">
+<Text>
+<![CDATA[XIC(Retry)EQU(RetryCount,10)[OTU(Retry) ,MOV(0,RetryCount) ,OTL(COMMON_DATA.Error) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(110,COMMON_DATA.Status) ,ADD(RetryTotal,1,RetryTotal) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="26" Type="N">
+<Comment>
+<![CDATA[Advance Handle to allow next IOLink request to be processed]]>
+</Comment>
+<Text>
+<![CDATA[XIO(COMMON_DATA.Done)XIO(COMMON_DATA.Error)XIO(IOLWriteActive)XIO(IOLReadActive)[MOV(0,RetryCount) ,ADD(COMMON_DATA.Handle,1,COMMON_DATA.Handle) ,GEQ(COMMON_DATA.Handle,COMMON_DATA.NextHandle) MOV(0,COMMON_DATA.Handle) ];]]>
+</Text>
+</Rung>
+<Rung Number="27" Type="N">
+<Comment>
+<![CDATA[********************************************************************************
+CIP Message Transfer Functions for IOLink Datastream operation
+********************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIC(IOL_ReceiveMSG_Request)MSG(IOL_ReceiveMSG);]]>
+</Text>
+</Rung>
+<Rung Number="28" Type="N">
+<Text>
+<![CDATA[OTU(IOL_ReceiveMSG_Request);]]>
+</Text>
+</Rung>
+<Rung Number="29" Type="N">
+<Text>
+<![CDATA[XIC(IOL_SendMSG_Request)MSG(IOL_SendMSG);]]>
+</Text>
+</Rung>
+<Rung Number="30" Type="N">
+<Text>
+<![CDATA[OTU(IOL_SendMSG_Request);]]>
+</Text>
+</Rung>
+<Rung Number="31" Type="N">
+<Text>
+<![CDATA[[XIC(IOL_SendMSG.ER) ONS(ER1) MOV(100,COMMON_DATA.Status) ,XIC(IOL_ReceiveMSG.ER) ONS(ER2) MOV(101,COMMON_DATA.Status) ][OTL(COMMON_DATA.Error) OTU(COMMON_DATA.Read) OTU(COMMON_DATA.Write) OTU(IOLReadActive) OTU(IOLWriteActive) ,OTU(IOLS1) OTU(IOLS2) OTU(IOLS3) OTU(IOLS4) OTU(IOLS5) OTU(IOLS6) OTU(IOLS7) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ];]]>
+</Text>
+</Rung>
+<Rung Number="32" Type="N">
+<Text>
+<![CDATA[[XIC(S:FS) ,XIC(COMMON_DATA.Reset) ONS(IOLReset_ONS) ][OTU(COMMON_DATA.Read) OTU(IOLReadActive) OTU(COMMON_DATA.Write) OTU(IOLWriteActive) OTU(COMMON_DATA.Done) OTU(COMMON_DATA.Error) ,OTU(IOLS1) OTU(IOLS2) OTU(IOLS2A) OTU(IOLS3) OTU(IOLS4) OTU(IOLS5) OTU(IOLS5A) OTU(IOLS6) OTU(IOLS7) OTU(IOLS4_Bad) ,OTU(Retry) OTU(Busy_Retry) OTU(Busy_Retry) OTU(Busy_Response) ,MOV(0,COMMON_DATA.Port) MOV(0,COMMON_DATA.Slot) ,MOV(0,COMMON_DATA.Length) MOV(0,COMMON_DATA.Index) ,MOV(0,COMMON_DATA.Handle) ];]]>
+</Text>
+</Rung>
+<Rung Number="33" Type="N">
+<Text>
+<![CDATA[OTE(READ_DATA.Read_Continuous);]]>
+</Text>
+</Rung>
+<Rung Number="34" Type="N">
+<Text>
+<![CDATA[IOL_ReadString(READ_DATA,COMMON_DATA,PORT_DATA,PORT_DATA_LENGHT);]]>
+</Text>
+</Rung>
+<Rung Number="35" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[7],0,Port1_VID,8,8)BTD(PORT_DATA[8],0,Port1_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="36" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[9],0,Port1_DID,16,8)BTD(PORT_DATA[10],0,Port1_DID,8,8)BTD(PORT_DATA[11],0,Port1_DID,0,8);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="Prescan" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[OTU(COMMON_DATA.Read)OTU(IOLReadActive)OTU(COMMON_DATA.Write)OTU(COMMON_DATA.Done)OTU(COMMON_DATA.Error);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[OTU(IOLS1)OTU(IOLS2)OTU(IOLS3)OTU(IOLS4)OTU(IOLS5)OTU(IOLS6)OTU(IOLS7);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[[MOV(0,COMMON_DATA.Slot) ,MOV(0,COMMON_DATA.Port) ,MOV(0,COMMON_DATA.Index) ,MOV(0,COMMON_DATA.Length) ,MOV(0,COMMON_DATA.Handle) ,MOV(0,COMMON_DATA.NextHandle) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[[MOV(0,IOL_S1_Count) ,MOV(0,IOL_S2_Count) ,MOV(0,IOL_S2_Error_Count) ,MOV(0,IOL_S3_Count) ,MOV(0,IOL_S4_Bad_Count) ,MOV(0,IOL_S5_Count) ,MOV(0,IOL_S6_Count) ,MOV(0,IOL_S2_0_Count) ,MOV(0,IOL_S2_0_Total) ,MOV(0,IOL_S3_Retry) ,MOV(0,IOL_S6_0_Count) ,MOV(0,IOL_S6_NotBusy_Count) ,MOV(0,RetryCount) ,MOV(0,RetryTotal) ,MOV(0,IOL_Done_Count) ,MOV(0,IOL_Error_Count) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="IOLRequest"/>
+<Dependency Type="AddOnInstructionDefinition" Name="IOL_ReadString"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>
