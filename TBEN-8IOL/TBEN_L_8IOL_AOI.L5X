@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--TBEN_L_8IOL AOI for managing all data to/from IOL blocks including process/acyclic data.-->
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_L_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="2.5 Support TBIP" TargetLastEdited="2023-06-20T18:53:43.902Z" ContainsContext="true" ExportDate="Tue Jun 20 15:12:43 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_L_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="2.5 Support TBIP" TargetLastEdited="2023-06-21T20:10:08.206Z" ContainsContext="true" ExportDate="Wed Jun 21 16:15:04 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
 <Controller Use="Context" Name="Kollmeyer_LiveDemo_TBENLX8IOL_TBIL">
 <DataTypes Use="Context">
-<DataType Name="IOLRequest" Family="NoFamily" Class="User">
+<DataType Name="Turck_IOL_CommonData" Family="NoFamily" Class="User">
 <Members>
 <Member Name="ZZZZZZZZZZIOLRequest0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="None"/>
 <Member Name="Enable_Multiple_Nodes" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZIOLRequest0" BitNumber="0" ExternalAccess="None">
@@ -106,8 +106,8 @@
 </DataType>
 </DataTypes>
 <AddOnInstructionDefinitions Use="Context">
-<AddOnInstructionDefinition Name="IOL_ReadString" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="true" CreatedDate="2009-07-07T18:39:04.362Z" CreatedBy="USMS\BKollm" EditedDate="2017-10-02T19:26:10.420Z" EditedBy="NIDLAB01\Turck User"
- SoftwareRevision="v27.00">
+<AddOnInstructionDefinition Name="IOL_ReadString" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="true" CreatedDate="2009-07-07T18:39:04.362Z" CreatedBy="USMS\BKollm" EditedDate="2023-06-21T20:09:43.668Z" EditedBy="AMER-turck-info\jose.sanchez"
+ SoftwareRevision="v32.00">
 <RevisionNote>
 <![CDATA[V1_0 Initial Release
 V1_1 Documentation update
@@ -219,7 +219,7 @@ Status	Description
 <DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
 </DefaultData>
 </Parameter>
-<Parameter Name="IOLData" TagType="Base" DataType="IOLRequest" Usage="InOut" Required="true" Visible="true" Constant="false">
+<Parameter Name="IOLData" TagType="Base" DataType="Turck_IOL_CommonData" Usage="InOut" Required="true" Visible="true" Constant="false">
 <Description>
 <![CDATA[Shared IOL Data Area - must be identical on all requests]]>
 </Description>
@@ -463,10 +463,10 @@ IOL_ReadString
 </Routine>
 </Routines>
 <Dependencies>
-<Dependency Type="DataType" Name="IOLRequest"/>
+<Dependency Type="DataType" Name="Turck_IOL_CommonData"/>
 </Dependencies>
 </AddOnInstructionDefinition>
-<AddOnInstructionDefinition Use="Target" Name="TBEN_L_8IOL_AOI" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-06-20T18:53:43.902Z"
+<AddOnInstructionDefinition Use="Target" Name="TBEN_L_8IOL_AOI" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-06-21T20:10:08.206Z"
  EditedBy="AMER-turck-info\jose.sanchez" SoftwareRevision="v32.00">
 <Description>
 <![CDATA[TBEN_L_8IOL AOI for managing all data to/from IOL blocks including process/acyclic data.]]>
@@ -538,7 +538,7 @@ Status	Description
 <![CDATA[Enable Output - System Defined Parameter]]>
 </Description>
 </Parameter>
-<Parameter Name="COMMON_DATA" TagType="Base" DataType="IOLRequest" Usage="InOut" Required="true" Visible="true" Constant="false">
+<Parameter Name="CommonData" TagType="Base" DataType="Turck_IOL_CommonData" Usage="InOut" Required="true" Visible="true" Constant="false">
 <Comments>
 <Comment Operand=".RECEIVEDATA[2]">
 <![CDATA[KH changed from -9 (f7) to -4 (Fd)]]>
@@ -1333,7 +1333,7 @@ Start IOLink Read or Write Operation
 Step 1 - Send Delete Datastream]]>
 </Comment>
 <Text>
-<![CDATA[[XIC(COMMON_DATA.Write) XIO(IOLWriteActive) OTL(IOLWriteActive) MOV(0,RetryCount) ,XIC(Retry) XIC(COMMON_DATA.Write) ADD(RetryCount,1,RetryCount) ,XIC(COMMON_DATA.Read) XIO(IOLReadActive) OTL(IOLReadActive) MOV(0,RetryCount) ,XIC(Retry) XIC(COMMON_DATA.Read) ADD(RetryCount,1,RetryCount) ][OTL(IOLS1) ,OTU(IOLS2) OTU(IOLS2A) ,OTU(IOLS3) ,OTU(IOLS4) ,OTU(IOLS5) OTU(IOLS5A) ,OTU(IOLS6) ,OTU(IOLS7) ,OTU(IOLS4_Bad) ,MOV(0,IOL_S2_0_Count) ,MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,MOV(2,IOL_SendMSG.REQ_LEN) ,MOV(0,COMMON_DATA.SendData[0]) ,MOV(0,COMMON_DATA.SendData[1]) ,OTL(IOL_SendMSG_Request) ,OTU(Retry) ,ADD(IOL_S1_Count,1,IOL_S1_Count) ,XIC(COMMON_DATA.Enable_Multiple_Nodes) COP(COMMON_DATA.ActivePath,IOL_SendMSG.Path,1) ,XIC(COMMON_DATA.Enable_Multiple_Nodes) COP(COMMON_DATA.ActivePath,IOL_ReceiveMSG.Path,1) ];]]>
+<![CDATA[[XIC(CommonData.Write) XIO(IOLWriteActive) OTL(IOLWriteActive) MOV(0,RetryCount) ,XIC(Retry) XIC(CommonData.Write) ADD(RetryCount,1,RetryCount) ,XIC(CommonData.Read) XIO(IOLReadActive) OTL(IOLReadActive) MOV(0,RetryCount) ,XIC(Retry) XIC(CommonData.Read) ADD(RetryCount,1,RetryCount) ][OTL(IOLS1) ,OTU(IOLS2) OTU(IOLS2A) ,OTU(IOLS3) ,OTU(IOLS4) ,OTU(IOLS5) OTU(IOLS5A) ,OTU(IOLS6) ,OTU(IOLS7) ,OTU(IOLS4_Bad) ,MOV(0,IOL_S2_0_Count) ,MOV(CommonData.Slot,IOL_SendMSG.Instance) ,MOV(2,IOL_SendMSG.REQ_LEN) ,MOV(0,CommonData.SendData[0]) ,MOV(0,CommonData.SendData[1]) ,OTL(IOL_SendMSG_Request) ,OTU(Retry) ,ADD(IOL_S1_Count,1,IOL_S1_Count) ,XIC(CommonData.Enable_Multiple_Nodes) COP(CommonData.ActivePath,IOL_SendMSG.Path,1) ,XIC(CommonData.Enable_Multiple_Nodes) COP(CommonData.ActivePath,IOL_ReceiveMSG.Path,1) ];]]>
 </Text>
 </Rung>
 <Rung Number="1" Type="N">
@@ -1356,7 +1356,7 @@ Step 1 - Send Delete Datastream]]>
 <![CDATA[Step 1 - After Delete Stream sent then Send IOLink Read or Write Request]]>
 </Comment>
 <Text>
-<![CDATA[XIC(IOLS1)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS1) ,OTL(IOLS2A) ,MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,MOV(0,COMMON_DATA.SendData[0]) ,MOV(16#fc,COMMON_DATA.SendData[1]) ,MOV(16#11,COMMON_DATA.SendData[2]) ,MOV(16#08,COMMON_DATA.SendData[3]) ,MOV(COMMON_DATA.Port,COMMON_DATA.SendData[4]) ,MOV(16#fe,COMMON_DATA.SendData[5]) ,MOV(16#4a,COMMON_DATA.SendData[6]) ,XIC(IOLReadActive) MOV(16#03,COMMON_DATA.SendData[7]) ,XIC(IOLWriteActive) MOV(16#02,COMMON_DATA.SendData[7]) ,BTD(COMMON_DATA.Index,8,COMMON_DATA.SendData[8],0,8) ,BTD(COMMON_DATA.Index,0,COMMON_DATA.SendData[9],0,8) ,MOV(COMMON_DATA.SubIndex,COMMON_DATA.SendData[10]) ,XIC(IOLReadActive) MOV(11,IOL_SendMSG.REQ_LEN) ,XIC(IOLWriteActive) ADD(11,COMMON_DATA.Length,IOL_SendMSG.REQ_LEN) ,ADD(IOL_S2_Count,1,IOL_S2_Count) ];]]>
+<![CDATA[XIC(IOLS1)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS1) ,OTL(IOLS2A) ,MOV(CommonData.Slot,IOL_SendMSG.Instance) ,MOV(0,CommonData.SendData[0]) ,MOV(16#fc,CommonData.SendData[1]) ,MOV(16#11,CommonData.SendData[2]) ,MOV(16#08,CommonData.SendData[3]) ,MOV(CommonData.Port,CommonData.SendData[4]) ,MOV(16#fe,CommonData.SendData[5]) ,MOV(16#4a,CommonData.SendData[6]) ,XIC(IOLReadActive) MOV(16#03,CommonData.SendData[7]) ,XIC(IOLWriteActive) MOV(16#02,CommonData.SendData[7]) ,BTD(CommonData.Index,8,CommonData.SendData[8],0,8) ,BTD(CommonData.Index,0,CommonData.SendData[9],0,8) ,MOV(CommonData.SubIndex,CommonData.SendData[10]) ,XIC(IOLReadActive) MOV(11,IOL_SendMSG.REQ_LEN) ,XIC(IOLWriteActive) ADD(11,CommonData.Length,IOL_SendMSG.REQ_LEN) ,ADD(IOL_S2_Count,1,IOL_S2_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="5" Type="N">
@@ -1364,7 +1364,7 @@ Step 1 - Send Delete Datastream]]>
 <![CDATA[Step 2 - After IOL Read or Write request is sent to the Datastream then do Get Attribute to check for busy/status]]>
 </Comment>
 <Text>
-<![CDATA[XIC(IOLS2)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS2) ,OTL(IOLS3) ,MOV(COMMON_DATA.Slot,IOL_ReceiveMSG.Instance) ,OTL(IOL_ReceiveMSG_Request) ,ADD(IOL_S3_Count,1,IOL_S3_Count) ];]]>
+<![CDATA[XIC(IOLS2)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS2) ,OTL(IOLS3) ,MOV(CommonData.Slot,IOL_ReceiveMSG.Instance) ,OTL(IOL_ReceiveMSG_Request) ,ADD(IOL_S3_Count,1,IOL_S3_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="6" Type="N">
@@ -1372,7 +1372,7 @@ Step 1 - Send Delete Datastream]]>
 <![CDATA[Step 3 - Evaluate busy/status response - retry if response length is 0]]>
 </Comment>
 <Text>
-<![CDATA[XIC(IOLS3)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,0)[OTU(IOLS3) ,ADD(IOL_S2_0_Total,1,IOL_S2_0_Total) ,ADD(IOL_S2_0_Count,1,IOL_S2_0_Count) ,LEQ(IOL_S2_0_Count,10) OTL(IOLS2) ,XIO(IOLS2) [OTL(COMMON_DATA.Error) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(0,IOL_S2_0_Count) ,MOV(666,COMMON_DATA.Status) ,ADD(IOL_S2_Error_Count,1,IOL_S2_Error_Count) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ] ];]]>
+<![CDATA[XIC(IOLS3)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,0)[OTU(IOLS3) ,ADD(IOL_S2_0_Total,1,IOL_S2_0_Total) ,ADD(IOL_S2_0_Count,1,IOL_S2_0_Count) ,LEQ(IOL_S2_0_Count,10) OTL(IOLS2) ,XIO(IOLS2) [OTL(CommonData.Error) ,OTU(CommonData.Read) ,OTU(CommonData.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(0,IOL_S2_0_Count) ,MOV(666,CommonData.Status) ,ADD(IOL_S2_Error_Count,1,IOL_S2_Error_Count) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ] ];]]>
 </Text>
 </Rung>
 <Rung Number="7" Type="N">
@@ -1380,7 +1380,7 @@ Step 1 - Send Delete Datastream]]>
 <![CDATA[Step 3 - Evaluate busy/status response if length = 8]]>
 </Comment>
 <Text>
-<![CDATA[XIC(IOLS3)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS3) ,OTL(IOLS4) ,NEQ(COMMON_DATA.ReceiveData[0],-2) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[1],31) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[2],-4) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[3],17) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[4],16#00) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[5],16#00) OTL(IOLS4_Bad) ,NEQ(COMMON_DATA.ReceiveData[7],16#00) OTL(IOLS4_Bad) ,XIO(IOLS4_Bad) MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,XIO(IOLS4_Bad) MOV(2,IOL_SendMSG.REQ_LEN) ,XIO(IOLS4_Bad) MOV(0,COMMON_DATA.SendData[0]) ,XIO(IOLS4_Bad) MOV(0,COMMON_DATA.SendData[1]) ,XIO(IOLS4_Bad) OTL(IOL_SendMSG_Request) ];]]>
+<![CDATA[XIC(IOLS3)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS3) ,OTL(IOLS4) ,NEQ(CommonData.ReceiveData[0],-2) OTL(IOLS4_Bad) ,NEQ(CommonData.ReceiveData[1],31) OTL(IOLS4_Bad) ,NEQ(CommonData.ReceiveData[2],-4) OTL(IOLS4_Bad) ,NEQ(CommonData.ReceiveData[3],17) OTL(IOLS4_Bad) ,NEQ(CommonData.ReceiveData[4],16#00) OTL(IOLS4_Bad) ,NEQ(CommonData.ReceiveData[5],16#00) OTL(IOLS4_Bad) ,NEQ(CommonData.ReceiveData[7],16#00) OTL(IOLS4_Bad) ,XIO(IOLS4_Bad) MOV(CommonData.Slot,IOL_SendMSG.Instance) ,XIO(IOLS4_Bad) MOV(2,IOL_SendMSG.REQ_LEN) ,XIO(IOLS4_Bad) MOV(0,CommonData.SendData[0]) ,XIO(IOLS4_Bad) MOV(0,CommonData.SendData[1]) ,XIO(IOLS4_Bad) OTL(IOL_SendMSG_Request) ];]]>
 </Text>
 </Rung>
 <Rung Number="8" Type="N">
@@ -1411,7 +1411,7 @@ Step 1 - Send Delete Datastream]]>
 During IOL write operation if expected response received send request for operation status]]>
 </Comment>
 <Text>
-<![CDATA[[XIC(IOLS4) [XIC(IOLReadActive) ,XIC(IOLWriteActive) ] XIC(IOL_SendMSG_DN) XIO(IOL_SendMSG_Request) ,XIC(Busy_Retry) OTU(Busy_Retry) ][OTU(IOLS4) ,OTL(IOLS5A) ,MOV(COMMON_DATA.Slot,IOL_SendMSG.Instance) ,MOV(16#00,COMMON_DATA.SendData[0]) ,MOV(16#FD,COMMON_DATA.SendData[1]) ,MOV(16#11,COMMON_DATA.SendData[2]) ,MOV(3,IOL_SendMSG.REQ_LEN) ,ADD(IOL_S5_Count,1,IOL_S5_Count) ];]]>
+<![CDATA[[XIC(IOLS4) [XIC(IOLReadActive) ,XIC(IOLWriteActive) ] XIC(IOL_SendMSG_DN) XIO(IOL_SendMSG_Request) ,XIC(Busy_Retry) OTU(Busy_Retry) ][OTU(IOLS4) ,OTL(IOLS5A) ,MOV(CommonData.Slot,IOL_SendMSG.Instance) ,MOV(16#00,CommonData.SendData[0]) ,MOV(16#FD,CommonData.SendData[1]) ,MOV(16#11,CommonData.SendData[2]) ,MOV(3,IOL_SendMSG.REQ_LEN) ,ADD(IOL_S5_Count,1,IOL_S5_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="12" Type="N">
@@ -1419,7 +1419,7 @@ During IOL write operation if expected response received send request for operat
 <![CDATA[During IOL Read operation when request for read data has been sent do Get Attrbute to bring in the read data]]>
 </Comment>
 <Text>
-<![CDATA[XIC(IOLS5)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS5) ,MOV(COMMON_DATA.Slot,IOL_ReceiveMSG.Instance) OTL(IOLS6) ,OTL(IOL_ReceiveMSG_Request) ,ADD(IOL_S6_Count,1,IOL_S6_Count) ];]]>
+<![CDATA[XIC(IOLS5)XIC(IOL_SendMSG_DN)XIO(IOL_SendMSG_Request)[OTU(IOLS5) ,MOV(CommonData.Slot,IOL_ReceiveMSG.Instance) OTL(IOLS6) ,OTL(IOL_ReceiveMSG_Request) ,ADD(IOL_S6_Count,1,IOL_S6_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="13" Type="N">
@@ -1435,7 +1435,7 @@ During IOL write operation if expected response received send request for operat
 <![CDATA[During read operation if a Datastream busy response is received then retry the request for data]]>
 </Comment>
 <Text>
-<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS6) ,OTL(Busy_Response) OTL(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[0],-1) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[1],31) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[2],-3) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[3],17) OTU(Busy_Response) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[4],-62) OTU(Busy_Response) ,NEQ(COMMON_DATA.ReceiveData[5],-128) OTU(Busy_Response) ,NEQ(COMMON_DATA.ReceiveData[4],0) OTU(Done_Response) ,NEQ(COMMON_DATA.ReceiveData[5],0) OTU(Done_Response) ,[XIC(Busy_Response) ,XIC(Done_Response) ] OTL(Busy_Retry) ,XIO(Busy_Response) XIO(Done_Response) [OTL(Retry) ,ADD(IOL_S6_NotBusy_Count,1,IOL_S6_NotBusy_Count) ] ,XIC(Done_Response) ADD(IOL_S6_Done_Count,1,IOL_S6_Done_Count) ,XIC(Busy_Response) ADD(IOL_S6_Busy_Count,1,IOL_S6_Busy_Count) ];]]>
+<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS6) ,OTL(Busy_Response) OTL(Done_Response) ,NEQ(CommonData.ReceiveData[0],-1) OTU(Busy_Response) OTU(Done_Response) ,NEQ(CommonData.ReceiveData[1],31) OTU(Busy_Response) OTU(Done_Response) ,NEQ(CommonData.ReceiveData[2],-3) OTU(Busy_Response) OTU(Done_Response) ,NEQ(CommonData.ReceiveData[3],17) OTU(Busy_Response) OTU(Done_Response) ,NEQ(CommonData.ReceiveData[4],-62) OTU(Busy_Response) ,NEQ(CommonData.ReceiveData[5],-128) OTU(Busy_Response) ,NEQ(CommonData.ReceiveData[4],0) OTU(Done_Response) ,NEQ(CommonData.ReceiveData[5],0) OTU(Done_Response) ,[XIC(Busy_Response) ,XIC(Done_Response) ] OTL(Busy_Retry) ,XIO(Busy_Response) XIO(Done_Response) [OTL(Retry) ,ADD(IOL_S6_NotBusy_Count,1,IOL_S6_NotBusy_Count) ] ,XIC(Done_Response) ADD(IOL_S6_Done_Count,1,IOL_S6_Done_Count) ,XIC(Busy_Response) ADD(IOL_S6_Busy_Count,1,IOL_S6_Busy_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="15" Type="N">
@@ -1448,37 +1448,37 @@ During IOL write operation if expected response received send request for operat
 <![CDATA[During read operation if a Datastream error response is received then terminate in error]]>
 </Comment>
 <Text>
-<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,14)NEQ(COMMON_DATA.ReceiveData[6],0)[OTL(COMMON_DATA.Error) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ,OTE(Generate_Status) ];]]>
+<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)EQU(IOL_ReceiveMSG.DN_LEN,14)NEQ(CommonData.ReceiveData[6],0)[OTL(CommonData.Error) ,OTU(CommonData.Read) ,OTU(CommonData.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ,OTE(Generate_Status) ];]]>
 </Text>
 </Rung>
 <Rung Number="17" Type="N">
 <Text>
-<![CDATA[XIC(Generate_Status)[ABS(COMMON_DATA.ReceiveData[11],ABS_RD_11) ,ABS(COMMON_DATA.ReceiveData[12],ABS_RD_12) ,ABS(COMMON_DATA.ReceiveData[13],ABS_RD_13) ];]]>
+<![CDATA[XIC(Generate_Status)[ABS(CommonData.ReceiveData[11],ABS_RD_11) ,ABS(CommonData.ReceiveData[12],ABS_RD_12) ,ABS(CommonData.ReceiveData[13],ABS_RD_13) ];]]>
 </Text>
 </Rung>
 <Rung Number="18" Type="N">
 <Text>
-<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],0)NEQ(COMMON_DATA.ReceiveData[12],-128)ADD(1000,ABS_RD_12,COMMON_DATA.Status);]]>
+<![CDATA[XIC(Generate_Status)EQU(CommonData.ReceiveData[6],-128)EQU(CommonData.ReceiveData[10],0)NEQ(CommonData.ReceiveData[12],-128)ADD(1000,ABS_RD_12,CommonData.Status);]]>
 </Text>
 </Rung>
 <Rung Number="19" Type="N">
 <Text>
-<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],0)EQU(COMMON_DATA.ReceiveData[12],-128)ADD(2000,ABS_RD_13,COMMON_DATA.Status);]]>
+<![CDATA[XIC(Generate_Status)EQU(CommonData.ReceiveData[6],-128)EQU(CommonData.ReceiveData[10],0)EQU(CommonData.ReceiveData[12],-128)ADD(2000,ABS_RD_13,CommonData.Status);]]>
 </Text>
 </Rung>
 <Rung Number="20" Type="N">
 <Text>
-<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-127)EQU(COMMON_DATA.ReceiveData[10],0)EQU(COMMON_DATA.ReceiveData[12],-128)ADD(3000,ABS_RD_13,COMMON_DATA.Status);]]>
+<![CDATA[XIC(Generate_Status)EQU(CommonData.ReceiveData[6],-127)EQU(CommonData.ReceiveData[10],0)EQU(CommonData.ReceiveData[12],-128)ADD(3000,ABS_RD_13,CommonData.Status);]]>
 </Text>
 </Rung>
 <Rung Number="21" Type="N">
 <Text>
-<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],112)ADD(7000,ABS_RD_11,COMMON_DATA.Status);]]>
+<![CDATA[XIC(Generate_Status)EQU(CommonData.ReceiveData[6],-128)EQU(CommonData.ReceiveData[10],112)ADD(7000,ABS_RD_11,CommonData.Status);]]>
 </Text>
 </Rung>
 <Rung Number="22" Type="N">
 <Text>
-<![CDATA[XIC(Generate_Status)EQU(COMMON_DATA.ReceiveData[6],-128)EQU(COMMON_DATA.ReceiveData[10],-128)ADD(8000,ABS_RD_11,COMMON_DATA.Status);]]>
+<![CDATA[XIC(Generate_Status)EQU(CommonData.ReceiveData[6],-128)EQU(CommonData.ReceiveData[10],-128)ADD(8000,ABS_RD_11,CommonData.Status);]]>
 </Text>
 </Rung>
 <Rung Number="23" Type="N">
@@ -1488,12 +1488,12 @@ During IOL write operation if expected response received send request for operat
 </Rung>
 <Rung Number="24" Type="N">
 <Text>
-<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)GRT(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS6) ,SUB(IOL_ReceiveMSG.DN_LEN,10,COMMON_DATA.Length) ,OTL(COMMON_DATA.Done) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(0,COMMON_DATA.Status) ,ADD(IOL_Done_Count,1,IOL_Done_Count) ];]]>
+<![CDATA[XIC(IOLS6)XIC(IOL_ReceiveMSG_DN)XIO(IOL_ReceiveMSG_Request)GRT(IOL_ReceiveMSG.DN_LEN,8)[OTU(IOLS6) ,SUB(IOL_ReceiveMSG.DN_LEN,10,CommonData.Length) ,OTL(CommonData.Done) ,OTU(CommonData.Read) ,OTU(CommonData.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(0,CommonData.Status) ,ADD(IOL_Done_Count,1,IOL_Done_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="25" Type="N">
 <Text>
-<![CDATA[XIC(Retry)EQU(RetryCount,10)[OTU(Retry) ,MOV(0,RetryCount) ,OTL(COMMON_DATA.Error) ,OTU(COMMON_DATA.Read) ,OTU(COMMON_DATA.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(110,COMMON_DATA.Status) ,ADD(RetryTotal,1,RetryTotal) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ];]]>
+<![CDATA[XIC(Retry)EQU(RetryCount,10)[OTU(Retry) ,MOV(0,RetryCount) ,OTL(CommonData.Error) ,OTU(CommonData.Read) ,OTU(CommonData.Write) ,OTU(IOLReadActive) ,OTU(IOLWriteActive) ,MOV(110,CommonData.Status) ,ADD(RetryTotal,1,RetryTotal) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="26" Type="N">
@@ -1501,7 +1501,7 @@ During IOL write operation if expected response received send request for operat
 <![CDATA[Advance Handle to allow next IOLink request to be processed]]>
 </Comment>
 <Text>
-<![CDATA[XIO(COMMON_DATA.Done)XIO(COMMON_DATA.Error)XIO(IOLWriteActive)XIO(IOLReadActive)[MOV(0,RetryCount) ,ADD(COMMON_DATA.Handle,1,COMMON_DATA.Handle) ,GEQ(COMMON_DATA.Handle,COMMON_DATA.NextHandle) MOV(0,COMMON_DATA.Handle) ];]]>
+<![CDATA[XIO(CommonData.Done)XIO(CommonData.Error)XIO(IOLWriteActive)XIO(IOLReadActive)[MOV(0,RetryCount) ,ADD(CommonData.Handle,1,CommonData.Handle) ,GEQ(CommonData.Handle,CommonData.NextHandle) MOV(0,CommonData.Handle) ];]]>
 </Text>
 </Rung>
 <Rung Number="27" Type="N">
@@ -1532,12 +1532,12 @@ CIP Message Transfer Functions for IOLink Datastream operation
 </Rung>
 <Rung Number="31" Type="N">
 <Text>
-<![CDATA[[XIC(IOL_SendMSG.ER) ONS(ER1) MOV(100,COMMON_DATA.Status) ,XIC(IOL_ReceiveMSG.ER) ONS(ER2) MOV(101,COMMON_DATA.Status) ][OTL(COMMON_DATA.Error) OTU(COMMON_DATA.Read) OTU(COMMON_DATA.Write) OTU(IOLReadActive) OTU(IOLWriteActive) ,OTU(IOLS1) OTU(IOLS2) OTU(IOLS3) OTU(IOLS4) OTU(IOLS5) OTU(IOLS6) OTU(IOLS7) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ];]]>
+<![CDATA[[XIC(IOL_SendMSG.ER) ONS(ER1) MOV(100,CommonData.Status) ,XIC(IOL_ReceiveMSG.ER) ONS(ER2) MOV(101,CommonData.Status) ][OTL(CommonData.Error) OTU(CommonData.Read) OTU(CommonData.Write) OTU(IOLReadActive) OTU(IOLWriteActive) ,OTU(IOLS1) OTU(IOLS2) OTU(IOLS3) OTU(IOLS4) OTU(IOLS5) OTU(IOLS6) OTU(IOLS7) ,ADD(IOL_Error_Count,1,IOL_Error_Count) ];]]>
 </Text>
 </Rung>
 <Rung Number="32" Type="N">
 <Text>
-<![CDATA[[XIC(S:FS) ,XIC(COMMON_DATA.Reset) ONS(IOLReset_ONS) ][OTU(COMMON_DATA.Read) OTU(IOLReadActive) OTU(COMMON_DATA.Write) OTU(IOLWriteActive) OTU(COMMON_DATA.Done) OTU(COMMON_DATA.Error) ,OTU(IOLS1) OTU(IOLS2) OTU(IOLS2A) OTU(IOLS3) OTU(IOLS4) OTU(IOLS5) OTU(IOLS5A) OTU(IOLS6) OTU(IOLS7) OTU(IOLS4_Bad) ,OTU(Retry) OTU(Busy_Retry) OTU(Busy_Retry) OTU(Busy_Response) ,MOV(0,COMMON_DATA.Port) MOV(0,COMMON_DATA.Slot) ,MOV(0,COMMON_DATA.Length) MOV(0,COMMON_DATA.Index) ,MOV(0,COMMON_DATA.Handle) ];]]>
+<![CDATA[[XIC(S:FS) ,XIC(CommonData.Reset) ONS(IOLReset_ONS) ][OTU(CommonData.Read) OTU(IOLReadActive) OTU(CommonData.Write) OTU(IOLWriteActive) OTU(CommonData.Done) OTU(CommonData.Error) ,OTU(IOLS1) OTU(IOLS2) OTU(IOLS2A) OTU(IOLS3) OTU(IOLS4) OTU(IOLS5) OTU(IOLS5A) OTU(IOLS6) OTU(IOLS7) OTU(IOLS4_Bad) ,OTU(Retry) OTU(Busy_Retry) OTU(Busy_Retry) OTU(Busy_Response) ,MOV(0,CommonData.Port) MOV(0,CommonData.Slot) ,MOV(0,CommonData.Length) MOV(0,CommonData.Index) ,MOV(0,CommonData.Handle) ];]]>
 </Text>
 </Rung>
 <Rung Number="33" Type="N">
@@ -1547,7 +1547,7 @@ CIP Message Transfer Functions for IOLink Datastream operation
 </Rung>
 <Rung Number="34" Type="N">
 <Text>
-<![CDATA[IOL_ReadString(READ_PORT_DATA,COMMON_DATA,PORT_DATA,PORT_DATA_LENGHT);]]>
+<![CDATA[IOL_ReadString(READ_PORT_DATA,CommonData,PORT_DATA,PORT_DATA_LENGHT);]]>
 </Text>
 </Rung>
 <Rung Number="35" Type="N">
@@ -1636,7 +1636,7 @@ CIP Message Transfer Functions for IOLink Datastream operation
 <RLLContent>
 <Rung Number="0" Type="N">
 <Text>
-<![CDATA[OTU(COMMON_DATA.Read)OTU(IOLReadActive)OTU(COMMON_DATA.Write)OTU(COMMON_DATA.Done)OTU(COMMON_DATA.Error);]]>
+<![CDATA[OTU(CommonData.Read)OTU(IOLReadActive)OTU(CommonData.Write)OTU(CommonData.Done)OTU(CommonData.Error);]]>
 </Text>
 </Rung>
 <Rung Number="1" Type="N">
@@ -1646,7 +1646,7 @@ CIP Message Transfer Functions for IOLink Datastream operation
 </Rung>
 <Rung Number="2" Type="N">
 <Text>
-<![CDATA[[MOV(0,COMMON_DATA.Slot) ,MOV(0,COMMON_DATA.Port) ,MOV(0,COMMON_DATA.Index) ,MOV(0,COMMON_DATA.Length) ,MOV(0,COMMON_DATA.Handle) ,MOV(0,COMMON_DATA.NextHandle) ];]]>
+<![CDATA[[MOV(0,CommonData.Slot) ,MOV(0,CommonData.Port) ,MOV(0,CommonData.Index) ,MOV(0,CommonData.Length) ,MOV(0,CommonData.Handle) ,MOV(0,CommonData.NextHandle) ];]]>
 </Text>
 </Rung>
 <Rung Number="3" Type="N">
@@ -1658,7 +1658,7 @@ CIP Message Transfer Functions for IOLink Datastream operation
 </Routine>
 </Routines>
 <Dependencies>
-<Dependency Type="DataType" Name="IOLRequest"/>
+<Dependency Type="DataType" Name="Turck_IOL_CommonData"/>
 <Dependency Type="AddOnInstructionDefinition" Name="IOL_ReadString"/>
 </Dependencies>
 </AddOnInstructionDefinition>
