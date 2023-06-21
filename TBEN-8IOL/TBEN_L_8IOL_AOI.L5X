@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--TBEN_L_8IOL AOI for managing all data to/from IOL blocks including process/acyclic data.-->
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_L_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="2.5 Support TBIP" TargetLastEdited="2023-05-25T15:45:40.183Z" ContainsContext="true" ExportDate="Thu May 25 12:16:19 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_L_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="2.5 Support TBIP" TargetLastEdited="2023-06-20T18:53:43.902Z" ContainsContext="true" ExportDate="Tue Jun 20 15:12:43 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
 <Controller Use="Context" Name="Kollmeyer_LiveDemo_TBENLX8IOL_TBIL">
 <DataTypes Use="Context">
 <DataType Name="IOLRequest" Family="NoFamily" Class="User">
@@ -466,7 +466,7 @@ IOL_ReadString
 <Dependency Type="DataType" Name="IOLRequest"/>
 </Dependencies>
 </AddOnInstructionDefinition>
-<AddOnInstructionDefinition Use="Target" Name="TBEN_L_8IOL_AOI" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-05-25T15:45:40.183Z"
+<AddOnInstructionDefinition Use="Target" Name="TBEN_L_8IOL_AOI" Class="Standard" Revision="2.5" RevisionExtension="Support TBIP" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-06-20T18:53:43.902Z"
  EditedBy="AMER-turck-info\jose.sanchez" SoftwareRevision="v32.00">
 <Description>
 <![CDATA[TBEN_L_8IOL AOI for managing all data to/from IOL blocks including process/acyclic data.]]>
@@ -1048,37 +1048,12 @@ Status	Description
 <DataValue DataType="DINT" Radix="Decimal" Value="0"/>
 </DefaultData>
 </LocalTag>
-<LocalTag Name="READ_DATA" DataType="IOL_ReadString" ExternalAccess="None">
+<LocalTag Name="PORT_DATA" DataType="SINT" Dimensions="230" Radix="Decimal" ExternalAccess="None">
 <DefaultData Format="L5K">
-<![CDATA[[1,0,0,0,1,1,0,0,0,0,0]]]>
+<![CDATA[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
 </DefaultData>
 <DefaultData Format="Decorated">
-<Structure DataType="IOL_ReadString">
-<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
-<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
-<DataValueMember Name="Done" DataType="BOOL" Value="0"/>
-<DataValueMember Name="Error" DataType="BOOL" Value="0"/>
-<DataValueMember Name="Pending" DataType="BOOL" Value="0"/>
-<DataValueMember Name="Active" DataType="BOOL" Value="0"/>
-<DataValueMember Name="DoneCount" DataType="DINT" Radix="Decimal" Value="0"/>
-<DataValueMember Name="ErrorCount" DataType="DINT" Radix="Decimal" Value="0"/>
-<DataValueMember Name="Status" DataType="INT" Radix="Decimal" Value="0"/>
-<DataValueMember Name="Read" DataType="BOOL" Value="0"/>
-<DataValueMember Name="Read_Continuous" DataType="BOOL" Value="0"/>
-<DataValueMember Name="Slot" DataType="INT" Radix="Decimal" Value="1"/>
-<DataValueMember Name="Port" DataType="INT" Radix="Decimal" Value="1"/>
-<DataValueMember Name="Index" DataType="INT" Radix="Decimal" Value="0"/>
-<DataValueMember Name="SubIndex" DataType="INT" Radix="Decimal" Value="0"/>
-<DataValueMember Name="StringLength" DataType="DINT" Radix="Decimal" Value="0"/>
-</Structure>
-</DefaultData>
-</LocalTag>
-<LocalTag Name="PORT_DATA" DataType="SINT" Dimensions="82" Radix="Decimal" ExternalAccess="None">
-<DefaultData Format="L5K">
-<![CDATA[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
-</DefaultData>
-<DefaultData Format="Decorated">
-<Array DataType="SINT" Dimensions="82" Radix="Decimal">
+<Array DataType="SINT" Dimensions="230" Radix="Decimal">
 <Element Index="[0]" Value="0"/>
 <Element Index="[1]" Value="0"/>
 <Element Index="[2]" Value="0"/>
@@ -1161,6 +1136,154 @@ Status	Description
 <Element Index="[79]" Value="0"/>
 <Element Index="[80]" Value="0"/>
 <Element Index="[81]" Value="0"/>
+<Element Index="[82]" Value="0"/>
+<Element Index="[83]" Value="0"/>
+<Element Index="[84]" Value="0"/>
+<Element Index="[85]" Value="0"/>
+<Element Index="[86]" Value="0"/>
+<Element Index="[87]" Value="0"/>
+<Element Index="[88]" Value="0"/>
+<Element Index="[89]" Value="0"/>
+<Element Index="[90]" Value="0"/>
+<Element Index="[91]" Value="0"/>
+<Element Index="[92]" Value="0"/>
+<Element Index="[93]" Value="0"/>
+<Element Index="[94]" Value="0"/>
+<Element Index="[95]" Value="0"/>
+<Element Index="[96]" Value="0"/>
+<Element Index="[97]" Value="0"/>
+<Element Index="[98]" Value="0"/>
+<Element Index="[99]" Value="0"/>
+<Element Index="[100]" Value="0"/>
+<Element Index="[101]" Value="0"/>
+<Element Index="[102]" Value="0"/>
+<Element Index="[103]" Value="0"/>
+<Element Index="[104]" Value="0"/>
+<Element Index="[105]" Value="0"/>
+<Element Index="[106]" Value="0"/>
+<Element Index="[107]" Value="0"/>
+<Element Index="[108]" Value="0"/>
+<Element Index="[109]" Value="0"/>
+<Element Index="[110]" Value="0"/>
+<Element Index="[111]" Value="0"/>
+<Element Index="[112]" Value="0"/>
+<Element Index="[113]" Value="0"/>
+<Element Index="[114]" Value="0"/>
+<Element Index="[115]" Value="0"/>
+<Element Index="[116]" Value="0"/>
+<Element Index="[117]" Value="0"/>
+<Element Index="[118]" Value="0"/>
+<Element Index="[119]" Value="0"/>
+<Element Index="[120]" Value="0"/>
+<Element Index="[121]" Value="0"/>
+<Element Index="[122]" Value="0"/>
+<Element Index="[123]" Value="0"/>
+<Element Index="[124]" Value="0"/>
+<Element Index="[125]" Value="0"/>
+<Element Index="[126]" Value="0"/>
+<Element Index="[127]" Value="0"/>
+<Element Index="[128]" Value="0"/>
+<Element Index="[129]" Value="0"/>
+<Element Index="[130]" Value="0"/>
+<Element Index="[131]" Value="0"/>
+<Element Index="[132]" Value="0"/>
+<Element Index="[133]" Value="0"/>
+<Element Index="[134]" Value="0"/>
+<Element Index="[135]" Value="0"/>
+<Element Index="[136]" Value="0"/>
+<Element Index="[137]" Value="0"/>
+<Element Index="[138]" Value="0"/>
+<Element Index="[139]" Value="0"/>
+<Element Index="[140]" Value="0"/>
+<Element Index="[141]" Value="0"/>
+<Element Index="[142]" Value="0"/>
+<Element Index="[143]" Value="0"/>
+<Element Index="[144]" Value="0"/>
+<Element Index="[145]" Value="0"/>
+<Element Index="[146]" Value="0"/>
+<Element Index="[147]" Value="0"/>
+<Element Index="[148]" Value="0"/>
+<Element Index="[149]" Value="0"/>
+<Element Index="[150]" Value="0"/>
+<Element Index="[151]" Value="0"/>
+<Element Index="[152]" Value="0"/>
+<Element Index="[153]" Value="0"/>
+<Element Index="[154]" Value="0"/>
+<Element Index="[155]" Value="0"/>
+<Element Index="[156]" Value="0"/>
+<Element Index="[157]" Value="0"/>
+<Element Index="[158]" Value="0"/>
+<Element Index="[159]" Value="0"/>
+<Element Index="[160]" Value="0"/>
+<Element Index="[161]" Value="0"/>
+<Element Index="[162]" Value="0"/>
+<Element Index="[163]" Value="0"/>
+<Element Index="[164]" Value="0"/>
+<Element Index="[165]" Value="0"/>
+<Element Index="[166]" Value="0"/>
+<Element Index="[167]" Value="0"/>
+<Element Index="[168]" Value="0"/>
+<Element Index="[169]" Value="0"/>
+<Element Index="[170]" Value="0"/>
+<Element Index="[171]" Value="0"/>
+<Element Index="[172]" Value="0"/>
+<Element Index="[173]" Value="0"/>
+<Element Index="[174]" Value="0"/>
+<Element Index="[175]" Value="0"/>
+<Element Index="[176]" Value="0"/>
+<Element Index="[177]" Value="0"/>
+<Element Index="[178]" Value="0"/>
+<Element Index="[179]" Value="0"/>
+<Element Index="[180]" Value="0"/>
+<Element Index="[181]" Value="0"/>
+<Element Index="[182]" Value="0"/>
+<Element Index="[183]" Value="0"/>
+<Element Index="[184]" Value="0"/>
+<Element Index="[185]" Value="0"/>
+<Element Index="[186]" Value="0"/>
+<Element Index="[187]" Value="0"/>
+<Element Index="[188]" Value="0"/>
+<Element Index="[189]" Value="0"/>
+<Element Index="[190]" Value="0"/>
+<Element Index="[191]" Value="0"/>
+<Element Index="[192]" Value="0"/>
+<Element Index="[193]" Value="0"/>
+<Element Index="[194]" Value="0"/>
+<Element Index="[195]" Value="0"/>
+<Element Index="[196]" Value="0"/>
+<Element Index="[197]" Value="0"/>
+<Element Index="[198]" Value="0"/>
+<Element Index="[199]" Value="0"/>
+<Element Index="[200]" Value="0"/>
+<Element Index="[201]" Value="0"/>
+<Element Index="[202]" Value="0"/>
+<Element Index="[203]" Value="0"/>
+<Element Index="[204]" Value="0"/>
+<Element Index="[205]" Value="0"/>
+<Element Index="[206]" Value="0"/>
+<Element Index="[207]" Value="0"/>
+<Element Index="[208]" Value="0"/>
+<Element Index="[209]" Value="0"/>
+<Element Index="[210]" Value="0"/>
+<Element Index="[211]" Value="0"/>
+<Element Index="[212]" Value="0"/>
+<Element Index="[213]" Value="0"/>
+<Element Index="[214]" Value="0"/>
+<Element Index="[215]" Value="0"/>
+<Element Index="[216]" Value="0"/>
+<Element Index="[217]" Value="0"/>
+<Element Index="[218]" Value="0"/>
+<Element Index="[219]" Value="0"/>
+<Element Index="[220]" Value="0"/>
+<Element Index="[221]" Value="0"/>
+<Element Index="[222]" Value="0"/>
+<Element Index="[223]" Value="0"/>
+<Element Index="[224]" Value="0"/>
+<Element Index="[225]" Value="0"/>
+<Element Index="[226]" Value="0"/>
+<Element Index="[227]" Value="0"/>
+<Element Index="[228]" Value="0"/>
+<Element Index="[229]" Value="0"/>
 </Array>
 </DefaultData>
 </LocalTag>
@@ -1170,6 +1293,31 @@ Status	Description
 </DefaultData>
 <DefaultData Format="Decorated">
 <DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="READ_PORT_DATA" DataType="IOL_ReadString" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[1,0,0,0,1,0,-1,68,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="IOL_ReadString">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Done" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Error" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Pending" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Active" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DoneCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ErrorCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Status" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Read" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Read_Continuous" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Slot" DataType="INT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Port" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Index" DataType="INT" Radix="Decimal" Value="-1"/>
+<DataValueMember Name="SubIndex" DataType="INT" Radix="Decimal" Value="68"/>
+<DataValueMember Name="StringLength" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
 </DefaultData>
 </LocalTag>
 </LocalTags>
@@ -1394,22 +1542,92 @@ CIP Message Transfer Functions for IOLink Datastream operation
 </Rung>
 <Rung Number="33" Type="N">
 <Text>
-<![CDATA[OTE(READ_DATA.Read_Continuous);]]>
+<![CDATA[OTE(READ_PORT_DATA.Read_Continuous);]]>
 </Text>
 </Rung>
 <Rung Number="34" Type="N">
 <Text>
-<![CDATA[IOL_ReadString(READ_DATA,COMMON_DATA,PORT_DATA,PORT_DATA_LENGHT);]]>
+<![CDATA[IOL_ReadString(READ_PORT_DATA,COMMON_DATA,PORT_DATA,PORT_DATA_LENGHT);]]>
 </Text>
 </Rung>
 <Rung Number="35" Type="N">
 <Text>
-<![CDATA[BTD(PORT_DATA[7],0,Port1_VID,8,8)BTD(PORT_DATA[8],0,Port1_VID,0,8);]]>
+<![CDATA[BTD(PORT_DATA[0],0,Port1_VID,8,8)BTD(PORT_DATA[1],0,Port1_VID,0,8);]]>
 </Text>
 </Rung>
 <Rung Number="36" Type="N">
 <Text>
-<![CDATA[BTD(PORT_DATA[9],0,Port1_DID,16,8)BTD(PORT_DATA[10],0,Port1_DID,8,8)BTD(PORT_DATA[11],0,Port1_DID,0,8);]]>
+<![CDATA[BTD(PORT_DATA[2],0,Port1_DID,24,8)BTD(PORT_DATA[3],0,Port1_DID,16,8)BTD(PORT_DATA[4],0,Port1_DID,8,8)BTD(PORT_DATA[5],0,Port1_DID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="37" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[28],0,Port2_VID,8,8)BTD(PORT_DATA[29],0,Port2_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="38" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[30],0,Port2_DID,24,8)BTD(PORT_DATA[31],0,Port2_DID,16,8)BTD(PORT_DATA[32],0,Port2_DID,8,8)BTD(PORT_DATA[33],0,Port2_DID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="39" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[56],0,Port3_VID,8,8)BTD(PORT_DATA[57],0,Port3_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="40" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[58],0,Port3_DID,24,8)BTD(PORT_DATA[59],0,Port3_DID,16,8)BTD(PORT_DATA[60],0,Port3_DID,8,8)BTD(PORT_DATA[61],0,Port3_DID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="41" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[84],0,Port4_VID,8,8)BTD(PORT_DATA[85],0,Port4_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="42" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[86],0,Port4_DID,24,8)BTD(PORT_DATA[87],0,Port4_DID,16,8)BTD(PORT_DATA[88],0,Port4_DID,8,8)BTD(PORT_DATA[89],0,Port4_DID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="43" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[112],0,Port5_VID,8,8)BTD(PORT_DATA[113],0,Port5_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="44" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[114],0,Port5_DID,24,8)BTD(PORT_DATA[115],0,Port5_DID,16,8)BTD(PORT_DATA[116],0,Port5_DID,8,8)BTD(PORT_DATA[117],0,Port5_DID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="45" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[140],0,Port6_VID,8,8)BTD(PORT_DATA[141],0,Port6_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="46" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[142],0,Port6_DID,24,8)BTD(PORT_DATA[143],0,Port6_DID,16,8)BTD(PORT_DATA[144],0,Port6_DID,8,8)BTD(PORT_DATA[145],0,Port6_DID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="47" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[168],0,Port7_VID,8,8)BTD(PORT_DATA[169],0,Port7_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="48" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[170],0,Port7_DID,24,8)BTD(PORT_DATA[171],0,Port7_DID,16,8)BTD(PORT_DATA[172],0,Port7_DID,8,8)BTD(PORT_DATA[173],0,Port7_DID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="49" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[196],0,Port8_VID,8,8)BTD(PORT_DATA[197],0,Port8_VID,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="50" Type="N">
+<Text>
+<![CDATA[BTD(PORT_DATA[198],0,Port8_DID,24,8)BTD(PORT_DATA[199],0,Port8_DID,16,8)BTD(PORT_DATA[200],0,Port8_DID,8,8)BTD(PORT_DATA[201],0,Port8_DID,0,8);]]>
 </Text>
 </Rung>
 </RLLContent>
