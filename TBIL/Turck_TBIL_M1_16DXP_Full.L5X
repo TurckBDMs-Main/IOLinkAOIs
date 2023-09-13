@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="23.00" TargetName="Turck_TBIL_M1_16DXP_Full" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2023-08-29T17:00:07.049Z" ContainsContext="true" Owner="TURCK, TURCK" ExportDate="Tue Aug 29 12:18:05 2023" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
-<Controller Use="Context" Name="TBIL_All_AOIs_V0_2">
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="23.00" TargetName="Turck_TBIL_M1_16DXP_Full" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2023-09-13T18:44:19.339Z" ContainsContext="true" Owner="TURCK, TURCK" ExportDate="Wed Sep 13 14:46:10 2023" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="TBIL_All_AOIs_V0_3">
 <DataTypes Use="Context">
 <DataType Name="Turck_IOLink_Common_Data" Family="NoFamily" Class="User">
 <Members>
@@ -30,7 +30,6 @@
 <![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
 </Description>
 </Member>
-<Member Name="Port_Control_C_Data" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="5" ExternalAccess="Read/Write"/>
 <Member Name="Port_in_Use" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
 <Description>
 <![CDATA[Each bit is set to show that a port is in use. If it's not in use the port diagnostics will be disabled so IO-Link can still be used but won't throw a red light if no device plugged]]>
@@ -71,8 +70,6 @@
 <![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
 </Description>
 </Member>
-<Member Name="Process_Input_Data" DataType="INT" Dimension="128" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Process_Output_Data" DataType="INT" Dimension="128" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
 <Member Name="ReceiveData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
 <Description>
 <![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
@@ -85,24 +82,23 @@
 </Member>
 <Member Name="Vendor_IDs" DataType="INT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
 <Member Name="Device_IDs" DataType="DINT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Operation_Mode" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Data_Storage_Mode" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Cycle_Time" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Revision" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Activate_Quick_Startup" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Device_Parameter_via_GSD" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Process_Input_Data_Invalid" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Deactivate_Diagnostics" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Input_Data_Mapping" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Output_Data_Mapping" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Vendor_ID" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
-<Member Name="Port_Device_ID" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
 <Member Name="WriteData" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Input_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Output_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+</Dependencies>
+</DataType>
+<DataType Name="Generic_16_Words" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Data" DataType="INT" Dimension="16" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
 </Members>
 </DataType>
 </DataTypes>
 <AddOnInstructionDefinitions Use="Context">
-<AddOnInstructionDefinition Use="Target" Name="Turck_TBIL_M1_16DXP_Full" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2023-08-25T04:19:48.293Z" CreatedBy="NIDLAB01\Turck User" EditedDate="2023-08-29T17:00:07.049Z" EditedBy="NIDLAB01\Turck User" SoftwareRevision="v23.00"
+<AddOnInstructionDefinition Use="Target" Name="Turck_TBIL_M1_16DXP_Full" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2023-08-25T04:19:48.293Z" CreatedBy="NIDLAB01\Turck User" EditedDate="2023-09-13T18:44:19.339Z" EditedBy="NIDLAB01\Turck User" SoftwareRevision="v23.00"
 >
 <Parameters>
 <Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
@@ -367,162 +363,162 @@
 </Rung>
 <Rung Number="3" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].0)OTE(Input_1A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].0)OTE(Input_1A);]]>
 </Text>
 </Rung>
 <Rung Number="4" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].1)OTE(Input_1B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].1)OTE(Input_1B);]]>
 </Text>
 </Rung>
 <Rung Number="5" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].2)OTE(Input_2A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].2)OTE(Input_2A);]]>
 </Text>
 </Rung>
 <Rung Number="6" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].3)OTE(Input_2B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].3)OTE(Input_2B);]]>
 </Text>
 </Rung>
 <Rung Number="7" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].4)OTE(Input_3A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].4)OTE(Input_3A);]]>
 </Text>
 </Rung>
 <Rung Number="8" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].5)OTE(Input_3B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].5)OTE(Input_3B);]]>
 </Text>
 </Rung>
 <Rung Number="9" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].6)OTE(Input_4A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].6)OTE(Input_4A);]]>
 </Text>
 </Rung>
 <Rung Number="10" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].7)OTE(Input_4B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].7)OTE(Input_4B);]]>
 </Text>
 </Rung>
 <Rung Number="11" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].8)OTE(Input_5A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].8)OTE(Input_5A);]]>
 </Text>
 </Rung>
 <Rung Number="12" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].9)OTE(Input_5B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].9)OTE(Input_5B);]]>
 </Text>
 </Rung>
 <Rung Number="13" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].10)OTE(Input_6A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].10)OTE(Input_6A);]]>
 </Text>
 </Rung>
 <Rung Number="14" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].11)OTE(Input_6B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].11)OTE(Input_6B);]]>
 </Text>
 </Rung>
 <Rung Number="15" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].12)OTE(Input_7A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].12)OTE(Input_7A);]]>
 </Text>
 </Rung>
 <Rung Number="16" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].13)OTE(Input_7B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].13)OTE(Input_7B);]]>
 </Text>
 </Rung>
 <Rung Number="17" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].14)OTE(Input_8A);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].14)OTE(Input_8A);]]>
 </Text>
 </Rung>
 <Rung Number="18" Type="N">
 <Text>
-<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One*16+0].15)OTE(Input_8B);]]>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].15)OTE(Input_8B);]]>
 </Text>
 </Rung>
 <Rung Number="19" Type="N">
 <Text>
-<![CDATA[XIC(Output_1A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].0);]]>
+<![CDATA[XIC(Output_1A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].0);]]>
 </Text>
 </Rung>
 <Rung Number="20" Type="N">
 <Text>
-<![CDATA[XIC(Output_1B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].1);]]>
+<![CDATA[XIC(Output_1B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].1);]]>
 </Text>
 </Rung>
 <Rung Number="21" Type="N">
 <Text>
-<![CDATA[XIC(Output_2A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].2);]]>
+<![CDATA[XIC(Output_2A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].2);]]>
 </Text>
 </Rung>
 <Rung Number="22" Type="N">
 <Text>
-<![CDATA[XIC(Output_2B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].3);]]>
+<![CDATA[XIC(Output_2B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].3);]]>
 </Text>
 </Rung>
 <Rung Number="23" Type="N">
 <Text>
-<![CDATA[XIC(Output_3A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].4);]]>
+<![CDATA[XIC(Output_3A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].4);]]>
 </Text>
 </Rung>
 <Rung Number="24" Type="N">
 <Text>
-<![CDATA[XIC(Output_3B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].5);]]>
+<![CDATA[XIC(Output_3B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].5);]]>
 </Text>
 </Rung>
 <Rung Number="25" Type="N">
 <Text>
-<![CDATA[XIC(Output_4A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].6);]]>
+<![CDATA[XIC(Output_4A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].6);]]>
 </Text>
 </Rung>
 <Rung Number="26" Type="N">
 <Text>
-<![CDATA[XIC(Output_4B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].7);]]>
+<![CDATA[XIC(Output_4B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].7);]]>
 </Text>
 </Rung>
 <Rung Number="27" Type="N">
 <Text>
-<![CDATA[XIC(Output_5A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].8);]]>
+<![CDATA[XIC(Output_5A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].8);]]>
 </Text>
 </Rung>
 <Rung Number="28" Type="N">
 <Text>
-<![CDATA[XIC(Output_5B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].9);]]>
+<![CDATA[XIC(Output_5B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].9);]]>
 </Text>
 </Rung>
 <Rung Number="29" Type="N">
 <Text>
-<![CDATA[XIC(Output_6A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].10);]]>
+<![CDATA[XIC(Output_6A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].10);]]>
 </Text>
 </Rung>
 <Rung Number="30" Type="N">
 <Text>
-<![CDATA[XIC(Output_6B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].11);]]>
+<![CDATA[XIC(Output_6B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].11);]]>
 </Text>
 </Rung>
 <Rung Number="31" Type="N">
 <Text>
-<![CDATA[XIC(Output_7A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].12);]]>
+<![CDATA[XIC(Output_7A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].12);]]>
 </Text>
 </Rung>
 <Rung Number="32" Type="N">
 <Text>
-<![CDATA[XIC(Output_7B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].13);]]>
+<![CDATA[XIC(Output_7B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].13);]]>
 </Text>
 </Rung>
 <Rung Number="33" Type="N">
 <Text>
-<![CDATA[XIC(Output_8A)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].14);]]>
+<![CDATA[XIC(Output_8A)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].14);]]>
 </Text>
 </Rung>
 <Rung Number="34" Type="N">
 <Text>
-<![CDATA[XIC(Output_8B)OTE(Common_Data.Process_Output_Data[Port_Less_One*16+0].15);]]>
+<![CDATA[XIC(Output_8B)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].15);]]>
 </Text>
 </Rung>
 </RLLContent>

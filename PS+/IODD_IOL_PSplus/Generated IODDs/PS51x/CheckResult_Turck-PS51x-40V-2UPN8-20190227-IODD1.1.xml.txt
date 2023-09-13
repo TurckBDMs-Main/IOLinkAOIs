@@ -1,0 +1,113 @@
+﻿======================================================
+IO Device Description Checker V1.1.4
+Checks an IODD V1.1 for syntax and semantic errors
+Copyright (c) 2015-2018 by IO-Link Community
+======================================================
+Checks file : C:\_PROJECTS\H01642_Dev_Pressure_Sensors_for_Fluid_2_0\trunk\documentation\Generated IODDs\PS51x\Turck-PS51x-40V-2UPN8-20190227-IODD1.1.xml
+
+XMLReader: Begin Check............................
+XMLReader Validation: no errors
+
+Business rules: Check .........................
+test case : "Variable Definition" : warnings occured
+  line 255 column 25 : warning : index 13 to 15, 25, 26, 49 to 63 and 16384 to 20479 are reserved for profiles. Take care, that the variable@index = '25' is defined within a profile released by the IO-Link Community.
+  line 259 column 25 : warning : index 13 to 15, 25, 26, 49 to 63 and 16384 to 20479 are reserved for profiles. Take care, that the variable@index = '26' is defined within a profile released by the IO-Link Community.
+test case : "Menu references" : warnings occured
+  line 685 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 686 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 691 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 692 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 697 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 698 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 703 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 704 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 709 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 710 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 715 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 716 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 721 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 722 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 727 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 728 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 733 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 734 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 739 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 740 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 745 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 746 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 747 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 747 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 747 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 752 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 753 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 754 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 754 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 754 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 759 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 760 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 761 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 761 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 761 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 766 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 767 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 768 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 768 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 768 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 773 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 774 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 775 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 775 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 775 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 780 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 781 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 782 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 782 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 782 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 787 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 788 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 789 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 789 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 789 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 794 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 795 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 796 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 796 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 796 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 801 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 802 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 803 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 803 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 803 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 808 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 809 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 810 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 810 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Legacy' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 810 column 36 : warning : For ProcessData 'PD_ProcessDataIn_adjusted' subindex 4 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 815 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 816 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 821 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 822 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 827 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 828 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 833 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 834 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 839 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 840 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 845 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 846 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 851 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 852 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 857 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 858 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 863 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 864 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 869 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 2 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+  line 870 column 36 : warning : For ProcessData 'PD_ProcessDataIn_Clean' subindex 3 is not found. Secure that conditions are handled correctly to match menu and ProcessData
+Business rules validation: no errors
+
+======================================================
+Result of validation and business rules ..............
+0 errors found
+92 warnings found
+Stamp written
+======================================================

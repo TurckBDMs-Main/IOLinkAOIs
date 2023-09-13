@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IODevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.io-link.com/IODD/2010/10" xsi:schemaLocation="http://www.io-link.com/IODD/2010/10 IODD1.1.xsd">
+   <DocumentInfo version="V01.0031" releaseDate="2018-12-06" copyright="© 2018, Werner Turck GmbH  Co. &amp; KG"/>
+   <ProfileHeader>
+      <ProfileIdentification>IO Device Profile</ProfileIdentification>
+      <ProfileRevision>1.1</ProfileRevision>
+      <ProfileName>Device Profile for IO Devices</ProfileName>
+      <ProfileSource>IO-Link Consortium</ProfileSource>
+      <ProfileClassID>Device</ProfileClassID>
+      <ISO15745Reference>
+         <ISO15745Part>1</ISO15745Part>
+         <ISO15745Edition>1</ISO15745Edition>
+         <ProfileTechnology>IODD</ProfileTechnology>
+      </ISO15745Reference>
+   </ProfileHeader>
+   <ProfileBody>
+      <DeviceIdentity vendorId="317" vendorName="Turck" deviceId="1974291">
+         <VendorText textId="TI_vendorText"/>
+         <VendorUrl textId="TI_url"/>
+         <VendorLogo name="Turck-logo.png"/>
+         <DeviceName textId="TI_deviceName"/>
+         <DeviceFamily textId="TI_family"/>
+         <DeviceVariantCollection>
+            <DeviceVariant productId="100002594" deviceIcon="Turck-TBIL-S3-icon.png" deviceSymbol="Turck-TBIL-S3-pic.png">
+               <Name textId="TI_productName"/>
+               <Description textId="TI_productDesc"/>
+            </DeviceVariant>
+         </DeviceVariantCollection>
+      </DeviceIdentity>
+      <DeviceFunction>
+         <Features blockParameter="true" dataStorage="true" profileCharacteristic="16384">
+            <SupportedAccessLocks dataStorage="true" parameter="false" localParameterization="false" localUserInterface="false"/>
+         </Features>
+		 <DatatypeCollection>
+			<Datatype id="DT_Inversion" xsi:type="BooleanT">
+				<SingleValue xsi:type="BooleanValueT" value="false">
+					<Name textId="TI_Inversion_Off"/>
+				</SingleValue>
+				<SingleValue xsi:type="BooleanValueT" value="true">
+					<Name textId="TI_Inversion_On"/>
+				</SingleValue>
+			</Datatype>			
+			
+			<Datatype id="DT_ThresholdUndervoltageDiagnostics" xsi:type="BooleanT">
+				<SingleValue xsi:type="BooleanValueT" value="false">
+					<Name textId="TI_Threshold_19_2V_Undervoltage"/>
+				</SingleValue>
+				<SingleValue xsi:type="BooleanValueT" value="true">
+					<Name textId="TI_Threshold_17_5V_Undervoltage"/>
+				</SingleValue>
+			</Datatype>
+			
+		 </DatatypeCollection>
+         <VariableCollection>
+            <StdVariableRef id="V_DirectParameters_1"/>
+            <StdVariableRef id="V_DirectParameters_2"/>
+            <StdVariableRef id="V_SystemCommand">
+				<SingleValue value="170">
+					<Name textId="TB_NO_For_All_Channels"/>
+				</SingleValue>
+				<SingleValue value="171">
+					<Name textId="TB_YES_For_All_Channels"/>
+				</SingleValue>
+				<SingleValue value="180">
+					<Name textId="TB_Deactivate_Impulse_Stretching"/>
+				</SingleValue>				
+				
+               <StdSingleValueRef value="128"/>
+               <StdSingleValueRef value="130"/>
+            </StdVariableRef>
+            <StdVariableRef id="V_DeviceAccessLocks"/>
+            <StdVariableRef id="V_VendorName" defaultValue="Turck"/>
+            <StdVariableRef id="V_VendorText" defaultValue="www.turck.com"/>
+            <StdVariableRef id="V_ProductName" defaultValue="TBIL-S3-8DIP"/>
+            <StdVariableRef id="V_ProductID" defaultValue="100002594"/>
+            <StdVariableRef id="V_ProductText" defaultValue="I/O-Hub"/>
+            <StdVariableRef id="V_SerialNumber"/>
+            <StdVariableRef id="V_HardwareRevision"/>
+            <StdVariableRef id="V_FirmwareRevision"/>
+            <StdVariableRef id="V_ApplicationSpecificTag" defaultValue="***"/>
+            <StdVariableRef id="V_DeviceStatus"/>
+            <StdVariableRef id="V_DetailedDeviceStatus" fixedLengthRestriction="3"/>
+            <StdVariableRef id="V_ProcessDataInput"/>
+			<Variable accessRights="rw" id="V_FunctionTag" index="25" defaultValue="***">
+				<Datatype xsi:type="StringT" fixedLength="32" encoding="UTF-8"/>
+				<Name textId="TI_FunctionTag"/>
+			</Variable>
+			<Variable accessRights="rw" id="V_LocationTag" index="26" defaultValue="***">
+				<Datatype xsi:type="StringT" fixedLength="32" encoding="UTF-8"/>
+				<Name textId="TI_LocationTag"/>
+			</Variable>
+            <Variable id="V_Parameter_ID" index="64" accessRights="rw" defaultValue="0" excludedFromDataStorage="true">
+               <Datatype xsi:type="UIntegerT" bitLength="32"/>
+               <Name textId="TI_Parameter_ID"/>
+			   <Description textId="TI_Parameter_ID_Desc"/>
+            </Variable>
+            <Variable id="V_Inverting_Input" index="65" accessRights="rw">
+               <Datatype xsi:type="RecordT" bitLength="8" subindexAccessSupported="false">
+                  <RecordItem subindex="1" bitOffset="7">
+                     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="2" bitOffset="6">
+				     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="3" bitOffset="5">
+                     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="4" bitOffset="4">
+                     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="5" bitOffset="3">
+                     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="6" bitOffset="2">
+                     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="7" bitOffset="1">
+                     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="8" bitOffset="0">
+                     <DatatypeRef datatypeId="DT_Inversion"/>
+					 <Name textId="TI_Inverting_Input"/>
+					 <Description textId="TI_Inverting_Input_Desc"/>
+                  </RecordItem>
+               </Datatype>
+			   <RecordItemInfo subindex="1" defaultValue="0"/>
+			   <RecordItemInfo subindex="2" defaultValue="0"/>
+			   <RecordItemInfo subindex="3" defaultValue="0"/>
+			   <RecordItemInfo subindex="4" defaultValue="0"/>
+			   <RecordItemInfo subindex="5" defaultValue="0"/>
+			   <RecordItemInfo subindex="6" defaultValue="0"/>
+			   <RecordItemInfo subindex="7" defaultValue="0"/>
+			   <RecordItemInfo subindex="8" defaultValue="0"/>
+               <Name textId="TI_Inverting_Input_param_name"/>
+			   <Description textId="TI_Inverting_Input_Desc"/>
+            </Variable>
+			
+			<Variable id="V_Impulse_Stretching_Input" index="67" accessRights="rw">
+				<Datatype xsi:type="RecordT" bitLength="64" subindexAccessSupported="true">					
+                  <RecordItem subindex="1" bitOffset="56">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="2" bitOffset="48">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="3" bitOffset="40">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="4" bitOffset="32">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="5" bitOffset="24">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="6" bitOffset="16">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="7" bitOffset="8">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+                  <RecordItem subindex="8" bitOffset="0">
+                     <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+					 <SingleValue xsi:type="UIntegerValueT" value="0">
+						<Name textId="TI_Impulse_stretching_deactivated"/>
+					</SingleValue>
+					<ValueRange xsi:type="UIntegerValueRangeT" lowerValue="1" upperValue="255"/>
+					</SimpleDatatype>
+					 <Name textId="TI_Impulse_Stretching"/>
+					 <Description textId="TI_Impulse_Stretching_Desc"/>
+                  </RecordItem>
+				</Datatype>
+			   <RecordItemInfo subindex="1" defaultValue="0"/>
+			   <RecordItemInfo subindex="2" defaultValue="0"/>
+			   <RecordItemInfo subindex="3" defaultValue="0"/>
+			   <RecordItemInfo subindex="4" defaultValue="0"/>
+			   <RecordItemInfo subindex="5" defaultValue="0"/>
+			   <RecordItemInfo subindex="6" defaultValue="0"/>
+			   <RecordItemInfo subindex="7" defaultValue="0"/>
+			   <RecordItemInfo subindex="8" defaultValue="0"/>
+				<Name textId="TI_Impulse_Stretching_param_name"/>
+				<Description textId="TI_Impulse_Stretching_Desc"/>
+            </Variable>
+									
+			<Variable id="V_Under_Voltage_Diagnostics" index="70" accessRights="rw">
+               <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+                  <RecordItem subindex="1" bitOffset="8">
+				     <DatatypeRef datatypeId="DT_ThresholdUndervoltageDiagnostics"/>
+					 <Name textId="TI_Undervoltage_Value"/>
+					 <Description textId="TI_Undervoltage_Value_Desc"/>
+                  </RecordItem>
+               </Datatype>
+			   <RecordItemInfo subindex="1" defaultValue="0"/>
+               <Name textId="TI_Undervoltage_Diagnostics_param_name"/>
+			   <Description textId="TI_Undervoltage_Diagnostics_Desc"/>
+            </Variable>
+			
+			<Variable id="V_Supply_Error" dynamic="true" index="80" accessRights="ro">
+               <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+					 <RecordItem subindex="1" bitOffset="15">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Sum_Diagnosis"/>
+						<Description textId="TI_Sum_Diagnosis_Desc"/>
+                     </RecordItem>
+					 <RecordItem subindex="2" bitOffset="10">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Voltage_underrun"/>
+						<Description textId="TI_Voltage_underrun_Desc"/>
+                     </RecordItem>
+					 <RecordItem subindex="3" bitOffset="8">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Voltage_overrun"/>
+						<Description textId="TI_Voltage_overrun_Desc"/>
+                     </RecordItem>
+					 <RecordItem subindex="4" bitOffset="7">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON7"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+                     <RecordItem subindex="5" bitOffset="6">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON6"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+                     <RecordItem subindex="6" bitOffset="5">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON5"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+                     <RecordItem subindex="7" bitOffset="4">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON4"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+                     <RecordItem subindex="8" bitOffset="3">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON3"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+                     <RecordItem subindex="9" bitOffset="2">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON2"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+                     <RecordItem subindex="10" bitOffset="1">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON1"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+                     <RecordItem subindex="11" bitOffset="0">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON0"/>
+						<Description textId="TI_AUX_Supply_Error_Desc"/>
+                     </RecordItem>
+				  </Datatype>
+               <Name textId="TI_Supply_Error_param_name"/>
+			   <Description textId="TI_Supply_Error_Desc"/>
+            </Variable>
+			
+         </VariableCollection>
+         <ProcessDataCollection>
+            <ProcessData id="PD_Process">
+               <ProcessDataIn bitLength="24" id="PI_ProcessDataIn">
+                  <Datatype xsi:type="RecordT" bitLength="24" subindexAccessSupported="false">
+                     <RecordItem subindex="1" bitOffset="23">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_7"/>
+                     </RecordItem>
+                     <RecordItem subindex="2" bitOffset="22">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_6"/>
+                     </RecordItem>
+                     <RecordItem subindex="3" bitOffset="21">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_5"/>
+                     </RecordItem>
+                     <RecordItem subindex="4" bitOffset="20">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_4"/>
+                     </RecordItem>
+                     <RecordItem subindex="5" bitOffset="19">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_3"/>
+                     </RecordItem>
+                     <RecordItem subindex="6" bitOffset="18">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_2"/>
+                     </RecordItem>
+                     <RecordItem subindex="7" bitOffset="17">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_1"/>
+                     </RecordItem>
+                     <RecordItem subindex="8" bitOffset="16">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Input_0"/>
+                     </RecordItem>
+                     <RecordItem subindex="9" bitOffset="15">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Sum_Diagnosis"/>
+                     </RecordItem>
+                     <RecordItem subindex="10" bitOffset="10">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Voltage_underrun"/>
+                     </RecordItem>
+                     <RecordItem subindex="11" bitOffset="8">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Voltage_overrun"/>
+                     </RecordItem>
+                     <RecordItem subindex="12" bitOffset="7">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON7"/>
+                     </RecordItem>
+                     <RecordItem subindex="13" bitOffset="6">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON6"/>
+                     </RecordItem>
+                     <RecordItem subindex="14" bitOffset="5">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON5"/>
+                     </RecordItem>
+                     <RecordItem subindex="15" bitOffset="4">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON4"/>
+                     </RecordItem>
+                     <RecordItem subindex="16" bitOffset="3">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON3"/>
+                     </RecordItem>
+                     <RecordItem subindex="17" bitOffset="2">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON2"/>
+                     </RecordItem>
+                     <RecordItem subindex="18" bitOffset="1">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON1"/>
+                     </RecordItem>
+                     <RecordItem subindex="19" bitOffset="0">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_AUX_Overload_CON0"/>
+                     </RecordItem>
+                  </Datatype>
+                  <Name textId="TI_Process_Data_In"/>
+               </ProcessDataIn>
+            </ProcessData>
+            </ProcessDataCollection>
+         <EventCollection>
+            <StdEventRef code="20480"/>
+            <StdEventRef code="20752"/>
+            <StdEventRef code="20753"/>
+            <StdEventRef code="30480"/>
+         </EventCollection>
+         <UserInterface>
+            <MenuCollection>
+			<!-- level 1 menu, referenced to user roles -->
+               <Menu id="ME_Ident_RW">
+                  <VariableRef variableId="V_VendorName"/>
+                  <VariableRef variableId="V_VendorText"/>
+                  <VariableRef variableId="V_ProductName"/>
+                  <VariableRef variableId="V_ProductID"/>
+                  <VariableRef variableId="V_ProductText"/>
+                  <VariableRef variableId="V_SerialNumber"/>
+                  <VariableRef variableId="V_HardwareRevision"/>
+                  <VariableRef variableId="V_FirmwareRevision"/>
+                  <VariableRef variableId="V_ApplicationSpecificTag"/>
+                  <VariableRef variableId="V_FunctionTag"/>
+                  <VariableRef variableId="V_LocationTag"/>
+                  <VariableRef variableId="V_DeviceStatus"/>
+                  <VariableRef variableId="V_DetailedDeviceStatus"/>
+               </Menu>
+			   
+			   <Menu id="ME_Ident_RO">
+                  <VariableRef variableId="V_VendorName"/>
+                  <VariableRef variableId="V_VendorText"/>
+                  <VariableRef variableId="V_ProductName"/>
+                  <VariableRef variableId="V_ProductID"/>
+                  <VariableRef variableId="V_ProductText"/>
+                  <VariableRef variableId="V_SerialNumber"/>
+                  <VariableRef variableId="V_HardwareRevision"/>
+                  <VariableRef variableId="V_FirmwareRevision"/>
+                  <VariableRef variableId="V_ApplicationSpecificTag" accessRightRestriction="ro"/>
+                  <VariableRef variableId="V_FunctionTag" accessRightRestriction="ro"/>
+                  <VariableRef variableId="V_LocationTag" accessRightRestriction="ro"/>
+                  <VariableRef variableId="V_DeviceStatus"/>
+                  <VariableRef variableId="V_DetailedDeviceStatus"/>
+               </Menu>
+			   
+			   
+               <Menu id="ME_Parameter">
+				  <Name textId="TI_Parameter"/>
+                  <MenuRef menuId="ME_Sub1_General_Settings"/>
+				  <MenuRef menuId="ME_Sub1_Overall_Parameter_Settings"/>
+				  
+				  <MenuRef menuId="ME_Port_0A"/>
+				  <MenuRef menuId="ME_Port_1A"/>
+				  <MenuRef menuId="ME_Port_2A"/>
+				  <MenuRef menuId="ME_Port_3A"/>
+				  <MenuRef menuId="ME_Port_4A"/>
+				  <MenuRef menuId="ME_Port_5A"/>
+				  <MenuRef menuId="ME_Port_6A"/>
+				  <MenuRef menuId="ME_Port_7A"/>
+               </Menu>
+               <Menu id="ME_Observe">
+                  <Name textId="TI_Observe"/>
+                  <VariableRef variableId="V_ProcessDataInput"/>
+               </Menu>
+			   <Menu id="ME_Diag">
+                  <Name textId="TI_Diagnosis"/>
+				  
+				  <MenuRef menuId="ME_Sub1_Group_Diagnosis"/>
+               </Menu>
+			   
+			   <!-- level 2 menu, referenced to level 1 menu -->
+
+			   <Menu id="ME_Sub1_General_Settings">
+                  <Name textId="TI_General_Settings"/>
+                  <VariableRef variableId="V_DeviceAccessLocks"/>
+                  <VariableRef variableId="V_Parameter_ID"/>
+				  <RecordItemRef variableId="V_Under_Voltage_Diagnostics" subindex="1"/>
+				  <VariableRef variableId="V_SystemCommand">
+				  <Button buttonValue="128"/>
+				  </VariableRef>
+				  <VariableRef variableId="V_SystemCommand">
+				  <Button buttonValue="130"/>
+				  </VariableRef>
+               </Menu>
+
+			   <Menu id="ME_Sub1_Overall_Parameter_Settings">
+                  <Name textId="TI_Overall_Parameter_Settings"/>
+				  <MenuRef menuId="ME_Sub1_Inverting_Input"/>
+				  <MenuRef menuId="ME_Sub1_Impulse_Stretching_Input"/>
+               </Menu>
+			   
+			   
+			   <Menu id="ME_Port_0A">
+                  <Name textId="TI_Port_0A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="8"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="1" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+			   
+			   <Menu id="ME_Port_1A">
+                  <Name textId="TI_Port_1A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="7"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="2" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+			   
+			   <Menu id="ME_Port_2A">
+                  <Name textId="TI_Port_2A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="6"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="3" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+			   
+			   <Menu id="ME_Port_3A">
+                  <Name textId="TI_Port_3A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="5"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="4" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+			   
+			   <Menu id="ME_Port_4A">
+                  <Name textId="TI_Port_4A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="4"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="5" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+			   
+			   <Menu id="ME_Port_5A">
+                  <Name textId="TI_Port_5A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="3"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="6" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+			   
+			   <Menu id="ME_Port_6A">
+                  <Name textId="TI_Port_6A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="2"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="7" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+			   
+			   <Menu id="ME_Port_7A">
+                  <Name textId="TI_Port_7A"/>
+				  <RecordItemRef variableId="V_Inverting_Input" subindex="1"/>
+				  <RecordItemRef variableId="V_Impulse_Stretching_Input" subindex="8" displayFormat="Dec.0" gradient="10" unitCode="1056" />
+               </Menu>
+
+				
+				<Menu id="ME_Sub1_Group_Diagnosis">
+					<Name textId="TI_Group_Diagnosis"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="1"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="2"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="3"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="11"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="10"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="9"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="8"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="7"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="6"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="5"/>
+					<RecordItemRef variableId="V_Supply_Error" subindex="4"/>
+				</Menu>
+
+			   
+			   <!-- level xx menu, referenced to level xx menu -->
+
+				<Menu id="ME_Sub1_Inverting_Input">
+					<Name textId="TI_Inverting_Input"/>
+					<VariableRef variableId="V_SystemCommand">
+						<Button buttonValue="170">
+						<Description textId="TB_Invert_Dig_Inputs_Off_Desc"/>
+						</Button>
+					</VariableRef>
+					<VariableRef variableId="V_SystemCommand">
+						<Button buttonValue="171">
+						<Description textId="TB_Invert_Dig_Inputs_On_Desc"/>
+						</Button>
+					</VariableRef>
+				</Menu>
+			   
+			   <Menu id="ME_Sub1_Impulse_Stretching_Input">
+					<Name textId="TI_Impulse_Stretching"/>
+					<VariableRef variableId="V_SystemCommand">
+						<Button buttonValue="180">
+						<Description textId="TB_Deactivate_Impulse_Stretching_Desc"/>
+						</Button>
+					</VariableRef>
+				</Menu>
+				
+            </MenuCollection>
+			<!-- user roles -->
+            <ObserverRoleMenuSet>
+               <IdentificationMenu menuId="ME_Ident_RO"/>
+               <ObservationMenu menuId="ME_Observe"/>
+			   <DiagnosisMenu menuId="ME_Diag"/>
+            </ObserverRoleMenuSet>
+            <MaintenanceRoleMenuSet>
+               <IdentificationMenu menuId="ME_Ident_RW"/>
+               <ParameterMenu menuId="ME_Parameter"/>
+               <ObservationMenu menuId="ME_Observe"/>
+			   <DiagnosisMenu menuId="ME_Diag"/>
+            </MaintenanceRoleMenuSet>
+            <SpecialistRoleMenuSet>
+               <IdentificationMenu menuId="ME_Ident_RW"/>
+               <ParameterMenu menuId="ME_Parameter"/>
+               <ObservationMenu menuId="ME_Observe"/>
+			   <DiagnosisMenu menuId="ME_Diag"/>
+            </SpecialistRoleMenuSet>
+         </UserInterface>
+      </DeviceFunction>
+   </ProfileBody>
+   <CommNetworkProfile xsi:type="IOLinkCommNetworkProfileT" iolinkRevision="V1.1">
+      <TransportLayers>
+         <PhysicalLayer bitrate="COM2" mSequenceCapability="25" minCycleTime="2200" sioSupported="false">
+            <Connection xsi:type="M12-4ConnectionT" connectionSymbol="Turck-TBIL-S3-8DIP-con-pic.png">
+               <ProductRef productId="100002594"/>
+               <Wire1 color="BN" function="L+"/>
+               <Wire2 color="WH" function="Other"/>
+               <Wire3 color="BU" function="L-"/>
+               <Wire4 color="BK" function="C/Q"/>
+            </Connection>
+         </PhysicalLayer>
+      </TransportLayers>
+      <Test>
+         <Config1 index="64" testValue="0xDE,0xAD,0xBE,0xEF"/>
+         <Config2 index="300" testValue="0x01"/>
+         <Config3 index="18" testValue="0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20"/>
+         <Config7 index="201">
+            <EventTrigger appearValue="0" disappearValue="1"/>
+            <EventTrigger appearValue="2" disappearValue="3"/>
+         </Config7>
+      </Test>
+   </CommNetworkProfile>
+   <ExternalTextCollection>
+      <PrimaryLanguage xml:lang="en">
+		<Text id="TI_vendorText"							value="Turck"/>
+		<Text id="TI_url"									value="http://www.turck.de/"/>
+		<Text id="TI_family"								value="TBIL... series"/>
+		<Text id="TI_productDesc"							value="I/O-Hub"/>
+		<Text id="TI_productName"							value="TBIL-S3-8DIP"/>
+		<Text id="TI_Parameter_ID"							value="Parameter ID"/>
+		<Text id="TI_Parameter_ID_Desc"						value="Free number to identify, e.g. module-number"/>
+		<Text id="TI_FunctionTag"							value="Function Tag"/>
+		<Text id="TI_LocationTag"							value="Location Tag"/>
+		<Text id="TI_Inverting_Input"						value="Invert digital input"/>
+		<Text id="TI_Inverting_Input_Desc"					value="Toggle the logic of inputs
+0: normal
+1: inverted"/>
+		<Text id="TI_Inverting_Input_param_name"			value=""/>
+		<Text id="TI_Undervoltage_Value"			value="Undervoltage value diagnoses"/>
+		<Text id="TI_Undervoltage_Value_Desc"		value="Undervoltage value diagnoses:
+0: Standard (IEC 61131-2), 19.2V sets undervoltage indication, 20.4V clears undervoltage indication
+1: Extended, 17.5V sets undervoltage indication"/>
+		<Text id="TI_Undervoltage_Diagnostics_param_name"	value=""/>
+		<Text id="TI_Undervoltage_Diagnostics_Desc"			value="Set or activate undervoltage diagnoses and their threshold values"/>
+		<Text id="TI_Supply_Error_param_name"				value=""/>
+		<Text id="TI_AUX_Overload_CON0"						value="Overcurrent Vaux Connector 0"/>
+		<Text id="TI_AUX_Overload_CON1"						value="Overcurrent Vaux Connector 1"/>
+		<Text id="TI_AUX_Overload_CON2"						value="Overcurrent Vaux Connector 2"/>
+		<Text id="TI_AUX_Overload_CON3"						value="Overcurrent Vaux Connector 3"/>
+		<Text id="TI_AUX_Overload_CON4"						value="Overcurrent Vaux Connector 4"/>
+		<Text id="TI_AUX_Overload_CON5"						value="Overcurrent Vaux Connector 5"/>
+		<Text id="TI_AUX_Overload_CON6"						value="Overcurrent Vaux Connector 6"/>
+		<Text id="TI_AUX_Overload_CON7"						value="Overcurrent Vaux Connector 7"/>
+
+		<Text id="TI_Group_Diagnosis"						value="Group diagnoses"/>
+		<Text id="TI_Supply_Error_Desc"						value="Indicates an overcurrent at auxiliary supply or a voltage supply error (out of specification)"/>
+		<Text id="TI_AUX_Supply_Error_Desc"					value="Indicates an overcurrent or short circuit at the auxiliary supply"/>
+		<Text id="TI_Voltage_underrun"						value="Undervoltage supply"/>
+		<Text id="TI_Voltage_underrun_Desc"					value="Indicates a too low voltage supply (out of specification)"/>
+		<Text id="TI_Voltage_overrun"						value="Overvoltage supply"/>
+		<Text id="TI_Voltage_overrun_Desc"					value="Indicates a too high voltage supply (out of specification)"/>
+		<Text id="TI_Sum_Diagnosis"							value="Sum diagnosis"/>
+		<Text id="TI_Sum_Diagnosis_Desc"					value="Sum diagnosis is set if any diagnosis occurs"/>
+
+		<Text id="TI_Impulse_Stretching"					value="Pulse stretching input"/>
+
+		<Text id="TI_Impulse_Stretching_param_name"			value=""/>
+		<Text id="TI_Impulse_Stretching_Desc"				value="Stretching of the input signal from 10 to 2550ms (time base: 10ms).
+
+Default setting:
+0 = pulse stretching deactivated
+(standard pulse = 2,5ms)"/>
+
+		<Text id="TI_Input_0"								value="Input 0"/>
+		<Text id="TI_Input_1"								value="Input 1"/>
+		<Text id="TI_Input_2"								value="Input 2"/>
+		<Text id="TI_Input_3"								value="Input 3"/>
+		<Text id="TI_Input_4"								value="Input 4"/>
+		<Text id="TI_Input_5"								value="Input 5"/>
+		<Text id="TI_Input_6"								value="Input 6"/>
+		<Text id="TI_Input_7"								value="Input 7"/>
+		<Text id="TI_Process_Data_In"						value="Process input data"/>
+		<Text id="TI_Parameter"								value="Parameter"/>
+		<Text id="TI_Observe"								value="Observation"/>
+		<Text id="TI_Diagnosis"								value="Diagnosis"/>
+		<Text id="TI_deviceName"							value="TBIL-S3-8DIP"/>
+		<Text id="TI_Inversion_Off"							value="no"/>
+		<Text id="TI_Inversion_On"							value="yes"/>
+		<Text id="TI_Port_0A"								value="Connector 0, Pin 4"/>
+		<Text id="TI_Port_1A"								value="Connector 1, Pin 4"/>
+		<Text id="TI_Port_2A"								value="Connector 2, Pin 4"/>
+		<Text id="TI_Port_3A"								value="Connector 3, Pin 4"/>
+		<Text id="TI_Port_4A"								value="Connector 4, Pin 4"/>
+		<Text id="TI_Port_5A"								value="Connector 5, Pin 4"/>
+		<Text id="TI_Port_6A"								value="Connector 6, Pin 4"/>
+		<Text id="TI_Port_7A"								value="Connector 7, Pin 4"/>
+		<Text id="TI_Threshold_19_2V_Undervoltage"			value="Standard (IEC 61131-2)"/>
+		<Text id="TI_Threshold_17_5V_Undervoltage"			value="Extended"/>
+		<Text id="TB_Invert_Dig_Inputs_Off_Desc"			value="All inputs not inverted"/>
+		<Text id="TB_Invert_Dig_Inputs_On_Desc"   			value="All inputs inverted"/>
+		<Text id="TB_Deactivate_Impulse_Stretching_Desc"	value="Deactivate Impulse Stretching for all channels (standard pulse = 2,5ms)"/>
+		<Text id="TI_Impulse_stretching_deactivated"		value="deactivated"/>
+		<Text id="TI_Overall_Parameter_Settings"			value="Summarized parameterization of all connectors"/>
+		<Text id="TI_General_Settings"						value="General Settings"/>
+		<Text id="TB_Deactivate_Impulse_Stretching"			value="Deactivate for all channels"/>
+		<Text id="TB_NO_For_All_Channels"					value="No for all channels"/>
+		<Text id="TB_YES_For_All_Channels"					value="Yes for all channels"/>
+
+
+      </PrimaryLanguage>
+      <Language xml:lang="de">
+		<Text id="TI_vendorText"							value="Turck"/>
+		<Text id="TI_url"									value="http://www.turck.de/"/>
+		<Text id="TI_family"								value="TBIL... Serie"/>
+		<Text id="TI_productDesc"							value="I/O-Hub"/>
+		<Text id="TI_productName"							value="TBIL-S3-8DIP"/>
+		<Text id="TI_Parameter_ID"							value="Parameter ID"/>
+		<Text id="TI_Parameter_ID_Desc"						value="Freie Nummer zur Identifizierung, z.B. 'Modul-Nummer"/>
+		<Text id="TI_FunctionTag"							value="Funktionskennzeichnung"/>
+		<Text id="TI_LocationTag"							value="Ortskennzeichnung"/>
+		<Text id="TI_Inverting_Input"						value="Digitaleingang invertieren"/>
+		<Text id="TI_Inverting_Input_Desc"					value="Logikumschaltung der Eingänge
+0: Normal
+1: Invertiert"/>
+		<Text id="TI_Inverting_Input_param_name"			value=""/>
+		<Text id="TI_Impulse_Stretching"					value="Impulsverlängerung Eingang"/>
+		<Text id="TI_Impulse_Stretching_param_name"			value=""/>
+		<Text id="TI_Impulse_Stretching_Desc"				value="Impulsverlängerung des Eingangssignals von 10 bis 2550ms (Zeitbasis: 10ms).
+
+Defaulteinstellung:
+0 = Impulsverlängerung deaktiviert
+(Standard-Impuls = 2,5ms)"/>
+
+		<Text id="TI_Impulse_stretching_deactivated"		value="deaktiviert"/>
+		<Text id="TI_Undervoltage_Value"			value="Schwellwert für Unterspannungsdiagnosen"/>
+		<Text id="TI_Undervoltage_Value_Desc"		value="Schwellwert der Unterspannungsdiagnosen:
+0: Standard (IEC 61131-2), 19.2V unterer Schwellwert, 20.4V oberer Schwellwert
+1: Erweitert, 17.5V unterer Schwellwert"/>
+		<Text id="TI_Undervoltage_Diagnostics_param_name"	value=""/>
+		<Text id="TI_Undervoltage_Diagnostics_Desc"			value="Unterspannungsdiagnosen und Schwellwerte aktivieren bzw. einstellen"/>
+		<Text id="TI_Supply_Error_param_name"				value=""/>
+		<Text id="TI_AUX_Overload_CON0"						value="Überstrom Vaux Steckplatz 0"/>
+		<Text id="TI_AUX_Overload_CON1"						value="Überstrom Vaux Steckplatz 1"/>
+		<Text id="TI_AUX_Overload_CON2"						value="Überstrom Vaux Steckplatz 2"/>
+		<Text id="TI_AUX_Overload_CON3"						value="Überstrom Vaux Steckplatz 3"/>
+		<Text id="TI_AUX_Overload_CON4"						value="Überstrom Vaux Steckplatz 4"/>
+		<Text id="TI_AUX_Overload_CON5"						value="Überstrom Vaux Steckplatz 5"/>
+		<Text id="TI_AUX_Overload_CON6"						value="Überstrom Vaux Steckplatz 6"/>
+		<Text id="TI_AUX_Overload_CON7"						value="Überstrom Vaux Steckplatz 7"/>
+		<Text id="TI_Group_Diagnosis"						value="Gruppendiagnosen"/>
+		<Text id="TI_Supply_Error_Desc"						value="Zeigt einen Überstrom der Sensorversorgung oder einen Fehler der Spannungsversorgung (außerhalb der Grenzwerte) an"/>
+		<Text id="TI_AUX_Supply_Error_Desc"					value="Zeigt einen Überstrom oder Kurzschluss der Sensorversorgung an"/>
+		<Text id="TI_Voltage_underrun"						value="Unterspannung Versorgung"/>
+		<Text id="TI_Voltage_underrun_Desc"					value="Zeigt eine zu niedrige Spannungsversorgung (außerhalb der Grenzwerte) an"/>
+		<Text id="TI_Voltage_overrun"						value="Überspannung Versorgung"/>
+		<Text id="TI_Voltage_overrun_Desc"					value="Zeigt eine zu hohe Spannungsversorgung (außerhalb der Grenzwerte) an"/>
+		<Text id="TI_Sum_Diagnosis"							value="Summendiagnose"/>
+		<Text id="TI_Sum_Diagnosis_Desc"					value="Summendiagnose wird gesetzt, wenn irgendeine Diagnose auftritt"/>
+		
+		
+		<Text id="TI_Input_0"								value="Eingang 0"/>
+		<Text id="TI_Input_1"								value="Eingang 1"/>
+		<Text id="TI_Input_2"								value="Eingang 2"/>
+		<Text id="TI_Input_3"								value="Eingang 3"/>
+		<Text id="TI_Input_4"								value="Eingang 4"/>
+		<Text id="TI_Input_5"								value="Eingang 5"/>
+		<Text id="TI_Input_6"								value="Eingang 6"/>
+		<Text id="TI_Input_7"								value="Eingang 7"/>
+		<Text id="TI_Process_Data_In"						value="Prozesseingangsdaten"/>
+		<Text id="TI_Parameter"								value="Parameter"/>
+		<Text id="TI_Observe"								value="Überwachung"/>
+		<Text id="TI_Diagnosis"								value="Diagnose"/>
+		<Text id="TI_Port_0A"								value="Steckplatz 0, Pin 4"/>
+		<Text id="TI_Port_1A"								value="Steckplatz 1, Pin 4"/>
+		<Text id="TI_Port_2A"								value="Steckplatz 2, Pin 4"/>
+		<Text id="TI_Port_3A"								value="Steckplatz 3, Pin 4"/>
+		<Text id="TI_Port_4A"								value="Steckplatz 4, Pin 4"/>
+		<Text id="TI_Port_5A"								value="Steckplatz 5, Pin 4"/>
+		<Text id="TI_Port_6A"								value="Steckplatz 6, Pin 4"/>
+		<Text id="TI_Port_7A"								value="Steckplatz 7, Pin 4"/>
+		<Text id="TI_deviceName"							value="TBIL-S3-8DIP"/>
+		<Text id="TI_Inversion_Off"							value="nein"/>
+		<Text id="TI_Inversion_On"							value="ja"/>
+		<Text id="TI_Threshold_19_2V_Undervoltage"			value="Standard (IEC 61131-2)"/>
+		<Text id="TI_Threshold_17_5V_Undervoltage"			value="Erweitert"/>
+		<Text id="TB_Invert_Dig_Inputs_Off_Desc"			value="Alle Eingänge nicht invertieren"/>
+		<Text id="TB_Invert_Dig_Inputs_On_Desc"				value="Alle Eingänge invertieren"/>
+		<Text id="TB_Deactivate_Impulse_Stretching_Desc"	value="Impulsverlängerung für alle Kanäle deaktivieren (Standard-Impuls = 2,5ms)"/>
+		<Text id="TI_Overall_Parameter_Settings"			value="Gemeinsame Parametrierung aller Steckplätze"/>
+		<Text id="TI_General_Settings"						value="Allgemeine Einstellungen"/>
+		<Text id="TB_Deactivate_Impulse_Stretching"			value="Deaktivieren für alle Kanäle"/>
+		<Text id="TB_NO_For_All_Channels"					value="Nein für alle Kanäle"/>
+		<Text id="TB_YES_For_All_Channels"					value="Ja für alle Kanäle"/>
+
+      </Language>
+   </ExternalTextCollection>
+   <Stamp crc="693954416"><Checker name="IODD-Checker V1.1.4" version="V1.1.4.0"/></Stamp>
+</IODevice>

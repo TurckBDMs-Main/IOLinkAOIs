@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IODevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.io-link.com/IODD/2010/10" xsi:schemaLocation="http://www.io-link.com/IODD/2010/10 IODD1.1.xsd">
+   <DocumentInfo version="V01.0031" releaseDate="2018-12-12" copyright="© 2018, Werner Turck GmbH  Co. &amp; KG"/>
+   <ProfileHeader>
+      <ProfileIdentification>IO Device Profile</ProfileIdentification>
+      <ProfileRevision>1.1</ProfileRevision>
+      <ProfileName>Device Profile for IO Devices</ProfileName>
+      <ProfileSource>IO-Link Consortium</ProfileSource>
+      <ProfileClassID>Device</ProfileClassID>
+      <ISO15745Reference>
+         <ISO15745Part>1</ISO15745Part>
+         <ISO15745Edition>1</ISO15745Edition>
+         <ProfileTechnology>IODD</ProfileTechnology>
+      </ISO15745Reference>
+   </ProfileHeader>
+   <ProfileBody>
+      <DeviceIdentity vendorId="317" vendorName="Turck" deviceId="1966595">
+         <VendorText textId="TI_vendorText"/>
+         <VendorUrl textId="TI_url"/>
+         <VendorLogo name="Turck-logo.png"/>
+         <DeviceName textId="TI_deviceName"/>
+         <DeviceFamily textId="TI_family"/>
+         <DeviceVariantCollection>
+            <DeviceVariant productId="6814101" deviceIcon="Turck-TBIL-M1-icon.png" deviceSymbol="Turck-TBIL-M1-pic.png">
+               <Name textId="TI_productName"/>
+               <Description textId="TI_productDesc"/>
+            </DeviceVariant>
+         </DeviceVariantCollection>
+      </DeviceIdentity>
+      <DeviceFunction>
+         <Features blockParameter="true" dataStorage="true">
+            <SupportedAccessLocks dataStorage="true" parameter="false" localParameterization="false" localUserInterface="false"/>
+         </Features>
+         <VariableCollection>
+            <StdVariableRef id="V_DirectParameters_1"/>
+            <StdVariableRef id="V_DirectParameters_2"/>
+            <StdVariableRef id="V_SystemCommand">
+               <StdSingleValueRef value="128"/>
+               <StdSingleValueRef value="130"/>
+            </StdVariableRef>
+            <StdVariableRef id="V_DeviceAccessLocks"/>
+            <StdVariableRef id="V_VendorName" defaultValue="Turck"/>
+            <StdVariableRef id="V_VendorText" defaultValue="www.turck.com"/>
+            <StdVariableRef id="V_ProductName" defaultValue="TBIL-M1-8DOP"/>
+            <StdVariableRef id="V_ProductID" defaultValue="6814101"/>
+            <StdVariableRef id="V_ProductText" defaultValue="I/O-Hub"/>
+            <StdVariableRef id="V_SerialNumber"/>
+            <StdVariableRef id="V_FirmwareRevision"/>
+            <StdVariableRef id="V_ApplicationSpecificTag"/>
+            <StdVariableRef id="V_ProcessDataOutput"/>
+            <Variable id="V_Parameter_ID" index="64" accessRights="rw" defaultValue="0" excludedFromDataStorage="true">
+               <Datatype xsi:type="UIntegerT" bitLength="32"/>
+               <Name textId="TI_Parameter_ID"/>
+			   <Description textId="TI_Parameter_ID_Desc"/>
+            </Variable>
+         </VariableCollection>
+         <ProcessDataCollection>
+            <ProcessData id="PD_Process">
+               <ProcessDataOut bitLength="8" id="PD_ProcessDataOut">
+                  <Datatype xsi:type="RecordT" bitLength="8" subindexAccessSupported="false">
+                     <RecordItem subindex="1" bitOffset="7">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_8A"/>
+                     </RecordItem>
+                     <RecordItem subindex="2" bitOffset="6">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_7A"/>
+                     </RecordItem>
+                     <RecordItem subindex="3" bitOffset="5">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_6A"/>
+                     </RecordItem>
+                     <RecordItem subindex="4" bitOffset="4">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_5A"/>
+                     </RecordItem>
+                     <RecordItem subindex="5" bitOffset="3">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_4A"/>
+                     </RecordItem>
+                     <RecordItem subindex="6" bitOffset="2">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_3A"/>
+                     </RecordItem>
+                     <RecordItem subindex="7" bitOffset="1">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_2A"/>
+                     </RecordItem>
+                     <RecordItem subindex="8" bitOffset="0">
+                        <SimpleDatatype xsi:type="BooleanT"/>
+                        <Name textId="TI_Port_1A"/>
+                     </RecordItem>
+                  </Datatype>
+                  <Name textId="TI_Process_Data_Out"/>
+               </ProcessDataOut>
+            </ProcessData>
+            </ProcessDataCollection>
+         <EventCollection>
+            <StdEventRef code="20480"/>
+            <StdEventRef code="20752"/>
+            <StdEventRef code="20753"/>
+            <StdEventRef code="30480"/>
+         </EventCollection>
+         <UserInterface>
+            <MenuCollection>
+			<!-- level 1 menu, referenced to user roles -->
+               <Menu id="ME_Ident_RW">
+                  <VariableRef variableId="V_VendorName"/>
+                  <VariableRef variableId="V_VendorText"/>
+                  <VariableRef variableId="V_ProductName"/>
+                  <VariableRef variableId="V_ProductID"/>
+                  <VariableRef variableId="V_ProductText"/>
+                  <VariableRef variableId="V_SerialNumber"/>
+                  <VariableRef variableId="V_FirmwareRevision"/>
+                  <VariableRef variableId="V_ApplicationSpecificTag"/>
+               </Menu>
+			   
+			   <Menu id="ME_Ident_RO">
+                  <VariableRef variableId="V_VendorName"/>
+                  <VariableRef variableId="V_VendorText"/>
+                  <VariableRef variableId="V_ProductName"/>
+                  <VariableRef variableId="V_ProductID"/>
+                  <VariableRef variableId="V_ProductText"/>
+                  <VariableRef variableId="V_SerialNumber"/>
+                  <VariableRef variableId="V_FirmwareRevision"/>
+                  <VariableRef variableId="V_ApplicationSpecificTag" accessRightRestriction="ro"/>
+               </Menu>
+			   
+			   
+               <Menu id="ME_Parameter">
+				  <Name textId="TI_Parameter"/>
+                  <MenuRef menuId="ME_Sub1_General_Settings"/>
+               </Menu>
+               <Menu id="ME_Observe">
+                  <Name textId="TI_Observe"/>
+				  <VariableRef variableId="V_ProcessDataOutput"/>
+               </Menu>
+			   <!-- level 2 menu, referenced to level 1 menu -->
+
+			   <Menu id="ME_Sub1_General_Settings">
+                  <Name textId="TI_General_Settings"/>
+                  <VariableRef variableId="V_DeviceAccessLocks"/>
+                  <VariableRef variableId="V_Parameter_ID"/>
+				  <VariableRef variableId="V_SystemCommand">
+				  <Button buttonValue="128"/>
+				  </VariableRef>
+				  <VariableRef variableId="V_SystemCommand">
+				  <Button buttonValue="130"/>
+				  </VariableRef>
+               </Menu>
+            </MenuCollection>
+			<!-- user roles -->
+            <ObserverRoleMenuSet>
+               <IdentificationMenu menuId="ME_Ident_RO"/>
+               <ObservationMenu menuId="ME_Observe"/>
+            </ObserverRoleMenuSet>
+            <MaintenanceRoleMenuSet>
+               <IdentificationMenu menuId="ME_Ident_RW"/>
+               <ParameterMenu menuId="ME_Parameter"/>
+               <ObservationMenu menuId="ME_Observe"/>
+            </MaintenanceRoleMenuSet>
+            <SpecialistRoleMenuSet>
+               <IdentificationMenu menuId="ME_Ident_RW"/>
+               <ParameterMenu menuId="ME_Parameter"/>
+               <ObservationMenu menuId="ME_Observe"/>
+            </SpecialistRoleMenuSet>
+         </UserInterface>
+      </DeviceFunction>
+   </ProfileBody>
+   <CommNetworkProfile xsi:type="IOLinkCommNetworkProfileT" iolinkRevision="V1.1">
+      <TransportLayers>
+         <PhysicalLayer bitrate="COM2" mSequenceCapability="1" minCycleTime="2300" sioSupported="false">
+            <Connection xsi:type="M12-4ConnectionT" connectionSymbol="Turck-TBIL-M1-8DOP-con-pic.png">
+               <ProductRef productId="6814101"/>
+               <Wire1 color="BN" function="L+"/>
+               <Wire2 color="WH" function="Other"/>
+               <Wire3 color="BU" function="L-"/>
+               <Wire4 color="BK" function="C/Q"/>
+            </Connection>
+         </PhysicalLayer>
+      </TransportLayers>
+      <Test>
+         <Config1 index="64" testValue="0xDE,0xAD,0xBE,0xEF"/>
+         <Config2 index="300" testValue="0x01"/>
+         <Config3 index="18" testValue="0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20"/>
+         <Config7 index="201">
+            <EventTrigger appearValue="0" disappearValue="1"/>
+            <EventTrigger appearValue="2" disappearValue="3"/>
+         </Config7>
+      </Test>
+   </CommNetworkProfile>
+   <ExternalTextCollection>
+      <PrimaryLanguage xml:lang="en">
+		<Text id="TI_vendorText"							value="Turck"/>
+		<Text id="TI_url"									value="http://www.turck.de/"/>
+		<Text id="TI_family"								value="TBIL... series"/>
+		<Text id="TI_productDesc"							value="I/O-Hub"/>
+		<Text id="TI_productName"							value="TBIL-M1-8DOP"/>
+		<Text id="TI_Parameter_ID"							value="Parameter ID"/>
+		<Text id="TI_Parameter_ID_Desc"						value="Free number to identify, e.g. module-number"/>
+		<Text id="TI_Process_Data_Out"						value="Process output data"/>
+		<Text id="TI_Parameter"								value="Parameter"/>
+		<Text id="TI_Observe"								value="Observation"/>
+		<Text id="TI_deviceName"							value="TBIL-M1-8DOP"/>
+		<Text id="TI_Port_1A"								value="Connector 1-A, Pin 4"/>
+		<Text id="TI_Port_2A"								value="Connector 2-A, Pin 4"/>
+		<Text id="TI_Port_3A"								value="Connector 3-A, Pin 4"/>
+		<Text id="TI_Port_4A"								value="Connector 4-A, Pin 4"/>
+		<Text id="TI_Port_5A"								value="Connector 5-A, Pin 4"/>
+		<Text id="TI_Port_6A"								value="Connector 6-A, Pin 4"/>
+		<Text id="TI_Port_7A"								value="Connector 7-A, Pin 4"/>
+		<Text id="TI_Port_8A"								value="Connector 8-A, Pin 4"/>
+		<Text id="TI_General_Settings"						value="General Settings"/>
+      </PrimaryLanguage>
+      <Language xml:lang="de">
+		<Text id="TI_vendorText"							value="Turck"/>
+		<Text id="TI_url"									value="http://www.turck.de/"/>
+		<Text id="TI_family"								value="TBIL... Serie"/>
+		<Text id="TI_productDesc"							value="I/O-Hub"/>
+		<Text id="TI_productName"							value="TBIL-M1-8DOP"/>
+		<Text id="TI_Parameter_ID"							value="Parameter ID"/>
+		<Text id="TI_Process_Data_Out"						value="Prozessausgangsdaten"/>
+		<Text id="TI_Parameter"								value="Parameter"/>
+		<Text id="TI_Observe"								value="Überwachung"/>
+		<Text id="TI_Port_1A"								value="Steckplatz 1-A, Pin 4"/>
+		<Text id="TI_Port_2A"								value="Steckplatz 2-A, Pin 4"/>
+		<Text id="TI_Port_3A"								value="Steckplatz 3-A, Pin 4"/>
+		<Text id="TI_Port_4A"								value="Steckplatz 4-A, Pin 4"/>
+		<Text id="TI_Port_5A"								value="Steckplatz 5-A, Pin 4"/>
+		<Text id="TI_Port_6A"								value="Steckplatz 6-A, Pin 4"/>
+		<Text id="TI_Port_7A"								value="Steckplatz 7-A, Pin 4"/>
+		<Text id="TI_Port_8A"								value="Steckplatz 8-A, Pin 4"/>
+
+		<Text id="TI_deviceName"							value="TBIL-M1-8DOP"/>
+		<Text id="TI_General_Settings"						value="Allgemeine Einstellungen"/>
+      </Language>
+   </ExternalTextCollection>
+   <Stamp crc="153486903"><Checker name="IODD-Checker V1.1.4" version="V1.1.4.0"/></Stamp>
+</IODevice>
