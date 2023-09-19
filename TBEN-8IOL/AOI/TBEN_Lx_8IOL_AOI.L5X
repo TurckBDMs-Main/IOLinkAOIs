@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!--AOI specific to TBEN-Lx-8IOL devices-->
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_Lx_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="0.1 Unreleased" TargetLastEdited="2023-09-08T23:31:28.609Z" ContainsContext="true" ExportDate="Fri Sep 08 19:37:50 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<!--Create an AOI specific to TBEN-Lx-8IOL devices-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_Lx_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="0.1 Unreleased" TargetLastEdited="2023-09-13T18:10:05.507Z" ContainsContext="true" ExportDate="Wed Sep 13 14:12:49 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
 <Controller Use="Context" Name="TBEN_Lx_8IOL_AOI_V0_2">
 <DataTypes Use="Context">
 <DataType Name="Generic_16_Words" Family="NoFamily" Class="User">
@@ -99,7 +99,7 @@
 </DataType>
 </DataTypes>
 <AddOnInstructionDefinitions Use="Context">
-<AddOnInstructionDefinition Use="Target" Name="TBEN_Lx_8IOL_AOI" Class="Standard" Revision="0.1" RevisionExtension="Unreleased" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-09-08T23:31:28.609Z"
+<AddOnInstructionDefinition Use="Target" Name="TBEN_Lx_8IOL_AOI" Class="Standard" Revision="0.1" RevisionExtension="Unreleased" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-09-13T18:10:05.507Z"
  EditedBy="AMER-turck-info\jose.sanchez" SoftwareRevision="v32.00">
 <Description>
 <![CDATA[Create an AOI specific to TBEN-Lx-8IOL devices]]>
@@ -501,7 +501,7 @@ Status	Description
 <DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
 </DefaultData>
 </Parameter>
-<Parameter Name="Devive_Restart_Required" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Parameter Name="Device_Restart_Required" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
 <DefaultData Format="L5K">
 <![CDATA[0]]>
 </DefaultData>
