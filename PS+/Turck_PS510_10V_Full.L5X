@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="23.00" TargetName="Turck_PS510_10V_Full" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2023-09-19T02:09:44.857Z" ContainsContext="true" Owner="TURCK, TURCK" ExportDate="Mon Sep 18 21:14:06 2023" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="PSPlus_All_AOIs_V0_3">
+<DataTypes Use="Context">
+<DataType Name="Turck_IOLink_Common_Data" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZTurck_IOLi0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="None"/>
+<Member Name="Read" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="0" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Write" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="1" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Reset" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="2" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="3" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Error" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="4" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Port_in_Use" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Each bit is set to show that a port is in use. If it's not in use the port diagnostics will be disabled so IO-Link can still be used but won't throw a red light if no device plugged]]>
+</Description>
+</Member>
+<Member Name="Port" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Index" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SubIndex" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Length" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="TicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Status" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="NextTicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="ReceiveData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SendData" DataType="SINT" Dimension="145" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Vendor_IDs" DataType="INT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Device_IDs" DataType="DINT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="WriteData" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Input_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Output_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+</Dependencies>
+</DataType>
+<DataType Name="Generic_16_Words" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Data" DataType="INT" Dimension="16" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="Turck_PS510_10V_Full" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2020-08-18T18:37:27.723Z" CreatedBy="NIDLAB01\Turck User" EditedDate="2023-09-19T02:09:44.857Z" EditedBy="NIDLAB01\Turck User" SoftwareRevision="v23.00"
+>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="Port" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="true" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Common_Data" TagType="Base" DataType="Turck_IOLink_Common_Data" Usage="InOut" Required="true" Visible="true" Constant="false">
+<Description>
+<![CDATA[Controller Tag of Process Data]]>
+</Description>
+</Parameter>
+<Parameter Name="Units" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 0x54 Subindex 1 - Change the Displayed Unit
+0 = bar
+1 = psi
+2 = kPa
+3 = MPa
+4-14 = See Manual]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Menu_Lock" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 0x58 - Subindex 1 - Menu Lock
+0 = Unlocked
+1 = Display Parameters Only
+2 = Locked]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Rotate_Display" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 0x5B - Subindex 1 - Display Rotation
+0 = 0degrees
+1 = 180 degrees]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Pressure_PSI" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Pressure_Bar" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Under_Permissible" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Value below permissible range]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Under_Tolerance" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Value below tolerance range but within permissible range]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Under_Measuring" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Value below measuring range but within tolerance]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Over_Measuring" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Value above measuring range but within tolerance]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Over_Tolerance" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Value above tolerance range but within permissible range]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Over_Permissible" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Value above permissible range]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Error" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Process_Error" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="EEPROM_Error" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Switching_State_A1" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Switching_State_A2" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Wrong_or_Missing_Device" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="Measured_Value" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Done" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Error_DINT" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Pending" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Pending_or_Active" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Port_Bit" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Port_Less_One" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Units_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Output_2_Function" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="StartupCount" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="StartupDone" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Active" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Read_ONS" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="MyTicketNum" DataType="INT" Dimensions="32" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Write" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Write_ONS" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="WriteRequest" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="DoneCount" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Status" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ErrorCount" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ReadRequest" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Rotate_Display_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Process_Data_Profile" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Max_Pressure_Recorded_Raw" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Every_Min_Poll_TON" DataType="TIMER" ExternalAccess="None">
+<DefaultData>00 00 00 00 60 EA 00 00 00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="60000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Min_Recorded_Pressure_Raw" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Process_Data_In_Swapped" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[SUB(Port,1,Port_Less_One)XPY(2,Port_Less_One,Port_Bit)OR(Common_Data.Port_in_Use,Port_Bit,Common_Data.Port_in_Use);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[[NEQ(Common_Data.Vendor_IDs[Port-1],317) ,NEQ(Common_Data.Device_IDs[Port-1],66358) NEQ(Common_Data.Device_IDs[Port-1],66102) ]OTE(Wrong_or_Missing_Device);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[SWPB(Common_Data.Process_Input_Data[Port_Less_One].Data[0],WORD,Process_Data_In_Swapped);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIC(Process_Data_In_Swapped.0)OTE(Switching_State_A1);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(Process_Data_In_Swapped.1)OTE(Switching_State_A2);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[XIC(Process_Data_In_Swapped.2)OTE(Error);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[BTD(Process_Data_In_Swapped,3,Measured_Value,0,13);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[EQU(Measured_Value,0)[OTE(Under_Permissible) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[GRT(Measured_Value,0)LES(Measured_Value,346)[OTE(Under_Tolerance) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[GEQ(Measured_Value,346)LES(Measured_Value,640)[OTE(Under_Measuring) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[GEQ(Measured_Value,640)LEQ(Measured_Value,7551)CPT(Pressure_Bar,(Measured_Value * 0.0015914639660005400) - 2.0185369382403500000);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[GRT(Measured_Value,7551)LEQ(Measured_Value,7897)[OTE(Over_Measuring) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[GRT(Measured_Value,7897)LES(Measured_Value,8191)[OTE(Over_Tolerance) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[EQU(Measured_Value,8191)[OTE(Over_Permissible) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[EQU(Measured_Value,8190)[OTE(Process_Error) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[EQU(Measured_Value,8189)[OTE(EEPROM_Error) ,MOV(0,Pressure_Bar) ];]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[CPT(Pressure_PSI,Pressure_Bar * 14.503773773);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Text>
+<![CDATA[XIC(S:FS)OTU(StartupDone);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)MOV(0,Read_ONS)MOV(0,Done)MOV(0,Error_DINT)MOV(0,Active)MOV(0,Pending)MOV(0,Pending_or_Active)MOV(0,Write)MOV(0,WriteRequest);]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)ADD(StartupCount,1,StartupCount);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Read 0 - Output Function 2 - Index 82
+Must be set away from Analog to be used with IO-Link
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[0]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[[XIO(StartupDone) ,OTL(Done.1) ]ONS(Read_ONS.0)OTL(ReadRequest.0);]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Text>
+<![CDATA[XIC(ReadRequest.0)XIO(Pending_or_Active.0)XIC(StartupDone)[OTU(Active.0) ,OTL(Pending.0) ,OTL(Pending_or_Active.0) ,OTU(ReadRequest.0) ];]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Text>
+<![CDATA[XIC(Pending.0)EQU(Common_Data.TicketNum,MyTicketNum[0])[OTU(Done.0) ,OTU(Error_DINT.0) ,OTL(Active.0) ,OTU(Pending.0) ,MOV(Port,Common_Data.Port) ,MOV(82,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,OTL(Common_Data.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="25" Type="N">
+<Text>
+<![CDATA[XIC(Active.0)XIC(Common_Data.Done)[OTL(Done.0) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.0) ,OTU(Active.0) ,OTU(Pending.0) ,OTU(Pending_or_Active.0) ,OTU(Common_Data.Done) ,COP(Common_Data.ReceiveData[10],Output_2_Function,1) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="26" Type="N">
+<Text>
+<![CDATA[XIC(Active.0)XIC(Common_Data.Error)[OTU(Done.0) ,OTL(Error_DINT.0) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.0) ,OTU(Pending.0) ,OTU(Pending_or_Active.0) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="27" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Write 1 - Output 2 Function - Index 82 
+Has to be a 0 in order to use IO-Link
+***************************************************************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[1]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="28" Type="N">
+<Text>
+<![CDATA[NEQ(Output_2_Function,0)XIC(Done.0)OTE(Write.1);]]>
+</Text>
+</Rung>
+<Rung Number="29" Type="N">
+<Text>
+<![CDATA[XIC(Write.1)ONS(Write_ONS.1)OTL(WriteRequest.1);]]>
+</Text>
+</Rung>
+<Rung Number="30" Type="N">
+<Text>
+<![CDATA[XIC(WriteRequest.1)XIO(Pending_or_Active.1)XIC(StartupDone)[OTU(Active.1) ,OTL(Pending.1) ,OTL(Pending_or_Active.1) ,OTU(WriteRequest.1) ];]]>
+</Text>
+</Rung>
+<Rung Number="31" Type="N">
+<Text>
+<![CDATA[XIC(Pending.1)EQU(Common_Data.TicketNum,MyTicketNum[1])[OTU(Done.1) ,OTU(Error_DINT.1) ,OTL(Active.1) ,OTU(Pending.1) ,MOV(Port,Common_Data.Port) ,MOV(82,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,MOV(0,Common_Data.SendData[11]) ,MOV(1,Common_Data.Length) ,OTL(Common_Data.Write) ];]]>
+</Text>
+</Rung>
+<Rung Number="32" Type="N">
+<Text>
+<![CDATA[XIC(Active.1)XIC(Common_Data.Done)[OTL(Done.1) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.1) ,OTU(Active.1) ,OTU(Pending.1) ,OTU(Pending_or_Active.1) ,OTU(Common_Data.Done) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="33" Type="N">
+<Text>
+<![CDATA[XIC(Active.1)XIC(Common_Data.Error)[OTU(Done.1) ,OTL(Error_DINT.1) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.1) ,OTU(Pending.1) ,OTU(Pending_or_Active.1) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="34" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Write 2 - Units - Index 84
+***************************************************************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[2]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="35" Type="N">
+<Text>
+<![CDATA[NEQ(Units,Units_Prev)OTE(Write.2);]]>
+</Text>
+</Rung>
+<Rung Number="36" Type="N">
+<Text>
+<![CDATA[XIC(Write.2)ONS(Write_ONS.2)OTL(WriteRequest.2);]]>
+</Text>
+</Rung>
+<Rung Number="37" Type="N">
+<Text>
+<![CDATA[XIC(WriteRequest.2)XIO(Pending_or_Active.2)XIC(StartupDone)[OTU(Active.2) ,OTL(Pending.2) ,OTL(Pending_or_Active.2) ,OTU(WriteRequest.2) ];]]>
+</Text>
+</Rung>
+<Rung Number="38" Type="N">
+<Text>
+<![CDATA[XIC(Pending.2)EQU(Common_Data.TicketNum,MyTicketNum[2])[OTU(Done.2) ,OTU(Error_DINT.2) ,OTL(Active.2) ,OTU(Pending.2) ,MOV(Port,Common_Data.Port) ,MOV(84,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,COP(Units,Common_Data.SendData[11],1) ,MOV(1,Common_Data.Length) ,OTL(Common_Data.Write) ];]]>
+</Text>
+</Rung>
+<Rung Number="39" Type="N">
+<Text>
+<![CDATA[XIC(Active.2)XIC(Common_Data.Done)[OTL(Done.2) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.2) ,OTU(Active.2) ,OTU(Pending.2) ,OTU(Pending_or_Active.2) ,OTU(Common_Data.Done) ,MOV(0,Status) ,MOV(Units,Units_Prev) ];]]>
+</Text>
+</Rung>
+<Rung Number="40" Type="N">
+<Text>
+<![CDATA[XIC(Active.2)XIC(Common_Data.Error)[OTU(Done.2) ,OTL(Error_DINT.2) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.2) ,OTU(Pending.2) ,OTU(Pending_or_Active.2) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="41" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Write 3 - Display Rotation - Index 91
+***************************************************************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[3]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="42" Type="N">
+<Text>
+<![CDATA[NEQ(Rotate_Display,Rotate_Display_Prev)OTE(Write.3);]]>
+</Text>
+</Rung>
+<Rung Number="43" Type="N">
+<Text>
+<![CDATA[XIC(Write.3)ONS(Write_ONS.3)OTL(WriteRequest.3);]]>
+</Text>
+</Rung>
+<Rung Number="44" Type="N">
+<Text>
+<![CDATA[XIC(WriteRequest.3)XIO(Pending_or_Active.3)XIC(StartupDone)[OTU(Active.3) ,OTL(Pending.3) ,OTL(Pending_or_Active.3) ,OTU(WriteRequest.3) ];]]>
+</Text>
+</Rung>
+<Rung Number="45" Type="N">
+<Text>
+<![CDATA[XIC(Pending.3)EQU(Common_Data.TicketNum,MyTicketNum[3])[OTU(Done.3) ,OTU(Error_DINT.3) ,OTL(Active.3) ,OTU(Pending.3) ,MOV(Port,Common_Data.Port) ,MOV(91,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,COP(Rotate_Display,Common_Data.SendData[11],1) ,MOV(1,Common_Data.Length) ,OTL(Common_Data.Write) ];]]>
+</Text>
+</Rung>
+<Rung Number="46" Type="N">
+<Text>
+<![CDATA[XIC(Active.3)XIC(Common_Data.Done)[OTL(Done.3) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.3) ,OTU(Active.3) ,OTU(Pending.3) ,OTU(Pending_or_Active.3) ,OTU(Common_Data.Done) ,MOV(0,Status) ,MOV(Rotate_Display,Rotate_Display_Prev) ];]]>
+</Text>
+</Rung>
+<Rung Number="47" Type="N">
+<Text>
+<![CDATA[XIC(Active.3)XIC(Common_Data.Error)[OTU(Done.3) ,OTL(Error_DINT.3) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.3) ,OTU(Pending.3) ,OTU(Pending_or_Active.3) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="48" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Read 4 - Max Pressure Memory - Index 105
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[4]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="49" Type="N">
+<Text>
+<![CDATA[XIO(Every_Min_Poll_TON.DN)TON(Every_Min_Poll_TON,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="50" Type="N">
+<Text>
+<![CDATA[XIC(Every_Min_Poll_TON.DN)OTL(ReadRequest.4);]]>
+</Text>
+</Rung>
+<Rung Number="51" Type="N">
+<Text>
+<![CDATA[XIC(ReadRequest.4)XIO(Pending_or_Active.4)XIC(StartupDone)[OTU(Active.4) ,OTL(Pending.4) ,OTL(Pending_or_Active.4) ,OTU(ReadRequest.4) ];]]>
+</Text>
+</Rung>
+<Rung Number="52" Type="N">
+<Text>
+<![CDATA[XIC(Pending.4)EQU(Common_Data.TicketNum,MyTicketNum[4])[OTU(Done.4) ,OTU(Error_DINT.4) ,OTL(Active.4) ,OTU(Pending.4) ,MOV(Port,Common_Data.Port) ,MOV(105,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,OTL(Common_Data.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="53" Type="N">
+<Text>
+<![CDATA[XIC(Active.4)XIC(Common_Data.Done)[OTL(Done.4) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.4) ,OTU(Active.4) ,OTU(Pending.4) ,OTU(Pending_or_Active.4) ,OTU(Common_Data.Done) ,COP(Common_Data.ReceiveData[10],Max_Pressure_Recorded_Raw,1) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="54" Type="N">
+<Text>
+<![CDATA[XIC(Active.4)XIC(Common_Data.Error)[OTU(Done.4) ,OTL(Error_DINT.4) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.4) ,OTU(Pending.4) ,OTU(Pending_or_Active.4) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="55" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Read 5 - Min Pressure Recorded - Index 106
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[5]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="56" Type="N">
+<Text>
+<![CDATA[XIC(Every_Min_Poll_TON.DN)ONS(Read_ONS.5)OTL(ReadRequest.5);]]>
+</Text>
+</Rung>
+<Rung Number="57" Type="N">
+<Text>
+<![CDATA[XIC(ReadRequest.5)XIO(Pending_or_Active.5)XIC(StartupDone)[OTU(Active.5) ,OTL(Pending.5) ,OTL(Pending_or_Active.5) ,OTU(ReadRequest.5) ];]]>
+</Text>
+</Rung>
+<Rung Number="58" Type="N">
+<Text>
+<![CDATA[XIC(Pending.5)EQU(Common_Data.TicketNum,MyTicketNum[5])[OTU(Done.5) ,OTU(Error_DINT.5) ,OTL(Active.5) ,OTU(Pending.5) ,MOV(Port,Common_Data.Port) ,MOV(106,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,OTL(Common_Data.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="59" Type="N">
+<Text>
+<![CDATA[XIC(Active.5)XIC(Common_Data.Done)[OTL(Done.5) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.5) ,OTU(Active.5) ,OTU(Pending.5) ,OTU(Pending_or_Active.5) ,OTU(Common_Data.Done) ,COP(Common_Data.ReceiveData[10],Min_Recorded_Pressure_Raw,1) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="60" Type="N">
+<Text>
+<![CDATA[XIC(Active.5)XIC(Common_Data.Error)[OTU(Done.5) ,OTL(Error_DINT.5) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.5) ,OTU(Pending.5) ,OTU(Pending_or_Active.5) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="61" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Read 6 - Process Data Profile - Index 80
+Must be set to default for process data logic to work
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[6]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="62" Type="N">
+<Text>
+<![CDATA[[XIO(StartupDone) ,OTL(Done.7) ]ONS(Read_ONS.6)OTL(ReadRequest.6);]]>
+</Text>
+</Rung>
+<Rung Number="63" Type="N">
+<Text>
+<![CDATA[XIC(ReadRequest.6)XIO(Pending_or_Active.6)XIC(StartupDone)[OTU(Active.6) ,OTL(Pending.6) ,OTL(Pending_or_Active.6) ,OTU(ReadRequest.6) ];]]>
+</Text>
+</Rung>
+<Rung Number="64" Type="N">
+<Text>
+<![CDATA[XIC(Pending.6)EQU(Common_Data.TicketNum,MyTicketNum[0])[OTU(Done.6) ,OTU(Error_DINT.6) ,OTL(Active.6) ,OTU(Pending.6) ,MOV(Port,Common_Data.Port) ,MOV(80,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,OTL(Common_Data.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="65" Type="N">
+<Text>
+<![CDATA[XIC(Active.6)XIC(Common_Data.Done)[OTL(Done.6) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.6) ,OTU(Active.6) ,OTU(Pending.6) ,OTU(Pending_or_Active.6) ,OTU(Common_Data.Done) ,COP(Common_Data.ReceiveData[10],Process_Data_Profile,1) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="66" Type="N">
+<Text>
+<![CDATA[XIC(Active.6)XIC(Common_Data.Error)[OTU(Done.6) ,OTL(Error_DINT.6) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.6) ,OTU(Pending.6) ,OTU(Pending_or_Active.6) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="67" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Write 7 - Process Data Profile - Index 80
+Has to be a 2 (default) in order to for the Process data breakdown logic to work
+***************************************************************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[7]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="68" Type="N">
+<Text>
+<![CDATA[NEQ(Process_Data_Profile,4)XIC(Done.6)OTE(Write.7);]]>
+</Text>
+</Rung>
+<Rung Number="69" Type="N">
+<Text>
+<![CDATA[XIC(Write.7)ONS(Write_ONS.7)OTL(WriteRequest.7);]]>
+</Text>
+</Rung>
+<Rung Number="70" Type="N">
+<Text>
+<![CDATA[XIC(WriteRequest.7)XIO(Pending_or_Active.7)XIC(StartupDone)[OTU(Active.7) ,OTL(Pending.7) ,OTL(Pending_or_Active.7) ,OTU(WriteRequest.7) ];]]>
+</Text>
+</Rung>
+<Rung Number="71" Type="N">
+<Text>
+<![CDATA[XIC(Pending.7)EQU(Common_Data.TicketNum,MyTicketNum[7])[OTU(Done.7) ,OTU(Error_DINT.7) ,OTL(Active.7) ,OTU(Pending.7) ,MOV(Port,Common_Data.Port) ,MOV(80,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,MOV(2,Common_Data.SendData[11]) ,MOV(1,Common_Data.Length) ,OTL(Common_Data.Write) ];]]>
+</Text>
+</Rung>
+<Rung Number="72" Type="N">
+<Text>
+<![CDATA[XIC(Active.7)XIC(Common_Data.Done)[OTL(Done.7) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.7) ,OTU(Active.7) ,OTU(Pending.7) ,OTU(Pending_or_Active.7) ,OTU(Common_Data.Done) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="73" Type="N">
+<Text>
+<![CDATA[XIC(Active.7)XIC(Common_Data.Error)[OTU(Done.7) ,OTL(Error_DINT.7) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.7) ,OTU(Pending.7) ,OTU(Pending_or_Active.7) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="74" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)OTL(StartupDone);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="Prescan" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[MOV(0,Done)MOV(0,Error_DINT)MOV(0,Active)MOV(0,Pending)MOV(0,Pending_or_Active)MOV(0,Write)MOV(0,WriteRequest);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Turck_IOLink_Common_Data"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>
