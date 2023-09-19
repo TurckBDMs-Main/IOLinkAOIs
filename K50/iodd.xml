@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IODevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.io-link.com/IODD/2010/10" xsi:schemaLocation="http://www.io-link.com/IODD/2010/10 IODD1.1.xsd">
+    <DocumentInfo version="V1.3" releaseDate="2019-11-01" copyright="Copyright 2019, Banner Engineering Corp."/>
+
+    <ProfileHeader>
+        <ProfileIdentification>IO Device Profile</ProfileIdentification>
+        <ProfileRevision>1.1</ProfileRevision>
+        <ProfileName>Device Profile for IO Devices</ProfileName>
+        <ProfileSource>IO-Link Consortium</ProfileSource>
+        <ProfileClassID>Device</ProfileClassID>
+        <ISO15745Reference>
+            <ISO15745Part>1</ISO15745Part>
+            <ISO15745Edition>1</ISO15745Edition>
+            <ProfileTechnology>IODD</ProfileTechnology>
+        </ISO15745Reference>
+    </ProfileHeader>
+
+  <ProfileBody>
+
+    <DeviceIdentity vendorId="451" vendorName="Banner Engineering Corporation" deviceId="393220">
+      <VendorText textId="TI_VendorText"/>
+      <VendorUrl textId="TI_VendorUrl"/>
+      <VendorLogo name="Banner_Engineering-logo.png"/>
+      <DeviceName textId="TI_DeviceName"/>
+      <DeviceFamily textId="TI_DeviceFamily"/>
+      <DeviceVariantCollection>
+        <DeviceVariant productId="K50PTCKQ" deviceSymbol="Banner_Engineering-K50PTCKQ-pic.png" deviceIcon="Banner_Engineering-K50PTCKQ-icon.png">
+          <Name textId="TI_Product_Name_K50PTCKQ"/>
+          <Description textId="TI_Product_Text_K50PTCKQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PTKQ" deviceSymbol="Banner_Engineering-K50PTKQ-pic.png" deviceIcon="Banner_Engineering-K50PTKQ-icon.png">
+          <Name textId="TI_Product_Name_K50PTKQ"/>
+          <Description textId="TI_Product_Text_K50PTKQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PTCKQP" deviceSymbol="Banner_Engineering-K50PTCKQP-pic.png" deviceIcon="Banner_Engineering-K50PTCKQP-icon.png">
+          <Name textId="TI_Product_Name_K50PTCKQP"/>
+          <Description textId="TI_Product_Text_K50PTCKQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PTKQP" deviceSymbol="Banner_Engineering-K50PTKQP-pic.png" deviceIcon="Banner_Engineering-K50PTKQP-icon.png">
+          <Name textId="TI_Product_Name_K50PTKQP"/>
+          <Description textId="TI_Product_Text_K50PTKQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PTFKQP" deviceSymbol="Banner_Engineering-K50PTKQP-pic.png" deviceIcon="Banner_Engineering-K50PTKQP-icon.png">
+          <Name textId="TI_Product_Name_K50PTFKQP"/>
+          <Description textId="TI_Product_Text_K50PTFKQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PTVKQ" deviceSymbol="Banner_Engineering-K50PTKQ-pic.png" deviceIcon="Banner_Engineering-K50PTKQ-icon.png">
+          <Name textId="TI_Product_Name_K50PTVKQ"/>
+          <Description textId="TI_Product_Text_K50PTVKQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PTVKQP" deviceSymbol="Banner_Engineering-K50PTKQP-pic.png" deviceIcon="Banner_Engineering-K50PTKQP-icon.png">
+          <Name textId="TI_Product_Name_K50PTVKQP"/>
+          <Description textId="TI_Product_Text_K50PTVKQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PTFVKQP" deviceSymbol="Banner_Engineering-K50PTKQP-pic.png" deviceIcon="Banner_Engineering-K50PTKQP-icon.png">
+          <Name textId="TI_Product_Name_K50PTFVKQP"/>
+          <Description textId="TI_Product_Text_K50PTFVKQP"/>
+        </DeviceVariant>
+        
+        <DeviceVariant productId="K50PFF50KQ" deviceSymbol="Banner_Engineering-K50PFF50KQ-pic.png" deviceIcon="Banner_Engineering-K50PFF50KQ-icon.png">
+          <Name textId="TI_Product_Name_K50PFF50KQ"/>
+          <Description textId="TI_Product_Text_K50PFF50KQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PFF50KQP" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PFF50KQP"/>
+          <Description textId="TI_Product_Text_K50PFF50KQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PFF50KQPMA" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PFF50KQPMA"/>
+          <Description textId="TI_Product_Text_K50PFF50KQPMA"/>
+        </DeviceVariant>
+        
+        <DeviceVariant productId="K50PFF100KQ" deviceSymbol="Banner_Engineering-K50PFF50KQ-pic.png" deviceIcon="Banner_Engineering-K50PFF50KQ-icon.png">
+          <Name textId="TI_Product_Name_K50PFF100KQ"/>
+          <Description textId="TI_Product_Text_K50PFF100KQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PFF100KQP" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PFF100KQP"/>
+          <Description textId="TI_Product_Text_K50PFF100KQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PFF100KQPMA" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PFF100KQPMA"/>
+          <Description textId="TI_Product_Text_K50PFF100KQPMA"/>
+        </DeviceVariant>
+        
+        <DeviceVariant productId="K50PFF200KQ" deviceSymbol="Banner_Engineering-K50PFF50KQ-pic.png" deviceIcon="Banner_Engineering-K50PFF50KQ-icon.png">
+          <Name textId="TI_Product_Name_K50PFF200KQ"/>
+          <Description textId="TI_Product_Text_K50PFF200KQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PFF200KQP" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PFF200KQP"/>
+          <Description textId="TI_Product_Text_K50PFF200KQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PFF200KQPMA" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PFF200KQPMA"/>
+          <Description textId="TI_Product_Text_K50PFF200KQPMA"/>
+        </DeviceVariant>
+        
+        <DeviceVariant productId="K50PLVKQ" deviceSymbol="Banner_Engineering-K50PFF50KQ-pic.png" deviceIcon="Banner_Engineering-K50PFF50KQ-icon.png">
+          <Name textId="TI_Product_Name_K50PLVKQ"/>
+          <Description textId="TI_Product_Text_K50PLVKQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PLVKQP" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PLVKQP"/>
+          <Description textId="TI_Product_Text_K50PLVKQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PLVKQPMA" deviceSymbol="Banner_Engineering-K50PFF100KQP-pic.png" deviceIcon="Banner_Engineering-K50PFF100KQP-icon.png">
+          <Name textId="TI_Product_Name_K50PLVKQPMA"/>
+          <Description textId="TI_Product_Text_K50PLVKQPMA"/>
+        </DeviceVariant>
+        
+        <DeviceVariant productId="K50PPBKQ" deviceSymbol="Banner_Engineering-K50PPBKQ-pic.png" deviceIcon="Banner_Engineering-K50PPBKQ-icon.png">
+          <Name textId="TI_Product_Name_K50PPBKQ"/>
+          <Description textId="TI_Product_Text_K50PPBKQ"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PPBKQP" deviceSymbol="Banner_Engineering-K50PPBKQ-pic.png" deviceIcon="Banner_Engineering-K50PPBKQ-icon.png">
+          <Name textId="TI_Product_Name_K50PPBKQP"/>
+          <Description textId="TI_Product_Text_K50PPBKQP"/>
+        </DeviceVariant>
+        <DeviceVariant productId="K50PPBKQPMA" deviceSymbol="Banner_Engineering-K50PPBKQ-pic.png" deviceIcon="Banner_Engineering-K50PPBKQ-icon.png">
+          <Name textId="TI_Product_Name_K50PPBKQPMA"/>
+          <Description textId="TI_Product_Text_K50PPBKQPMA"/>
+        </DeviceVariant>
+      </DeviceVariantCollection>
+    </DeviceIdentity>
+
+    <DeviceFunction>
+
+      <Features blockParameter="true" dataStorage="true">
+        <SupportedAccessLocks localParameterization="false" parameter="true" dataStorage="true" localUserInterface="false"/>
+      </Features>
+
+      <DatatypeCollection>
+        <Datatype id="DT_OperationMode" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="3">
+          <SingleValue value="0"><Name textId="TI_VAR_OperationModeMulticolor"/></SingleValue>
+          <SingleValue value="1"><Name textId="TI_VAR_OperationModeFourStateFullLogic"/></SingleValue>
+          <SingleValue value="2"><Name textId="TI_VAR_OperationModeAdvanced"/></SingleValue>
+          <SingleValue value="3"><Name textId="TI_VAR_OperationModeLedControl"/></SingleValue>
+          <SingleValue value="4"><Name textId="TI_VAR_OperationModeDemo"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_CustomIntensity" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="8">
+          <ValueRange xsi:type="UIntegerValueRangeT" lowerValue="0" upperValue="100"/>
+        </Datatype>
+        <Datatype id="DT_CustomFrequency" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="8">
+          <ValueRange xsi:type="UIntegerValueRangeT" lowerValue="5" upperValue="255"/>
+        </Datatype>
+        <Datatype id="DT_GamutSetting"    xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="8">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Off"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_On"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_TouchSensitivity" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="2">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Low"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_Standard"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_High"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_OutputState" xsi:type="BooleanT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <SingleValue xsi:type="BooleanValueT" value="false"><Name textId="TI_VAR_OutputStateNormallyClosed"/></SingleValue>
+          <SingleValue xsi:type="BooleanValueT" value="true"><Name textId="TI_VAR_OutputStateNormallyOpen"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_OutputFunction" xsi:type="BooleanT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <SingleValue xsi:type="BooleanValueT" value="false"><Name textId="TI_VAR_Momentary"/></SingleValue>
+          <SingleValue xsi:type="BooleanValueT" value="true"><Name textId="TI_VAR_Latched"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_OffDelayType" xsi:type="BooleanT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <SingleValue xsi:type="BooleanValueT" value="false"><Name textId="TI_VAR_LeadingEdge"/></SingleValue>
+          <SingleValue xsi:type="BooleanValueT" value="true"><Name textId="TI_VAR_TrailingEdge"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_Delay" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="16">
+          <ValueRange xsi:type="UIntegerValueRangeT" lowerValue="0" upperValue="65535"/>
+        </Datatype>
+        <Datatype id="DT_MuteEnable" xsi:type="BooleanT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <SingleValue xsi:type="BooleanValueT" value="false"><Name textId="TI_VAR_MuteOff"/></SingleValue>
+          <SingleValue xsi:type="BooleanValueT" value="true"><Name textId="TI_VAR_MuteOn"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_AnimationType" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="4">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Off"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_Steady"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_Flash"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_TwoColorFlash"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="4"><Name textId="TI_VAR_HalfHalf"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="5"><Name textId="TI_VAR_HalfHalfRotate"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="6"><Name textId="TI_VAR_Chase"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="7"><Name textId="TI_VAR_IntensitySweep"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="8"><Name textId="TI_VAR_ColorSweep"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="9"><Name textId="TI_VAR_Sequence"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_AnimationPattern" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="3">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Flash"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_Strobe"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_ThreePulse"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_SOS"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="4"><Name textId="TI_VAR_Random"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_AnimationDirection" xsi:type="BooleanT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <SingleValue xsi:type="BooleanValueT" value="false"><Name textId="TI_VAR_CCW"/></SingleValue>
+          <SingleValue xsi:type="BooleanValueT" value="true"><Name textId="TI_VAR_CW"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_Sequence" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="8">
+          <ValueRange xsi:type="UIntegerValueRangeT" lowerValue="0" upperValue="255"/>
+        </Datatype>
+        <Datatype id="DT_SequenceShift" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="3">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_LED1"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_LED2"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_LED3"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_LED4"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="4"><Name textId="TI_VAR_LED5"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="5"><Name textId="TI_VAR_LED6"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="6"><Name textId="TI_VAR_LED7"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="7"><Name textId="TI_VAR_LED8"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_AnimationSpeed" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="2">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Slow"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_Medium"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_Fast"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_Custom"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_VibrationFeedback" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="2">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Off"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_On"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_AnimationPattern"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_VibrationFeedbackInLedControlMode" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="2">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Off"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_On"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_Pattern"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_Color" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="5">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Green"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_Red"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_Orange"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_Amber"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="4"><Name textId="TI_VAR_Yellow"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="5"><Name textId="TI_VAR_LimeGreen"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="6"><Name textId="TI_VAR_SpringGreen"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="7"><Name textId="TI_VAR_Cyan"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="8"><Name textId="TI_VAR_SkyBlue"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="9"><Name textId="TI_VAR_Blue"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="10"><Name textId="TI_VAR_Violet"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="11"><Name textId="TI_VAR_Magenta"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="12"><Name textId="TI_VAR_Rose"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="13"><Name textId="TI_VAR_White"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="14"><Name textId="TI_VAR_Custom1"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="15"><Name textId="TI_VAR_Custom2"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_LedControlColor" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="4">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_Green"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_Red"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_Orange"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_Amber"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="4"><Name textId="TI_VAR_Yellow"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="5"><Name textId="TI_VAR_LimeGreen"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="6"><Name textId="TI_VAR_SpringGreen"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="7"><Name textId="TI_VAR_Cyan"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="8"><Name textId="TI_VAR_SkyBlue"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="9"><Name textId="TI_VAR_Blue"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="10"><Name textId="TI_VAR_Violet"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="11"><Name textId="TI_VAR_Magenta"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="12"><Name textId="TI_VAR_Rose"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="13"><Name textId="TI_VAR_White"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="14"><Name textId="TI_VAR_Custom1"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="15"><Name textId="TI_VAR_Custom2"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_ColorIntensity" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="3">
+          <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_High"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_Medium"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_Low"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_Off"/></SingleValue>
+          <SingleValue xsi:type="UIntegerValueT" value="4"><Name textId="TI_VAR_Custom"/></SingleValue>
+        </Datatype>
+        <Datatype id="DT_LedControlColorIntensity" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="4">
+          <ValueRange xsi:type="UIntegerValueRangeT" lowerValue="0" upperValue="10"/>
+        </Datatype>
+        <Datatype id="DT_CustomColorRGB" xsi:type="UIntegerT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bitLength="8">
+          <ValueRange xsi:type="UIntegerValueRangeT" lowerValue="0" upperValue="255"/>
+        </Datatype>
+      </DatatypeCollection>
+
+      <VariableCollection>
+        <StdVariableRef id="V_DirectParameters_1"/>
+        <StdVariableRef id="V_DirectParameters_2"/>
+        <StdVariableRef id="V_SystemCommand">
+          <StdSingleValueRef value="130"/>
+        </StdVariableRef>
+        <StdVariableRef id="V_DeviceAccessLocks">
+          <StdRecordItemRef subindex="1" defaultValue="false"/>
+          <StdRecordItemRef subindex="2" defaultValue="false"/>
+        </StdVariableRef>
+        <StdVariableRef id="V_VendorName" fixedLengthRestriction="30" excludedFromDataStorage="false" defaultValue="Banner Engineering Corporation"/>
+        <StdVariableRef id="V_VendorText" fixedLengthRestriction="29" excludedFromDataStorage="false" defaultValue="More Sensors. More Solutions."/>
+        <StdVariableRef id="V_ProductName" fixedLengthRestriction="32" excludedFromDataStorage="false" />
+        <StdVariableRef id="V_ProductID" fixedLengthRestriction="32" excludedFromDataStorage="false" />
+        <StdVariableRef id="V_ProductText" fixedLengthRestriction="27" excludedFromDataStorage="false" defaultValue="K50 Pro Device with IO-Link"/>
+        <StdVariableRef id="V_SerialNumber"/>
+        <StdVariableRef id="V_HardwareRevision"/>
+        <StdVariableRef id="V_FirmwareRevision" fixedLengthRestriction="8" excludedFromDataStorage="false"/>
+        <StdVariableRef id="V_ApplicationSpecificTag" fixedLengthRestriction="32" excludedFromDataStorage="false"/>
+        <StdVariableRef id="V_DeviceStatus"/>
+        <StdVariableRef id="V_DetailedDeviceStatus" fixedLengthRestriction="6"/>
+
+        <Variable id="V_OperationMode" index="80" accessRights="rw" defaultValue="2">
+          <DatatypeRef datatypeId="DT_OperationMode"/>
+          <Name textId="TI_OperationMode"/>
+          <Description textId="TI_OperationMode"/>
+        </Variable>
+        
+        <Variable id="V_CustomAnimationSettings" index="81" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="24" subindexAccessSupported = "true">
+            <RecordItem subindex="1" bitOffset="0"><DatatypeRef datatypeId="DT_CustomIntensity"/><Name textId="TI_VAR_CustomIntensity"/><Description textId="TI_VAR_CustomIntensityDsc"/></RecordItem>
+            <RecordItem subindex="2" bitOffset="8"><DatatypeRef datatypeId="DT_CustomFrequency"/><Name textId="TI_VAR_CustomFlashRate"/><Description textId="TI_VAR_CustomFlashRateDsc"/></RecordItem>         
+            <RecordItem subindex="3" bitOffset="16"><DatatypeRef datatypeId="DT_GamutSetting"/><Name textId="TI_VAR_RestrictToGamut"/><Description textId="TI_VAR_RestrictToGamutDsc"/></RecordItem>
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="100"/>
+          <RecordItemInfo subindex="2" defaultValue="15"/>
+          <RecordItemInfo subindex="3" defaultValue="0"/>
+          <Name textId="TI_VAR_Setting"/>
+          <Description textId="TI_VAR_Setting"/>
+        </Variable>
+
+        <Variable id="V_InputSettings" index="82" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="24" subindexAccessSupported = "true">
+            <RecordItem subindex="1" bitOffset="0"><DatatypeRef datatypeId="DT_TouchSensitivity"/><Name textId="TI_VAR_TouchSensitivity"/><Description textId="TI_VAR_TouchSensitivityDsc"/></RecordItem>
+            <RecordItem subindex="2" bitOffset="2"><DatatypeRef datatypeId="DT_OutputFunction"/><Name textId="TI_VAR_OutputFunction"/><Description textId="TI_VAR_OutputFunctionDsc"/></RecordItem>         
+            <RecordItem subindex="3" bitOffset="3"><DatatypeRef datatypeId="DT_MuteEnable"/><Name textId="TI_VAR_MuteEnable"/><Description textId="TI_VAR_MuteEnableDsc"/></RecordItem>
+            <RecordItem subindex="4" bitOffset="8"><DatatypeRef datatypeId="DT_Delay"/><Name textId="TI_VAR_OnDelay"/><Description textId="TI_VAR_OnDelayDsc"/></RecordItem>
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="1"/>
+          <RecordItemInfo subindex="2" defaultValue="false"/>
+          <RecordItemInfo subindex="3" defaultValue="false"/>
+          <RecordItemInfo subindex="4" defaultValue="0"/>
+          <Name textId="TI_VAR_TouchSettings"/>
+          <Description textId="TI_VAR_TouchSettings"/>
+        </Variable>
+
+        <Variable id="V_OutputSettings" index="83" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="24" subindexAccessSupported = "true">
+            <RecordItem subindex="1" bitOffset="0"><DatatypeRef datatypeId="DT_OutputState"/><Name textId="TI_VAR_OutputState"/><Description textId="TI_VAR_OutputStateDsc"/></RecordItem>
+            <RecordItem subindex="2" bitOffset="1"><DatatypeRef datatypeId="DT_OffDelayType"/><Name textId="TI_VAR_OffDelayType"/><Description textId="TI_VAR_OffDelayTypeDsc"/></RecordItem>
+            <RecordItem subindex="3" bitOffset="8"><DatatypeRef datatypeId="DT_Delay"/><Name textId="TI_VAR_OffDelay"/><Description textId="TI_VAR_OffDelayDsc"/></RecordItem>
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="true"/>
+          <RecordItemInfo subindex="2" defaultValue="false"/>
+          <RecordItemInfo subindex="3" defaultValue="0"/>
+          <Name textId="TI_VAR_OutputSettings"/>
+          <Description textId="TI_VAR_OutputSettings"/>
+        </Variable>
+
+        <Variable id="V_StateParameters1" index="84" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="64" subindexAccessSupported = "true">
+            <RecordItem subindex="1"  bitOffset="0"><DatatypeRef datatypeId="DT_AnimationType"/><Name textId="TI_VAR_Type"/><Description textId="TI_VAR_TypeDsc"/></RecordItem>                       <!-- 4 bits -->
+            <RecordItem subindex="2"  bitOffset="4"><DatatypeRef datatypeId="DT_AnimationDirection"/><Name textId="TI_VAR_Direction"/><Description textId="TI_VAR_DirectionDsc"/></RecordItem>        <!-- 1 bit  -->
+            <RecordItem subindex="3"  bitOffset="5"><DatatypeRef datatypeId="DT_AnimationPattern"/><Name textId="TI_VAR_AnimationPattern"/><Description textId="TI_VAR_AnimationPatternDsc"/></RecordItem>              <!-- 3 bits -->
+            <RecordItem subindex="4"  bitOffset="8"><DatatypeRef datatypeId="DT_AnimationSpeed"/><Name textId="TI_VAR_AnimationSpeed"/><Description textId="TI_VAR_SpeedDsc"/></RecordItem>                    <!-- 2 bits -->
+            <RecordItem subindex="5"  bitOffset="10"><DatatypeRef datatypeId="DT_VibrationFeedback"/><Name textId="TI_VAR_VibrationFeedback"/><Description textId="TI_VAR_VibrationFeedbackDsc"/></RecordItem> <!-- 2 bits -->
+            <RecordItem subindex="6"  bitOffset="12"><DatatypeRef datatypeId="DT_OffDelayType"/><Name textId="TI_VAR_OffDelayType"/><Description textId="TI_VAR_OffDelayTypeDsc"/></RecordItem>       <!-- 1 bit  -->
+            <RecordItem subindex="7"  bitOffset="16"><DatatypeRef datatypeId="DT_Delay"/><Name textId="TI_VAR_OffDelay"/><Description textId="TI_VAR_OffDelayDsc"/></RecordItem>                      <!-- 1 bit  -->
+            <RecordItem subindex="8"  bitOffset="32"><DatatypeRef datatypeId="DT_Sequence"/><Name textId="TI_VAR_StaticSequenceValue"/><Description textId="TI_VAR_StaticSequenceDsc"/></RecordItem>  <!-- 8 bits -->
+            <RecordItem subindex="9"  bitOffset="40"><DatatypeRef datatypeId="DT_SequenceShift"/><Name textId="TI_VAR_SequenceShift"/><Description textId="TI_VAR_SequenceShiftDsc"/></RecordItem>    <!-- 3 bits -->
+            <RecordItem subindex="10" bitOffset="48"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color1"/><Description textId="TI_VAR_Color1Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="11" bitOffset="53"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity1"/><Description textId="TI_VAR_Intensity1Dsc"/></RecordItem>         <!-- 3 bits -->
+            <RecordItem subindex="12" bitOffset="56"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color2"/><Description textId="TI_VAR_Color2Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="13" bitOffset="61"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity2"/><Description textId="TI_VAR_Intensity2Dsc"/></RecordItem>         <!-- 3 bits -->
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="1"/>
+          <RecordItemInfo subindex="2" defaultValue="false"/>
+          <RecordItemInfo subindex="3" defaultValue="0"/>
+          <RecordItemInfo subindex="4" defaultValue="1"/>
+          <RecordItemInfo subindex="5" defaultValue="1"/>
+          <RecordItemInfo subindex="6" defaultValue="false"/>
+          <RecordItemInfo subindex="7" defaultValue="0"/>
+          <RecordItemInfo subindex="8" defaultValue="0"/>
+          <RecordItemInfo subindex="9" defaultValue="0"/>
+          <RecordItemInfo subindex="10" defaultValue="0"/>
+          <RecordItemInfo subindex="11" defaultValue="0"/>
+          <RecordItemInfo subindex="12" defaultValue="0"/>
+          <RecordItemInfo subindex="13" defaultValue="0"/>
+          <Name textId="TI_VAR_StateParameters1"/>
+          <Description textId="TI_VAR_StateParameters1"/>
+        </Variable>
+
+        <Variable id="V_StateParameters2" index="85" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="64" subindexAccessSupported = "true">
+            <RecordItem subindex="1"  bitOffset="0"><DatatypeRef datatypeId="DT_AnimationType"/><Name textId="TI_VAR_Type"/><Description textId="TI_VAR_TypeDsc"/></RecordItem>                       <!-- 4 bits -->
+            <RecordItem subindex="2"  bitOffset="4"><DatatypeRef datatypeId="DT_AnimationDirection"/><Name textId="TI_VAR_Direction"/><Description textId="TI_VAR_DirectionDsc"/></RecordItem>        <!-- 1 bit  -->
+            <RecordItem subindex="3"  bitOffset="5"><DatatypeRef datatypeId="DT_AnimationPattern"/><Name textId="TI_VAR_AnimationPattern"/><Description textId="TI_VAR_AnimationPatternDsc"/></RecordItem>              <!-- 3 bits -->
+            <RecordItem subindex="4"  bitOffset="8"><DatatypeRef datatypeId="DT_AnimationSpeed"/><Name textId="TI_VAR_AnimationSpeed"/><Description textId="TI_VAR_SpeedDsc"/></RecordItem>                    <!-- 2 bits -->
+            <RecordItem subindex="5"  bitOffset="10"><DatatypeRef datatypeId="DT_VibrationFeedback"/><Name textId="TI_VAR_VibrationFeedback"/><Description textId="TI_VAR_VibrationFeedbackDsc"/></RecordItem> <!-- 2 bits -->
+            <RecordItem subindex="6"  bitOffset="12"><DatatypeRef datatypeId="DT_OffDelayType"/><Name textId="TI_VAR_OffDelayType"/><Description textId="TI_VAR_OffDelayTypeDsc"/></RecordItem>       <!-- 1 bit  -->
+            <RecordItem subindex="7"  bitOffset="16"><DatatypeRef datatypeId="DT_Delay"/><Name textId="TI_VAR_OffDelay"/><Description textId="TI_VAR_OffDelayDsc"/></RecordItem>                      <!-- 1 bit  -->
+            <RecordItem subindex="8"  bitOffset="32"><DatatypeRef datatypeId="DT_Sequence"/><Name textId="TI_VAR_StaticSequenceValue"/><Description textId="TI_VAR_StaticSequenceDsc"/></RecordItem>  <!-- 8 bits -->
+            <RecordItem subindex="9"  bitOffset="40"><DatatypeRef datatypeId="DT_SequenceShift"/><Name textId="TI_VAR_SequenceShift"/><Description textId="TI_VAR_SequenceShiftDsc"/></RecordItem>    <!-- 3 bits -->
+            <RecordItem subindex="10" bitOffset="48"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color1"/><Description textId="TI_VAR_Color1Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="11" bitOffset="53"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity1"/><Description textId="TI_VAR_Intensity1Dsc"/></RecordItem>         <!-- 3 bits -->
+            <RecordItem subindex="12" bitOffset="56"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color2"/><Description textId="TI_VAR_Color2Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="13" bitOffset="61"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity2"/><Description textId="TI_VAR_Intensity2Dsc"/></RecordItem>         <!-- 3 bits -->
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="1"/>
+          <RecordItemInfo subindex="2" defaultValue="false"/>
+          <RecordItemInfo subindex="3" defaultValue="0"/>
+          <RecordItemInfo subindex="4" defaultValue="1"/>
+          <RecordItemInfo subindex="5" defaultValue="1"/>
+          <RecordItemInfo subindex="6" defaultValue="false"/>
+          <RecordItemInfo subindex="7" defaultValue="0"/>
+          <RecordItemInfo subindex="8" defaultValue="0"/>
+          <RecordItemInfo subindex="9" defaultValue="0"/>
+          <RecordItemInfo subindex="10" defaultValue="0"/>
+          <RecordItemInfo subindex="11" defaultValue="0"/>
+          <RecordItemInfo subindex="12" defaultValue="0"/>
+          <RecordItemInfo subindex="13" defaultValue="0"/>
+          <Name textId="TI_VAR_StateParameters2"/>
+          <Description textId="TI_VAR_StateParameters2"/>
+        </Variable>
+
+        <Variable id="V_StateParameters3" index="86" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="64" subindexAccessSupported = "true">
+            <RecordItem subindex="1"  bitOffset="0"><DatatypeRef datatypeId="DT_AnimationType"/><Name textId="TI_VAR_Type"/><Description textId="TI_VAR_TypeDsc"/></RecordItem>                       <!-- 4 bits -->
+            <RecordItem subindex="2"  bitOffset="4"><DatatypeRef datatypeId="DT_AnimationDirection"/><Name textId="TI_VAR_Direction"/><Description textId="TI_VAR_DirectionDsc"/></RecordItem>        <!-- 1 bit  -->
+            <RecordItem subindex="3"  bitOffset="5"><DatatypeRef datatypeId="DT_AnimationPattern"/><Name textId="TI_VAR_AnimationPattern"/><Description textId="TI_VAR_AnimationPatternDsc"/></RecordItem>              <!-- 3 bits -->
+            <RecordItem subindex="4"  bitOffset="8"><DatatypeRef datatypeId="DT_AnimationSpeed"/><Name textId="TI_VAR_AnimationSpeed"/><Description textId="TI_VAR_SpeedDsc"/></RecordItem>                    <!-- 2 bits -->
+            <RecordItem subindex="5"  bitOffset="10"><DatatypeRef datatypeId="DT_VibrationFeedback"/><Name textId="TI_VAR_VibrationFeedback"/><Description textId="TI_VAR_VibrationFeedbackDsc"/></RecordItem> <!-- 2 bits -->
+            <RecordItem subindex="6"  bitOffset="12"><DatatypeRef datatypeId="DT_OffDelayType"/><Name textId="TI_VAR_OffDelayType"/><Description textId="TI_VAR_OffDelayTypeDsc"/></RecordItem>       <!-- 1 bit  -->
+            <RecordItem subindex="7"  bitOffset="16"><DatatypeRef datatypeId="DT_Delay"/><Name textId="TI_VAR_OffDelay"/><Description textId="TI_VAR_OffDelayDsc"/></RecordItem>                      <!-- 1 bit  -->
+            <RecordItem subindex="8"  bitOffset="32"><DatatypeRef datatypeId="DT_Sequence"/><Name textId="TI_VAR_StaticSequenceValue"/><Description textId="TI_VAR_StaticSequenceDsc"/></RecordItem>  <!-- 8 bits -->
+            <RecordItem subindex="9"  bitOffset="40"><DatatypeRef datatypeId="DT_SequenceShift"/><Name textId="TI_VAR_SequenceShift"/><Description textId="TI_VAR_SequenceShiftDsc"/></RecordItem>    <!-- 3 bits -->
+            <RecordItem subindex="10" bitOffset="48"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color1"/><Description textId="TI_VAR_Color1Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="11" bitOffset="53"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity1"/><Description textId="TI_VAR_Intensity1Dsc"/></RecordItem>         <!-- 3 bits -->
+            <RecordItem subindex="12" bitOffset="56"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color2"/><Description textId="TI_VAR_Color2Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="13" bitOffset="61"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity2"/><Description textId="TI_VAR_Intensity2Dsc"/></RecordItem>         <!-- 3 bits -->
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="1"/>
+          <RecordItemInfo subindex="2" defaultValue="false"/>
+          <RecordItemInfo subindex="3" defaultValue="0"/>
+          <RecordItemInfo subindex="4" defaultValue="1"/>
+          <RecordItemInfo subindex="5" defaultValue="1"/>
+          <RecordItemInfo subindex="6" defaultValue="false"/>
+          <RecordItemInfo subindex="7" defaultValue="0"/>
+          <RecordItemInfo subindex="8" defaultValue="0"/>
+          <RecordItemInfo subindex="9" defaultValue="0"/>
+          <RecordItemInfo subindex="10" defaultValue="0"/>
+          <RecordItemInfo subindex="11" defaultValue="0"/>
+          <RecordItemInfo subindex="12" defaultValue="0"/>
+          <RecordItemInfo subindex="13" defaultValue="0"/>
+          <Name textId="TI_VAR_StateParameters3"/>
+          <Description textId="TI_VAR_StateParameters3"/>
+        </Variable>
+
+        <Variable id="V_StateParameters4" index="87" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="64" subindexAccessSupported = "true">
+            <RecordItem subindex="1"  bitOffset="0"><DatatypeRef datatypeId="DT_AnimationType"/><Name textId="TI_VAR_Type"/><Description textId="TI_VAR_TypeDsc"/></RecordItem>                       <!-- 4 bits -->
+            <RecordItem subindex="2"  bitOffset="4"><DatatypeRef datatypeId="DT_AnimationDirection"/><Name textId="TI_VAR_Direction"/><Description textId="TI_VAR_DirectionDsc"/></RecordItem>        <!-- 1 bit  -->
+            <RecordItem subindex="3"  bitOffset="5"><DatatypeRef datatypeId="DT_AnimationPattern"/><Name textId="TI_VAR_AnimationPattern"/><Description textId="TI_VAR_AnimationPatternDsc"/></RecordItem>              <!-- 3 bits -->
+            <RecordItem subindex="4"  bitOffset="8"><DatatypeRef datatypeId="DT_AnimationSpeed"/><Name textId="TI_VAR_AnimationSpeed"/><Description textId="TI_VAR_SpeedDsc"/></RecordItem>                    <!-- 2 bits -->
+            <RecordItem subindex="5"  bitOffset="10"><DatatypeRef datatypeId="DT_VibrationFeedback"/><Name textId="TI_VAR_VibrationFeedback"/><Description textId="TI_VAR_VibrationFeedbackDsc"/></RecordItem> <!-- 2 bits -->
+            <RecordItem subindex="6"  bitOffset="12"><DatatypeRef datatypeId="DT_OffDelayType"/><Name textId="TI_VAR_OffDelayType"/><Description textId="TI_VAR_OffDelayTypeDsc"/></RecordItem>       <!-- 1 bit  -->
+            <RecordItem subindex="7"  bitOffset="16"><DatatypeRef datatypeId="DT_Delay"/><Name textId="TI_VAR_OffDelay"/><Description textId="TI_VAR_OffDelayDsc"/></RecordItem>                      <!-- 1 bit  -->
+            <RecordItem subindex="8"  bitOffset="32"><DatatypeRef datatypeId="DT_Sequence"/><Name textId="TI_VAR_StaticSequenceValue"/><Description textId="TI_VAR_StaticSequenceDsc"/></RecordItem>  <!-- 8 bits -->
+            <RecordItem subindex="9"  bitOffset="40"><DatatypeRef datatypeId="DT_SequenceShift"/><Name textId="TI_VAR_SequenceShift"/><Description textId="TI_VAR_SequenceShiftDsc"/></RecordItem>    <!-- 3 bits -->
+            <RecordItem subindex="10" bitOffset="48"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color1"/><Description textId="TI_VAR_Color1Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="11" bitOffset="53"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity1"/><Description textId="TI_VAR_Intensity1Dsc"/></RecordItem>         <!-- 3 bits -->
+            <RecordItem subindex="12" bitOffset="56"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color2"/><Description textId="TI_VAR_Color2Dsc"/></RecordItem>                          <!-- 5 bits -->
+            <RecordItem subindex="13" bitOffset="61"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity2"/><Description textId="TI_VAR_Intensity2Dsc"/></RecordItem>         <!-- 3 bits -->
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="1"/>
+          <RecordItemInfo subindex="2" defaultValue="false"/>
+          <RecordItemInfo subindex="3" defaultValue="0"/>
+          <RecordItemInfo subindex="4" defaultValue="1"/>
+          <RecordItemInfo subindex="5" defaultValue="1"/>
+          <RecordItemInfo subindex="6" defaultValue="false"/>
+          <RecordItemInfo subindex="7" defaultValue="0"/>
+          <RecordItemInfo subindex="8" defaultValue="0"/>
+          <RecordItemInfo subindex="9" defaultValue="0"/>
+          <RecordItemInfo subindex="10" defaultValue="0"/>
+          <RecordItemInfo subindex="11" defaultValue="0"/>
+          <RecordItemInfo subindex="12" defaultValue="0"/>
+          <RecordItemInfo subindex="13" defaultValue="0"/>
+          <Name textId="TI_VAR_StateParameters4"/>
+          <Description textId="TI_VAR_StateParameters4"/>
+        </Variable>
+
+        <Variable id="V_CustomColor1Configuration" index="88" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="24" subindexAccessSupported = "false">
+            <RecordItem subindex="1" bitOffset="0"><DatatypeRef datatypeId="DT_CustomColorRGB"/><Name textId="TI_VAR_Color_Red"/><Description textId="TI_VAR_Color_RedDsc"/></RecordItem>
+            <RecordItem subindex="2" bitOffset="8"><DatatypeRef datatypeId="DT_CustomColorRGB"/><Name textId="TI_VAR_Color_Green"/><Description textId="TI_VAR_Color_GreenDsc"/></RecordItem>         
+            <RecordItem subindex="3" bitOffset="16"><DatatypeRef datatypeId="DT_CustomColorRGB"/><Name textId="TI_VAR_Color_Blue"/><Description textId="TI_VAR_Color_BlueDsc"/></RecordItem>
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="255"/>
+          <RecordItemInfo subindex="2" defaultValue="255"/>
+          <RecordItemInfo subindex="3" defaultValue="255"/>
+          <Name textId="TI_VAR_Color_Custom1"/>
+          <Description textId="TI_VAR_Color_Custom1"/>
+        </Variable>
+
+        <Variable id="V_CustomColor2Configuration" index="89" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="24" subindexAccessSupported = "false">
+            <RecordItem subindex="1" bitOffset="0"><DatatypeRef datatypeId="DT_CustomColorRGB"/><Name textId="TI_VAR_Color_Red"/><Description textId="TI_VAR_Color_RedDsc"/></RecordItem>
+            <RecordItem subindex="2" bitOffset="8"><DatatypeRef datatypeId="DT_CustomColorRGB"/><Name textId="TI_VAR_Color_Green"/><Description textId="TI_VAR_Color_GreenDsc"/></RecordItem>         
+            <RecordItem subindex="3" bitOffset="16"><DatatypeRef datatypeId="DT_CustomColorRGB"/><Name textId="TI_VAR_Color_Blue"/><Description textId="TI_VAR_Color_BlueDsc"/></RecordItem>
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="255"/>
+          <RecordItemInfo subindex="2" defaultValue="255"/>
+          <RecordItemInfo subindex="3" defaultValue="255"/>
+          <Name textId="TI_VAR_Color_Custom2"/>
+          <Description textId="TI_VAR_Color_Custom2"/>
+        </Variable>
+
+      </VariableCollection>
+
+      <ProcessDataCollection>
+
+        <ProcessData id="V_Pd_Multicolor">
+          <Condition variableId="V_OperationMode" value="0"/>
+          <ProcessDataIn id="V_Pd_InMulticolor" bitLength="16">
+            <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+              <RecordItem subindex="1" bitOffset="0">
+                <SimpleDatatype xsi:type="BooleanT">
+                   <SingleValue value="false"><Name textId="TI_Inactive"/></SingleValue>
+                   <SingleValue value="true"><Name textId="TI_Active"/></SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_OutputState"/>
+                <Description textId="TI_PD_OutputStateDsc"/>
+              </RecordItem>
+              <RecordItem subindex="2" bitOffset="8">
+                <SimpleDatatype xsi:type="UIntegerT" bitLength="2">
+                   <SingleValue value="0"><Name textId="TI_State1"/></SingleValue>
+                   <SingleValue value="1"><Name textId="TI_State2"/></SingleValue>
+                   <SingleValue value="2"><Name textId="TI_State3"/></SingleValue>
+                   <SingleValue value="3"><Name textId="TI_State4"/></SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_State"/>
+                <Description textId="TI_PD_StateDsc"/>
+              </RecordItem>
+            </Datatype>
+            <Name textId="TI_PD_In"/>
+          </ProcessDataIn>
+          <ProcessDataOut id="V_Pd_OutMulticolor" bitLength="80">
+            <Datatype xsi:type="RecordT" bitLength="80" subindexAccessSupported="false">
+               <RecordItem subindex="1" bitOffset="0">
+                  <SimpleDatatype xsi:type="UIntegerT" bitLength="2">
+                    <SingleValue xsi:type="UIntegerValueT" value="0"><Name textId="TI_VAR_State1"/></SingleValue>
+                    <SingleValue xsi:type="UIntegerValueT" value="1"><Name textId="TI_VAR_State2"/></SingleValue>
+                    <SingleValue xsi:type="UIntegerValueT" value="2"><Name textId="TI_VAR_State3"/></SingleValue>
+                    <SingleValue xsi:type="UIntegerValueT" value="3"><Name textId="TI_VAR_State4"/></SingleValue>
+                  </SimpleDatatype>
+                  <Name textId="TI_PD_State"/>
+                  <Description textId="TI_PD_StateDsc"/>
+               </RecordItem>
+            </Datatype>          
+            <Name textId="TI_PD_Out"/>
+          </ProcessDataOut>
+        </ProcessData>
+
+        <ProcessData id="V_Pd_FourStateFullLogic">
+          <Condition variableId="V_OperationMode" value="1"/>
+          <ProcessDataIn id="V_Pd_InFourStateFullLogic" bitLength="16">
+            <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+              <RecordItem subindex="1" bitOffset="0">
+                <SimpleDatatype xsi:type="BooleanT">
+                   <SingleValue value="false"><Name textId="TI_Inactive"/></SingleValue>
+                   <SingleValue value="true"><Name textId="TI_Active"/></SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_OutputState"/>
+                <Description textId="TI_PD_OutputStateDsc"/>
+              </RecordItem>
+              <RecordItem subindex="2" bitOffset="8">
+                <SimpleDatatype xsi:type="UIntegerT" bitLength="2">
+                   <SingleValue value="0"><Name textId="TI_State1"/></SingleValue>
+                   <SingleValue value="1"><Name textId="TI_State2"/></SingleValue>
+                   <SingleValue value="2"><Name textId="TI_State3"/></SingleValue>
+                   <SingleValue value="3"><Name textId="TI_State4"/></SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_State"/>
+                <Description textId="TI_PD_StateDsc"/>
+              </RecordItem>
+            </Datatype>
+            <Name textId="TI_PD_In"/>
+          </ProcessDataIn>
+          <ProcessDataOut id="V_Pd_OutFourStateFullLogic" bitLength="80">
+            <Datatype xsi:type="RecordT" bitLength="80" subindexAccessSupported="false">
+               <RecordItem subindex="1" bitOffset="0">
+                  <SimpleDatatype xsi:type="BooleanT">
+                    <SingleValue value="false"><Name textId="TI_VAR_Off"/></SingleValue>
+                    <SingleValue value="true"><Name textId="TI_VAR_On"/></SingleValue>
+                  </SimpleDatatype>
+                  <Name textId="TI_PD_JobInput"/>
+                  <Description textId="TI_PD_JobInputDsc"/>
+               </RecordItem>
+            </Datatype>          
+            <Name textId="TI_PD_Out"/>
+          </ProcessDataOut>
+        </ProcessData>
+
+        <ProcessData id="V_Pd_Advanced">
+          <Condition variableId="V_OperationMode" value="2"/>
+          <ProcessDataIn id="V_Pd_InAdvanced" bitLength="16">
+            <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+              <RecordItem subindex="1" bitOffset="0">
+                <SimpleDatatype xsi:type="BooleanT">
+                   <SingleValue value="false"><Name textId="TI_Inactive"/></SingleValue>
+                   <SingleValue value="true"><Name textId="TI_Active"/></SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_OutputState"/>
+                <Description textId="TI_PD_OutputStateDsc"/>
+              </RecordItem>
+            </Datatype>
+            <Name textId="TI_PD_In"/>
+          </ProcessDataIn>
+          <ProcessDataOut id="V_Pd_OutAdvanced" bitLength="80">
+            <Datatype xsi:type="RecordT" bitLength="80" subindexAccessSupported="false">
+            <RecordItem subindex="1"  bitOffset="0"><DatatypeRef datatypeId="DT_AnimationType"/><Name textId="TI_VAR_Type"/><Description textId="TI_VAR_TypeDsc"/></RecordItem>                        <!-- 4 bits -->
+            <RecordItem subindex="2"  bitOffset="4"><DatatypeRef datatypeId="DT_AnimationDirection"/><Name textId="TI_VAR_Direction"/><Description textId="TI_VAR_DirectionDsc"/></RecordItem>         <!-- 1 bit  -->
+            <RecordItem subindex="3"  bitOffset="5"><DatatypeRef datatypeId="DT_AnimationPattern"/><Name textId="TI_VAR_AnimationPattern"/><Description textId="TI_VAR_AnimationPatternDsc"/></RecordItem>               <!-- 3 bits -->
+            <RecordItem subindex="4"  bitOffset="8"><DatatypeRef datatypeId="DT_AnimationSpeed"/><Name textId="TI_VAR_AnimationSpeed"/><Description textId="TI_VAR_SpeedDsc"/></RecordItem>                     <!-- 2 bits -->
+            <RecordItem subindex="5"  bitOffset="10"><DatatypeRef datatypeId="DT_VibrationFeedback"/><Name textId="TI_VAR_VibrationFeedback"/><Description textId="TI_VAR_VibrationFeedbackDsc"/></RecordItem>  <!-- 2 bits -->
+            <RecordItem subindex="6"  bitOffset="32"><DatatypeRef datatypeId="DT_Sequence"/><Name textId="TI_VAR_DynamicSequenceValue"/><Description textId="TI_VAR_DynamicSequenceDsc"/></RecordItem> <!-- 8 bits -->
+            <RecordItem subindex="7"  bitOffset="40"><DatatypeRef datatypeId="DT_SequenceShift"/><Name textId="TI_VAR_SequenceShift"/><Description textId="TI_VAR_SequenceShiftDsc"/></RecordItem>     <!-- 3 bits -->
+            <RecordItem subindex="8"  bitOffset="48"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color1"/><Description textId="TI_VAR_Color1Dsc"/></RecordItem>                           <!-- 5 bits -->
+            <RecordItem subindex="9"  bitOffset="53"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity1"/><Description textId="TI_VAR_Intensity1Dsc"/></RecordItem>          <!-- 3 bits -->
+            <RecordItem subindex="10" bitOffset="56"><DatatypeRef datatypeId="DT_Color"/><Name textId="TI_VAR_Color2"/><Description textId="TI_VAR_Color2Dsc"/></RecordItem>                           <!-- 5 bits -->
+            <RecordItem subindex="11" bitOffset="61"><DatatypeRef datatypeId="DT_ColorIntensity"/><Name textId="TI_VAR_Intensity2"/><Description textId="TI_VAR_Intensity2Dsc"/></RecordItem>          <!-- 3 bits -->
+            </Datatype>          
+            <Name textId="TI_PD_Out"/>
+          </ProcessDataOut>
+        </ProcessData>
+
+        <ProcessData id="V_Pd_LedControl">
+          <Condition variableId="V_OperationMode" value="3"/>
+          <ProcessDataIn id="V_Pd_InLedControl" bitLength="16">
+            <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+              <RecordItem subindex="1" bitOffset="0">
+                <SimpleDatatype xsi:type="BooleanT">
+                   <SingleValue value="false"><Name textId="TI_Inactive"/></SingleValue>
+                   <SingleValue value="true"><Name textId="TI_Active"/></SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_OutputState"/>
+                <Description textId="TI_PD_OutputStateDsc"/>
+              </RecordItem>
+            </Datatype>
+            <Name textId="TI_PD_In"/>
+          </ProcessDataIn>
+          <ProcessDataOut id="V_Pd_OutLedControl" bitLength="80">
+            <Datatype xsi:type="RecordT" bitLength="80" subindexAccessSupported="false">
+              <RecordItem subindex="1" bitOffset="0"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor1"/><Description textId="TI_VAR_LedColor1Dsc"/></RecordItem>
+              <RecordItem subindex="2" bitOffset="4"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity1"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="3" bitOffset="8"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor2"/><Description textId="TI_VAR_LedColorDsc"/></RecordItem>
+              <RecordItem subindex="4" bitOffset="12"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity2"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="5" bitOffset="16"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor3"/><Description textId="TI_VAR_LedColorDsc"/></RecordItem>
+              <RecordItem subindex="6" bitOffset="20"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity3"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="7" bitOffset="24"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor4"/><Description textId="TI_VAR_LedColorDsc"/></RecordItem>
+              <RecordItem subindex="8" bitOffset="28"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity4"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="9" bitOffset="32"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor5"/><Description textId="TI_VAR_LedColorDsc"/></RecordItem>
+              <RecordItem subindex="10" bitOffset="36"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity5"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="11" bitOffset="40"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor6"/><Description textId="TI_VAR_LedColorDsc"/></RecordItem>
+              <RecordItem subindex="12" bitOffset="44"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity6"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="13" bitOffset="48"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor7"/><Description textId="TI_VAR_LedColorDsc"/></RecordItem>
+              <RecordItem subindex="14" bitOffset="52"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity7"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="15" bitOffset="56"><DatatypeRef datatypeId="DT_LedControlColor"/><Name textId="TI_VAR_LedColor8"/><Description textId="TI_VAR_LedColorDsc"/></RecordItem>
+              <RecordItem subindex="16" bitOffset="60"><DatatypeRef datatypeId="DT_LedControlColorIntensity"/><Name textId="TI_VAR_LedIntensity8"/><Description textId="TI_VAR_LedIntensityDsc"/></RecordItem>
+              <RecordItem subindex="17" bitOffset="64"><DatatypeRef datatypeId="DT_VibrationFeedbackInLedControlMode"/><Name textId="TI_VAR_VibrationFeedback"/></RecordItem>
+              <RecordItem subindex="18" bitOffset="66"><DatatypeRef datatypeId="DT_AnimationPattern"/><Name textId="TI_VAR_VibrationPattern"/></RecordItem>
+              <RecordItem subindex="19" bitOffset="69"><DatatypeRef datatypeId="DT_AnimationSpeed"/><Name textId="TI_VAR_VibrationSpeed"/></RecordItem>
+            </Datatype>          
+            <Name textId="TI_PD_Out"/>
+          </ProcessDataOut>
+        </ProcessData>
+
+      </ProcessDataCollection>
+
+      <ErrorTypeCollection>
+        <!-- 0x8000: NO DETAILS -->
+        <StdErrorTypeRef additionalCode="0"   code="128"/>
+        <!-- 0x8011: INDEX NOT AVAILABLE -->
+        <StdErrorTypeRef additionalCode="17"  code="128"/>
+        <!-- 0x8012: SUB-INDEX NOT AVAILABLE -->
+        <StdErrorTypeRef additionalCode="18"  code="128"/>
+        <!-- 0x8020: SRV TEMP NOT AVAILABLE -->
+        <StdErrorTypeRef additionalCode="32"  code="128"/>
+        <!-- 0x8023: ACCESS DENIED -->
+        <StdErrorTypeRef additionalCode="35"  code="128"/>
+        <!-- 0x8030: PARAMETER VALUE OUT OF RANGE -->
+        <StdErrorTypeRef additionalCode="48"  code="128"/>
+        <!-- 0x8031: PARAMETER VALUE ABOVE LIMIT -->
+        <StdErrorTypeRef additionalCode="49"  code="128"/>
+        <!-- 0x8033: PARAMETER LENGTH OVERRUN -->
+        <StdErrorTypeRef additionalCode="51"  code="128"/>
+        <!-- 0x8034: PARAMETER LENGTH UNDERRUN -->
+        <StdErrorTypeRef additionalCode="52"  code="128"/>
+        <!-- 0x8035: FUNCTION NOT AVAILABLE -->
+        <StdErrorTypeRef additionalCode="53"  code="128"/>
+        <!-- 0x8036: FUNCTION TEMPORARILY UNAVAILABLE -->
+        <StdErrorTypeRef additionalCode="54"  code="128"/>
+        <!-- 0x8041: INCONSISTENT PARAMETER SET -->
+        <StdErrorTypeRef additionalCode="65"  code="128"/>
+      </ErrorTypeCollection> 
+
+      <EventCollection>
+        <!-- 0x0000: NO MALFUNCTION -->
+        <StdEventRef code="0"/>
+        <!-- 0x5000: DEVICE HARDWARE -->
+        <StdEventRef code="20480"/>
+      </EventCollection>
+
+      <UserInterface>
+        <MenuCollection>
+          <Menu id="ME_MSR_Param">
+            <MenuRef menuId="ME_ExecutableCommands"/>
+            <MenuRef menuId="ME_DeviceAccessLocks"/>
+            <MenuRef menuId="ME_OperationMode"/>
+            <MenuRef menuId="ME_StateParameters1"/>
+            <MenuRef menuId="ME_StateParameters2"/>
+            <MenuRef menuId="ME_StateParameters3"/>
+            <MenuRef menuId="ME_StateParameters4"/>
+            <MenuRef menuId="ME_InputSettings"/>
+            <MenuRef menuId="ME_OutputSettings"/>
+            <MenuRef menuId="ME_CustomAnimationSettings"/>
+            <MenuRef menuId="ME_CustomColor1Configuration"/>
+            <MenuRef menuId="ME_CustomColor2Configuration"/>
+          </Menu>
+          <Menu id="ME_DeviceAccessLocks">
+            <Name textId="TI_DeviceAccessLocks"/>
+            <RecordItemRef subindex="1" variableId="V_DeviceAccessLocks"/>
+            <RecordItemRef subindex="2" variableId="V_DeviceAccessLocks"/>
+          </Menu>
+          <Menu id="ME_ExecutableCommands">
+            <Name textId="TI_ExecutableCommands"/>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="130">
+                <Description textId="TD_FactoryReset"/>
+                <ActionStartedMessage textId="T_FactoryResetStarted"/>
+              </Button>
+            </VariableRef>
+          </Menu>
+          <Menu id="ME_OperationMode">
+            <Name textId="TI_OperationMode"/>
+              <VariableRef variableId="V_OperationMode"/>
+          </Menu>
+          <Menu id="ME_InputSettings">
+            <Name textId="TI_TouchSettings"/>
+              <RecordItemRef variableId="V_InputSettings" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_InputSettings" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_InputSettings" displayFormat="Dec" subindex="3"/>
+              <RecordItemRef variableId="V_InputSettings" displayFormat="Dec" subindex="4" unitCode="1056"/>
+          </Menu>
+          <Menu id="ME_OutputSettings">
+            <Name textId="TI_OutputSettings"/>
+              <RecordItemRef variableId="V_OutputSettings" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_OutputSettings" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_OutputSettings" displayFormat="Dec" subindex="3" unitCode="1056"/>
+          </Menu>
+          <Menu id="ME_StateParameters1">
+            <Name textId="TI_VAR_StateParameters1"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="3"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="4"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="5"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="6"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="7" unitCode="1056"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="8"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="9"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="10"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="11"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="12"/>
+              <RecordItemRef variableId="V_StateParameters1" displayFormat="Dec" subindex="13"/>
+          </Menu>
+          <Menu id="ME_StateParameters2">
+            <Name textId="TI_VAR_StateParameters2"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="3"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="4"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="5"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="6"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="7" unitCode="1056"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="8"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="9"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="10"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="11"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="12"/>
+              <RecordItemRef variableId="V_StateParameters2" displayFormat="Dec" subindex="13"/>
+          </Menu>
+          <Menu id="ME_StateParameters3">
+            <Name textId="TI_VAR_StateParameters3"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="3"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="4"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="5"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="6"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="7" unitCode="1056"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="8"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="9"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="10"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="11"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="12"/>
+              <RecordItemRef variableId="V_StateParameters3" displayFormat="Dec" subindex="13"/>
+          </Menu>
+          <Menu id="ME_StateParameters4">
+            <Name textId="TI_VAR_StateParameters4"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="3"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="4"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="5"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="6"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="7" unitCode="1056"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="8"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="9"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="10"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="11"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="12"/>
+              <RecordItemRef variableId="V_StateParameters4" displayFormat="Dec" subindex="13"/>
+          </Menu>
+          <Menu id="ME_CustomColor1Configuration">
+            <Name textId="TI_CustomColor1Configuration"/>
+              <RecordItemRef variableId="V_CustomColor1Configuration" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_CustomColor1Configuration" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_CustomColor1Configuration" displayFormat="Dec" subindex="3"/>
+          </Menu>
+          <Menu id="ME_CustomColor2Configuration">
+            <Name textId="TI_CustomColor2Configuration"/>
+              <RecordItemRef variableId="V_CustomColor2Configuration" displayFormat="Dec" subindex="1"/>
+              <RecordItemRef variableId="V_CustomColor2Configuration" displayFormat="Dec" subindex="2"/>
+              <RecordItemRef variableId="V_CustomColor2Configuration" displayFormat="Dec" subindex="3"/>
+          </Menu>
+          <Menu id="ME_CustomAnimationSettings">
+            <Name textId="TI_CustomAnimationSettings"/>
+              <RecordItemRef variableId="V_CustomAnimationSettings" displayFormat="Dec" subindex="1" unitCode="1342"/>
+              <RecordItemRef variableId="V_CustomAnimationSettings" displayFormat="Dec" subindex="2" gradient=".1" unitCode="1077"/>
+              <RecordItemRef variableId="V_CustomAnimationSettings" displayFormat="Dec" subindex="3"/>
+          </Menu>
+          <Menu id="M_OR_MR_SR_Ident">
+            <VariableRef variableId="V_VendorName"/>
+            <VariableRef variableId="V_VendorText"/>
+            <VariableRef variableId="V_ProductName"/>
+            <VariableRef variableId="V_ProductID"/>
+            <VariableRef variableId="V_ProductText"/>
+            <VariableRef variableId="V_SerialNumber"/>
+            <VariableRef variableId="V_HardwareRevision"/>
+            <VariableRef variableId="V_FirmwareRevision"/>
+            <VariableRef variableId="V_ApplicationSpecificTag"/>
+          </Menu>
+        </MenuCollection>
+        <ObserverRoleMenuSet><!-- OR -->
+          <IdentificationMenu menuId="M_OR_MR_SR_Ident"/>
+          <ParameterMenu menuId="ME_MSR_Param"/>
+        </ObserverRoleMenuSet>
+        <MaintenanceRoleMenuSet><!-- MR -->
+          <IdentificationMenu menuId="M_OR_MR_SR_Ident"/>
+          <ParameterMenu menuId="ME_MSR_Param"/>
+        </MaintenanceRoleMenuSet>
+        <SpecialistRoleMenuSet><!-- SR -->
+          <IdentificationMenu menuId="M_OR_MR_SR_Ident"/>
+          <ParameterMenu menuId="ME_MSR_Param"/>
+        </SpecialistRoleMenuSet>
+      </UserInterface>
+
+    </DeviceFunction>
+  </ProfileBody>
+
+  <CommNetworkProfile xsi:type="IOLinkCommNetworkProfileT" iolinkRevision="V1.1">
+    <TransportLayers>
+      <PhysicalLayer minCycleTime="5000" sioSupported="false" bitrate="COM2" mSequenceCapability="9">
+        <Connection xsi:type="M12-4ConnectionT">
+          <ProductRef productId="K50PTCKQ"/>
+          <ProductRef productId="K50PTKQ"/>
+          <ProductRef productId="K50PTVKQ"/>
+          <ProductRef productId="K50PFF50KQ"/>
+          <ProductRef productId="K50PFF100KQ"/>
+          <ProductRef productId="K50PFF200KQ"/>
+          <ProductRef productId="K50PLVKQ"/>
+          <ProductRef productId="K50PPBKQ"/>
+          <Description textId="TI_IOL_ConnectorQD"/>
+          <Wire1 function="L+" color="BN"></Wire1>
+          <Wire2 function="Other" color="WH"></Wire2>
+          <Wire3 function="L-" color="BU"></Wire3>
+          <Wire4 function="C/Q" color="BK"></Wire4>
+        </Connection>
+        <Connection xsi:type="M12-4ConnectionT">
+          <ProductRef productId="K50PTCKQP"/>
+          <ProductRef productId="K50PTKQP"/>
+          <ProductRef productId="K50PTFKQP"/>
+          <ProductRef productId="K50PTVKQP"/>
+          <ProductRef productId="K50PTFVKQP"/>
+          <ProductRef productId="K50PFF50KQP"/>
+          <ProductRef productId="K50PFF100KQP"/>
+          <ProductRef productId="K50PFF200KQP"/>
+          <ProductRef productId="K50PLVKQP"/>
+          <ProductRef productId="K50PPBKQP"/>
+          <Description textId="TI_IOL_ConnectorQP"/>
+          <Wire1 function="L+" color="BN"></Wire1>
+          <Wire2 function="Other" color="WH"></Wire2>
+          <Wire3 function="L-" color="BU"></Wire3>
+          <Wire4 function="C/Q" color="BK"></Wire4>
+        </Connection>
+        <Connection xsi:type="M12-4ConnectionT">
+          <ProductRef productId="K50PFF50KQPMA"/>
+          <ProductRef productId="K50PFF100KQPMA"/>
+          <ProductRef productId="K50PFF200KQPMA"/>
+          <ProductRef productId="K50PLVKQPMA"/>
+          <ProductRef productId="K50PPBKQPMA"/>
+          <Description textId="TI_IOL_ConnectorQP"/>
+          <Wire1 function="L+" color="BN"></Wire1>
+          <Wire2 function="Other" color="WH"></Wire2>
+          <Wire3 function="L-" color="BU"></Wire3>
+          <Wire4 function="C/Q" color="BK"></Wire4>
+        </Connection>
+      </PhysicalLayer>
+    </TransportLayers>
+      <Test>
+         <Config1 index="244" testValue="0x00"/>
+         <Config2 index="257" testValue="0x01"/>
+         <Config3 index="16368" testValue="0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20"/>
+         <Config7 index="16376">
+            <EventTrigger appearValue="0" disappearValue="1"/>
+            <EventTrigger appearValue="2" disappearValue="3"/>
+         </Config7>
+      </Test>
+  </CommNetworkProfile>
+
+  <ExternalTextCollection>
+    <PrimaryLanguage xml:lang="en">
+      <Text id="TI_VendorText" value="More Sensors. More Solutions."/>
+      <Text id="TI_VendorUrl" value="www.bannerengineering.com/io-link"/>
+      <Text id="TI_DeviceFamily" value="Base Mount Button"/>
+      <Text id="TI_DeviceName" value="K50 Pro Device"/>
+    
+      <Text id="TI_Product_Name_K50PTCKQ"       value="K50PTCKQ"/>
+      <Text id="TI_Product_Name_K50PTKQ"        value="K50PTKQ"/>
+      <Text id="TI_Product_Name_K50PTCKQP"      value="K50PTCKQP"/>
+      <Text id="TI_Product_Name_K50PTKQP"       value="K50PTKQP"/>
+      <Text id="TI_Product_Name_K50PTFKQP"      value="K50PTFKQP"/>
+      <Text id="TI_Product_Name_K50PTVKQ"       value="K50PTVKQ"/>
+      <Text id="TI_Product_Name_K50PTVKQP"      value="K50PTVKQP"/>
+      <Text id="TI_Product_Name_K50PTFVKQP"     value="K50PTFVKQP"/>
+      <Text id="TI_Product_Name_K50PFF50KQ"     value="K50PFF50KQ"/>
+      <Text id="TI_Product_Name_K50PFF50KQP"    value="K50PFF50KQP"/>
+      <Text id="TI_Product_Name_K50PFF50KQPMA"  value="K50PFF50KQPMA"/>
+      <Text id="TI_Product_Name_K50PFF100KQ"    value="K50PFF100KQ"/>
+      <Text id="TI_Product_Name_K50PFF100KQP"   value="K50PFF100KQP"/>
+      <Text id="TI_Product_Name_K50PFF100KQPMA" value="K50PFF100KQPMA"/>
+      <Text id="TI_Product_Name_K50PFF200KQ"    value="K50PFF200KQ"/>
+      <Text id="TI_Product_Name_K50PFF200KQP"   value="K50PFF200KQP"/>
+      <Text id="TI_Product_Name_K50PFF200KQPMA" value="K50PFF200KQPMA"/>
+      <Text id="TI_Product_Name_K50PLVKQ"       value="K50PLVKQ"/>
+      <Text id="TI_Product_Name_K50PLVKQP"      value="K50PLVKQP"/>
+      <Text id="TI_Product_Name_K50PLVKQPMA"    value="K50PLVKQPMA"/>
+      <Text id="TI_Product_Name_K50PPBKQ"       value="K50PPBKQ"/>
+      <Text id="TI_Product_Name_K50PPBKQP"      value="K50PPBKQP"/>
+      <Text id="TI_Product_Name_K50PPBKQPMA"    value="K50PPBKQPMA"/>
+      
+      <Text id="TI_Product_Text_K50PTCKQ"       value="K50 Pro Compact Touch with Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PTKQ"        value="K50 Pro Touch with Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PTCKQP"      value="K50 Pro Compact Touch with Euro 4-pin 150 mm PVC Pigtail Connector"/>
+      <Text id="TI_Product_Text_K50PTKQP"       value="K50 Pro Touch with Euro 4-pin 150 mm PVC Pigtail Connector"/>
+      <Text id="TI_Product_Text_K50PTFKQP"      value="K50 Pro Touch with FDA-grade copolyester and Euro 4-pin 150 mm PVC Pigtail Connector"/>
+      <Text id="TI_Product_Text_K50PTVKQ"       value="K50 Pro Touch with Vibration Feedback and Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PTVKQP"      value="K50 Pro Touch with Vibration Feedback and Euro 4-pin 150 mm PVC Pigtail Connector"/>
+      <Text id="TI_Product_Text_K50PTFVKQP"     value="K50 Pro Touch with Vibration Feedback, FDA Copolyester, and Euro 4-pin 150 mm PVC Pigtail Connector"/>
+      <Text id="TI_Product_Text_K50PFF50KQ"     value="K50 Pro 50 mm Optical with Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PFF50KQP"    value="K50 Pro 50 mm Optical with Euro 4-Pin 150 mm PVC Pigtail"/>
+      <Text id="TI_Product_Text_K50PFF50KQPMA"  value="K50 Pro 50 mm Optical with Euro 4-Pin 150 mm PUR Pigtail"/>
+      <Text id="TI_Product_Text_K50PFF100KQ"    value="K50 Pro 100 mm Optical with Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PFF100KQP"   value="K50 Pro 100 mm Optical with Euro 4-Pin 150 mm PVC Pigtail"/>
+      <Text id="TI_Product_Text_K50PFF100KQPMA" value="K50 Pro 100 mm Optical with Euro 4-Pin 150 mm PUR Pigtail"/>
+      <Text id="TI_Product_Text_K50PFF200KQ"    value="K50 Pro 200 mm Optical with Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PFF200KQP"   value="K50 Pro 200 mm Optical with Euro 4-Pin 150 mm PVC Pigtail"/>
+      <Text id="TI_Product_Text_K50PFF200KQPMA" value="K50 Pro 200 mm Optical with Euro 4-Pin 150 mm PUR Pigtail"/>
+      <Text id="TI_Product_Text_K50PLVKQ"       value="K50 Pro 200 mm Optical with Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PLVKQP"      value="K50 Pro 200 mm Optical with Euro 4-Pin 150 mm PVC Pigtail"/>
+      <Text id="TI_Product_Text_K50PLVKQPMA"    value="K50 Pro 200 mm Optical with Euro 4-Pin 150 mm PUR Pigtail"/>
+      <Text id="TI_Product_Text_K50PPBKQ"       value="K50 Pro Push Button with Euro 4-Pin Quick-Disconnect"/>
+      <Text id="TI_Product_Text_K50PPBKQP"      value="K50 Pro Push Button with Euro 4-Pin 150 mm PVC Pigtail"/>
+      <Text id="TI_Product_Text_K50PPBKQPMA"    value="K50 Pro Push Button with Euro 4-Pin 150 mm PUR Pigtail"/>
+      
+      <Text id="TI_IOL_ConnectorQD" value="IO-Link Euro QD"/>
+      <Text id="TI_IOL_ConnectorQP" value="IO-Link Euro QP"/>
+      <Text id="TI_VAR_Color_Red" value="Red"/>
+      <Text id="TI_VAR_Color_Green" value="Green"/>
+      <Text id="TI_VAR_Color_Blue" value="Blue"/>
+      <Text id="TI_VAR_Color_Custom1" value="Custom Color 1"/>
+      <Text id="TI_VAR_Color_Custom2" value="Custom Color 2"/>
+      <Text id="TI_VAR_On" value="On"/>
+      <Text id="TI_VAR_Off" value="Off"/>
+      <Text id="TI_VAR_CustomFlashRate" value="Custom Flash Rate (0.5 - 25.5 Hz)"/>
+      <Text id="TI_VAR_CustomIntensity" value="Custom Intensity (0 - 100%)"/>
+      <Text id="TI_VAR_RestrictToGamut" value="Restrict To Gamut"/>
+      <Text id="TI_VAR_Setting" value="Setting"/>
+      <Text id="TI_OperationMode" value="Operation Mode"/>
+      <Text id="TI_VAR_OperationModeMulticolor" value="Multicolor"/>
+      <Text id="TI_VAR_OperationModeFourStateFullLogic" value="Four State Full Logic"/>
+      <Text id="TI_VAR_OperationModeAdvanced" value="Advanced"/>
+      <Text id="TI_VAR_OperationModeLedControl" value="LED Control"/>
+      <Text id="TI_VAR_OperationModeDemo" value="Demo"/>
+      <Text id="TI_VAR_TouchSensitivity" value="Touch Sensitivity"/>
+      <Text id="TI_VAR_TouchSettings" value="Touch Settings"/>
+      <Text id="TI_VAR_OutputSettings" value="Output Settings"/>
+      <Text id="TI_VAR_OutputStateNormallyOpen" value="Normally Open"/>
+      <Text id="TI_VAR_OutputStateNormallyClosed" value="Normally Closed"/>
+      <Text id="TI_VAR_Momentary" value="Momentary"/>
+      <Text id="TI_VAR_Latched" value="Latched"/>
+      <Text id="TI_VAR_LeadingEdge" value="Leading Edge"/>
+      <Text id="TI_VAR_TrailingEdge" value="Trailing Edge"/>
+      <Text id="TI_VAR_OffDelayType" value="Off Delay Type"/>
+      <Text id="TI_VAR_MuteOff" value="Off"/>
+      <Text id="TI_VAR_MuteOn" value="On"/>
+      <Text id="TI_VAR_OutputFunction" value="Function"/>
+      <Text id="TI_VAR_OutputState" value="Output State"/>
+      <Text id="TI_VAR_MuteEnable" value="Mute Enable"/>
+      <Text id="TI_VAR_OnDelay" value="On Delay (ms)"/>
+      <Text id="TI_VAR_OffDelay" value="Off Delay (ms)"/>
+      <Text id="TI_VAR_StateParameters1" value="State 1 Parameters"/>
+      <Text id="TI_VAR_StateParameters2" value="State 2 Parameters"/>
+      <Text id="TI_VAR_StateParameters3" value="State 3 Parameters"/>
+      <Text id="TI_VAR_StateParameters4" value="State 4 Parameters"/>
+      <Text id="TI_VAR_Type" value="Animation Type"/>
+      <Text id="TI_VAR_AnimationPattern" value="Animation Pattern"/>
+      <Text id="TI_VAR_VibrationPattern" value="Vibration Pattern"/>
+      <Text id="TI_VAR_Direction" value="Animation Direction"/>
+      <Text id="TI_VAR_AnimationSpeed" value="Animation Speed"/>
+      <Text id="TI_VAR_VibrationSpeed" value="Vibration Speed"/>
+      <Text id="TI_VAR_VibrationFeedback" value="Vibration Feedback"/>
+      <Text id="TI_VAR_Pattern" value="Pattern"/>
+      <Text id="TI_VAR_Color1" value="Color 1"/>
+      <Text id="TI_VAR_Color2" value="Color 2"/>
+      <Text id="TI_VAR_Intensity1" value="Color 1 Intensity"/>
+      <Text id="TI_VAR_Intensity2" value="Color 2 Intensity"/>
+      <Text id="TI_VAR_LedColor1" value="LED 1 Color"/>
+      <Text id="TI_VAR_LedColor2" value="LED 2 Color"/>
+      <Text id="TI_VAR_LedColor3" value="LED 3 Color"/>
+      <Text id="TI_VAR_LedColor4" value="LED 4 Color"/>
+      <Text id="TI_VAR_LedColor5" value="LED 5 Color"/>
+      <Text id="TI_VAR_LedColor6" value="LED 6 Color"/>
+      <Text id="TI_VAR_LedColor7" value="LED 8 Color"/>
+      <Text id="TI_VAR_LedColor8" value="LED 8 Color"/>
+      <Text id="TI_VAR_LedIntensity1" value="LED 1 Intensity (0-10)"/>
+      <Text id="TI_VAR_LedIntensity2" value="LED 2 Intensity (0-10)"/>
+      <Text id="TI_VAR_LedIntensity3" value="LED 3 Intensity (0-10)"/>
+      <Text id="TI_VAR_LedIntensity4" value="LED 4 Intensity (0-10)"/>
+      <Text id="TI_VAR_LedIntensity5" value="LED 5 Intensity (0-10)"/>
+      <Text id="TI_VAR_LedIntensity6" value="LED 6 Intensity (0-10)"/>
+      <Text id="TI_VAR_LedIntensity7" value="LED 7 Intensity (0-10)"/>
+      <Text id="TI_VAR_LedIntensity8" value="LED 8 Intensity (0-10)"/>
+      <Text id="TI_VAR_Steady" value="Steady"/>
+      <Text id="TI_VAR_Flash" value="Flash"/>
+      <Text id="TI_VAR_TwoColorFlash" value="Two Color Flash"/>
+      <Text id="TI_VAR_HalfHalf" value="50/50"/>
+      <Text id="TI_VAR_HalfHalfRotate" value="50/50 Rotate"/>
+      <Text id="TI_VAR_Chase" value="Chase"/>
+      <Text id="TI_VAR_IntensitySweep" value="Intensity Sweep"/>
+      <Text id="TI_VAR_ColorSweep" value="Color Sweep"/>
+      <Text id="TI_VAR_Sequence" value="Sequence"/>
+      <Text id="TI_VAR_StaticSequenceValue" value="Static Sequence Value (0-255)"/>
+      <Text id="TI_VAR_DynamicSequenceValue" value="Dynamic Sequence Value (0-255)"/>
+      <Text id="TI_VAR_SequenceShift" value="Sequence Start Location"/>
+      <Text id="TI_VAR_LED1" value="LED1"/>
+      <Text id="TI_VAR_LED2" value="LED2"/>
+      <Text id="TI_VAR_LED3" value="LED3"/>
+      <Text id="TI_VAR_LED4" value="LED4"/>
+      <Text id="TI_VAR_LED5" value="LED5"/>
+      <Text id="TI_VAR_LED6" value="LED6"/>
+      <Text id="TI_VAR_LED7" value="LED7"/>
+      <Text id="TI_VAR_LED8" value="LED8"/>
+      <Text id="TI_VAR_Strobe" value="Strobe"/>
+      <Text id="TI_VAR_ThreePulse" value="Three Pulse"/>
+      <Text id="TI_VAR_SOS" value="SOS"/>
+      <Text id="TI_VAR_Random" value="Random"/>
+      <Text id="TI_VAR_High" value="High"/>
+      <Text id="TI_VAR_Low" value="Low"/>
+      <Text id="TI_VAR_Medium" value="Medium"/>
+      <Text id="TI_VAR_Custom" value="Custom"/>
+      <Text id="TI_VAR_Slow" value="Slow"/>
+      <Text id="TI_VAR_Standard" value="Standard"/>
+      <Text id="TI_VAR_Fast" value="Fast"/>
+      <Text id="TI_VAR_CCW" value="CCW"/>
+      <Text id="TI_VAR_CW" value="CW"/>
+      <Text id="TI_VAR_Green" value="Green"/>
+      <Text id="TI_VAR_Red" value="Red"/>
+      <Text id="TI_VAR_Orange" value="Orange"/>
+      <Text id="TI_VAR_Amber" value="Amber"/>
+      <Text id="TI_VAR_Yellow" value="Yellow"/>
+      <Text id="TI_VAR_LimeGreen" value="Lime Green"/>
+      <Text id="TI_VAR_SpringGreen" value="Spring Green"/>
+      <Text id="TI_VAR_Cyan" value="Cyan"/>
+      <Text id="TI_VAR_SkyBlue" value="Sky Blue"/>
+      <Text id="TI_VAR_Blue" value="Blue"/>
+      <Text id="TI_VAR_Violet" value="Violet"/>
+      <Text id="TI_VAR_Magenta" value="Magenta"/>
+      <Text id="TI_VAR_Rose" value="Rose"/>
+      <Text id="TI_VAR_White" value="White"/>
+      <Text id="TI_VAR_Custom1" value="Custom1"/>
+      <Text id="TI_VAR_Custom2" value="Custom2"/>
+
+      <Text id="TI_VAR_State1" value="State1"/>
+      <Text id="TI_VAR_State2" value="State2"/>
+      <Text id="TI_VAR_State3" value="State3"/>
+      <Text id="TI_VAR_State4" value="State4"/>
+
+      <Text id="TI_PD_Out" value="Process Data Out"/>
+      <Text id="TI_PD_In" value="Process Data In"/>
+      <Text id="TI_PD_OutputState" value="Output State"/>
+      <Text id="TI_PD_OutputStateDsc" value="Output State. Related parameters defined in output and touch settings parameter data."/>
+      <Text id="TI_PD_State" value="State"/>
+      <Text id="TI_PD_StateDsc" value="Animation State. Related parameters defined in Four State Full Logic/Multicolor parameter data."/>
+      <Text id="TI_PD_JobInput" value="Job Input"/>
+      <Text id="TI_PD_JobInputDsc" value="Job Input for Four State Full Logic mode."/>
+      <Text id="TD_FactoryReset" value="Factory Reset"/>
+      <Text id="T_FactoryResetStarted" value="Factory Reset is now in progress!"/>
+      <Text id="TI_DeviceAccessLocks" value="Device Access Locks"/>
+      <Text id="TI_ExecutableCommands" value="Executable Commands"/>
+      <Text id="TI_CustomAnimationSettings" value="Custom Animation Settings"/>
+      <Text id="TI_TouchSettings" value="Touch Settings"/>
+      <Text id="TI_OutputSettings" value="Output Settings"/>
+      <Text id="TI_CustomColor1Configuration" value="Custom Color 1 Configuration"/>
+      <Text id="TI_CustomColor2Configuration" value="Custom Color 2 Configuration"/>
+      <Text id="TI_Active" value="Active"/>
+      <Text id="TI_Inactive" value="Inactive"/>
+      <Text id="TI_State1" value="State 1"/>
+      <Text id="TI_State2" value="State 2"/>
+      <Text id="TI_State3" value="State 3"/>
+      <Text id="TI_State4" value="State 4"/>
+
+      <Text id="TI_VAR_TouchSensitivityDsc" value="Defines the sensitivity of the touch button. High sensitivity will allow easier actuation. Low sensitivity will prevent false actuation."/>
+      <Text id="TI_VAR_OutputStateDsc" value="When defined as normally open, the output is active with a touch input. When defined as normally closed, the output is inactive with a touch input."/>
+      <Text id="TI_VAR_OutputFunctionDsc" value="In Momentary mode, output is active only while the button is touched. In Latching mode, output is activate each time the button is pressed."/>
+      <Text id="TI_VAR_OffDelayTypeDsc" value="A leading edge delay is triggered on the rising edge of a touch input. A trailing edge delay is triggered on a the falling edge of a touch input."/>
+      <Text id="TI_VAR_MuteEnableDsc" value="Prevents the touch input from activating the output."/>
+      <Text id="TI_VAR_OnDelayDsc" value="Length of time the touch button needs to be pressed to trigger 'touch active' state."/>
+      <Text id="TI_VAR_OffDelayDsc" value="Length of time before the device returns to 'touch inactive' state after button is released."/>
+
+      <Text id="TI_VAR_TypeDsc" value="The Animation type"/>
+      <Text id="TI_VAR_DirectionDsc" value="The Direction of Animation rotation"/>
+      <Text id="TI_VAR_AnimationPatternDsc" value="The pattern of Animation/Vibration Feedback"/>
+      <Text id="TI_VAR_SpeedDsc" value="The speed of the Animation/Vibration Feedback"/>
+      <Text id="TI_VAR_VibrationFeedbackDsc" value="Type of Vibration Feedback"/>
+      <Text id="TI_VAR_StaticSequenceDsc" value="Value describing the LED position of the device. LED state defined in parameter data."/>
+      <Text id="TI_VAR_DynamicSequenceDsc" value="Value describing the LED position of the device. LED states defined in process data."/>
+      <Text id="TI_VAR_SequenceShiftDsc" value="Defines the LED location that the sequence animation is initiated at."/>
+      <Text id="TI_VAR_Color1Dsc" value="The main color of the Animation, Custom Colors are defined in Parameter data"/>
+      <Text id="TI_VAR_Intensity1Dsc" value="The Intensity of Color 1, Custom Intensity defined in Parameter Data"/>
+      <Text id="TI_VAR_Color2Dsc" value="The secondary color of the Animation, Custom Colors are defined in Parameter data"/>
+      <Text id="TI_VAR_Intensity2Dsc" value="The Intensity of Color 2, Custom Intensity defined in Parameter Data"/>
+      <Text id="TI_VAR_CustomIntensityDsc" value="Set custom intensity to be used"/>
+      <Text id="TI_VAR_CustomFlashRateDsc" value="Set custom flash rate to be used"/>
+      <Text id="TI_VAR_RestrictToGamutDsc" value="Turn on to show more consistent colors from device to device"/>
+      <Text id="TI_VAR_Color_RedDsc" value="Red value for custom color"/>
+      <Text id="TI_VAR_Color_GreenDsc" value="Green value for custom color"/>
+      <Text id="TI_VAR_Color_BlueDsc" value="Blue value for custom color"/>
+
+      <Text id="TI_VAR_LedColor1Dsc" value="Defines the color of the designated LED. LED 1 is oriented at the 12 O'clock position"/>
+      <Text id="TI_VAR_LedColorDsc" value="Defines the color of the designated LED"/>
+      <Text id="TI_VAR_LedIntensityDsc" value="Defines the intensity of the designated LED"/>
+
+    </PrimaryLanguage>
+  </ExternalTextCollection>
+
+  <Stamp crc="2215679956"><Checker name="IODD-Checker V1.1.4" version="V1.1.4.0"/></Stamp>
+</IODevice>
