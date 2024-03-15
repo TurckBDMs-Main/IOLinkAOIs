@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!--Create an AOI specific to TBEN-Lx-8IOL devices-->
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_Lx_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="0.1 Unreleased" TargetLastEdited="2023-09-13T18:10:05.507Z" ContainsContext="true" ExportDate="Wed Sep 13 14:12:49 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<!--AOI specific to TBEN-Lx-8IOL devices. It requires the  Input, Output, Config tags from the catalog file.-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="TBEN_Lx_8IOL_AOI" TargetType="AddOnInstructionDefinition" TargetClass="Standard" TargetRevision="0.3 Unreleased" TargetLastEdited="2024-03-15T14:45:30.237Z" ContainsContext="true" ExportDate="Fri Mar 15 10:46:13 2024" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
 <Controller Use="Context" Name="TBEN_Lx_8IOL_AOI_V0_2">
 <DataTypes Use="Context">
 <DataType Name="Generic_16_Words" Family="NoFamily" Class="User">
@@ -81,7 +81,7 @@
 <![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
 </Description>
 </Member>
-<Member Name="SendData" DataType="SINT" Dimension="145" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Member Name="SendData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
 <Description>
 <![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
 </Description>
@@ -99,14 +99,15 @@
 </DataType>
 </DataTypes>
 <AddOnInstructionDefinitions Use="Context">
-<AddOnInstructionDefinition Use="Target" Name="TBEN_Lx_8IOL_AOI" Class="Standard" Revision="0.1" RevisionExtension="Unreleased" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm" EditedDate="2023-09-13T18:10:05.507Z"
- EditedBy="AMER-turck-info\jose.sanchez" SoftwareRevision="v32.00">
+<AddOnInstructionDefinition Use="Target" Name="TBEN_Lx_8IOL_AOI" Class="Standard" Revision="0.3" RevisionExtension="Unreleased" Vendor="Turck" ExecutePrescan="true" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2009-07-08T18:42:43.285Z" CreatedBy="USMS\BKollm"
+ EditedDate="2024-03-15T14:45:30.237Z" EditedBy="AMER-turck-info\jose.sanchez" SoftwareRevision="v32.00">
 <Description>
-<![CDATA[Create an AOI specific to TBEN-Lx-8IOL devices]]>
+<![CDATA[AOI specific to TBEN-Lx-8IOL devices. It requires the  Input, Output, Config tags from the catalog file.]]>
 </Description>
 <RevisionNote>
 <![CDATA[V0_1 Initial Approach
-V0_2 Cleaning Up]]>
+V0_2 Cleaning Up
+V0_3 Changes to process Data]]>
 </RevisionNote>
 <AdditionalHelpText>
 <![CDATA[IOL_Service - used with Turck BL20, BL67, BLC and TBEN IOLink masters to process requests from IOL_ReadString, IOL_WriteString, IOL_ReadData and IOL_WriteData AOI's.
@@ -1363,6 +1364,9 @@ Read 0 - Vendor Name - Index 16
 </Text>
 </Rung>
 <Rung Number="32" Type="N">
+<Comment>
+<![CDATA[Get VIDs/DIDs for evry port.]]>
+</Comment>
 <Text>
 <![CDATA[XIC(Active)XIC(Common_Data.Done)[OTL(Done) ,ADD(DoneCount,1,DoneCount) ,OTU(Error) ,OTU(Active) ,OTU(Pending) ,OTU(Pending_or_Active) ,OTU(Common_Data.Done) ,BTD(Common_Data.ReceiveData[10],0,Common_Data.Vendor_IDs[0],8,8) BTD(Common_Data.ReceiveData[11],0,Common_Data.Vendor_IDs[0],0,8) ,BTD(Common_Data.ReceiveData[12],0,Common_Data.Device_IDs[0],24,8) BTD(Common_Data.ReceiveData[13],0,Common_Data.Device_IDs[0],16,8) BTD(Common_Data.ReceiveData[14],0,Common_Data.Device_IDs[0],8,8) BTD(Common_Data.ReceiveData[15],0,Common_Data.Device_IDs[0],0,8) ,BTD(Common_Data.ReceiveData[38],0,Common_Data.Vendor_IDs[1],8,8) BTD(Common_Data.ReceiveData[39],0,Common_Data.Vendor_IDs[1],0,8) ,BTD(Common_Data.ReceiveData[40],0,Common_Data.Device_IDs[1],24,8) BTD(Common_Data.ReceiveData[41],0,Common_Data.Device_IDs[1],16,8) BTD(Common_Data.ReceiveData[42],0,Common_Data.Device_IDs[1],8,8) BTD(Common_Data.ReceiveData[43],0,Common_Data.Device_IDs[1],0,8) ,BTD(Common_Data.ReceiveData[66],0,Common_Data.Vendor_IDs[2],8,8) BTD(Common_Data.ReceiveData[67],0,Common_Data.Vendor_IDs[2],0,8) ,BTD(Common_Data.ReceiveData[68],0,Common_Data.Device_IDs[2],24,8) BTD(Common_Data.ReceiveData[69],0,Common_Data.Device_IDs[2],16,8) BTD(Common_Data.ReceiveData[70],0,Common_Data.Device_IDs[2],8,8) BTD(Common_Data.ReceiveData[71],0,Common_Data.Device_IDs[2],0,8) ,BTD(Common_Data.ReceiveData[94],0,Common_Data.Vendor_IDs[3],8,8) BTD(Common_Data.ReceiveData[95],0,Common_Data.Vendor_IDs[3],0,8) ,BTD(Common_Data.ReceiveData[96],0,Common_Data.Device_IDs[3],24,8) BTD(Common_Data.ReceiveData[97],0,Common_Data.Device_IDs[3],16,8) BTD(Common_Data.ReceiveData[98],0,Common_Data.Device_IDs[3],8,8) BTD(Common_Data.ReceiveData[99],0,Common_Data.Device_IDs[3],0,8) ,BTD(Common_Data.ReceiveData[122],0,Common_Data.Vendor_IDs[4],8,8) BTD(Common_Data.ReceiveData[123],0,Common_Data.Vendor_IDs[4],0,8) ,BTD(Common_Data.ReceiveData[124],0,Common_Data.Device_IDs[4],24,8) BTD(Common_Data.ReceiveData[125],0,Common_Data.Device_IDs[4],16,8) BTD(Common_Data.ReceiveData[126],0,Common_Data.Device_IDs[4],8,8) BTD(Common_Data.ReceiveData[127],0,Common_Data.Device_IDs[4],0,8) ,BTD(Common_Data.ReceiveData[150],0,Common_Data.Vendor_IDs[5],8,8) BTD(Common_Data.ReceiveData[151],0,Common_Data.Vendor_IDs[5],0,8) ,BTD(Common_Data.ReceiveData[152],0,Common_Data.Device_IDs[5],24,8) BTD(Common_Data.ReceiveData[153],0,Common_Data.Device_IDs[5],16,8) BTD(Common_Data.ReceiveData[154],0,Common_Data.Device_IDs[5],8,8) BTD(Common_Data.ReceiveData[155],0,Common_Data.Device_IDs[5],0,8) ,BTD(Common_Data.ReceiveData[178],0,Common_Data.Vendor_IDs[6],8,8) BTD(Common_Data.ReceiveData[179],0,Common_Data.Vendor_IDs[6],0,8) ,BTD(Common_Data.ReceiveData[180],0,Common_Data.Device_IDs[6],24,8) BTD(Common_Data.ReceiveData[181],0,Common_Data.Device_IDs[6],16,8) BTD(Common_Data.ReceiveData[182],0,Common_Data.Device_IDs[6],8,8) BTD(Common_Data.ReceiveData[183],0,Common_Data.Device_IDs[6],0,8) ,BTD(Common_Data.ReceiveData[206],0,Common_Data.Vendor_IDs[7],8,8) BTD(Common_Data.ReceiveData[207],0,Common_Data.Vendor_IDs[7],0,8) ,BTD(Common_Data.ReceiveData[208],0,Common_Data.Device_IDs[7],24,8) BTD(Common_Data.ReceiveData[209],0,Common_Data.Device_IDs[7],16,8) BTD(Common_Data.ReceiveData[210],0,Common_Data.Device_IDs[7],8,8) BTD(Common_Data.ReceiveData[211],0,Common_Data.Device_IDs[7],0,8) ,MOV(0,Status) ,MOV(TBEN_I_DATA[2],Prev_Input_Data_Valids) ];]]>
 </Text>
@@ -1378,16 +1382,25 @@ Read 0 - Vendor Name - Index 16
 </Text>
 </Rung>
 <Rung Number="35" Type="N">
+<Comment>
+<![CDATA[Copy Input Data from IO Block into the Common Data]]>
+</Comment>
 <Text>
 <![CDATA[CPS(TBEN_I_DATA[3],Common_Data.Process_Input_Data[0],8);]]>
 </Text>
 </Rung>
 <Rung Number="36" Type="N">
+<Comment>
+<![CDATA[Copy Output Data from Common Data into the IO Block]]>
+</Comment>
 <Text>
 <![CDATA[CPS(Common_Data.Process_Output_Data[0],TBEN_O_DATA[2],128);]]>
 </Text>
 </Rung>
 <Rung Number="37" Type="N">
+<Comment>
+<![CDATA[Basic Digital Inputs]]>
+</Comment>
 <Text>
 <![CDATA[XIC(TBEN_I_DATA[1].0)OTE(IOL0_DI);]]>
 </Text>
@@ -1448,6 +1461,9 @@ Read 0 - Vendor Name - Index 16
 </Text>
 </Rung>
 <Rung Number="49" Type="N">
+<Comment>
+<![CDATA[Basic Digital Outputs]]>
+</Comment>
 <Text>
 <![CDATA[XIC(DXP1_OUT)OTE(TBEN_O_DATA[1].1);]]>
 </Text>
@@ -1468,6 +1484,9 @@ Read 0 - Vendor Name - Index 16
 </Text>
 </Rung>
 <Rung Number="53" Type="N">
+<Comment>
+<![CDATA[Setting ports to DI or IOL]]>
+</Comment>
 <Text>
 <![CDATA[XIC(PORT1_Mode_IOL_or_DI)MOV(8,TBEN_C_DATA[18]);]]>
 </Text>
@@ -1548,6 +1567,9 @@ Read 0 - Vendor Name - Index 16
 </Text>
 </Rung>
 <Rung Number="69" Type="N">
+<Comment>
+<![CDATA[Enabling / Disabling Outputs on DXPs]]>
+</Comment>
 <Text>
 <![CDATA[XIO(DisableOutput_DXP1)OTE(TBEN_C_DATA[14].0);]]>
 </Text>
@@ -1568,91 +1590,145 @@ Read 0 - Vendor Name - Index 16
 </Text>
 </Rung>
 <Rung Number="73" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.0)MOV(3,TBEN_C_DATA[25]);]]>
 </Text>
 </Rung>
 <Rung Number="74" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.0)MOV(0,TBEN_C_DATA[25])MOV(0,TBEN_C_DATA[26])MOV(0,TBEN_C_DATA[27])MOV(0,TBEN_C_DATA[27]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.0)MOV(0,TBEN_C_DATA[25])MOV(3,TBEN_C_DATA[26])MOV(3,TBEN_C_DATA[27]);]]>
 </Text>
 </Rung>
 <Rung Number="75" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.1)MOV(3,TBEN_C_DATA[41]);]]>
 </Text>
 </Rung>
 <Rung Number="76" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.1)MOV(0,TBEN_C_DATA[41])MOV(0,TBEN_C_DATA[42])MOV(0,TBEN_C_DATA[43]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.1)MOV(0,TBEN_C_DATA[41])MOV(3,TBEN_C_DATA[42])MOV(3,TBEN_C_DATA[43]);]]>
 </Text>
 </Rung>
 <Rung Number="77" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.2)MOV(3,TBEN_C_DATA[57]);]]>
 </Text>
 </Rung>
 <Rung Number="78" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.2)MOV(0,TBEN_C_DATA[57])MOV(0,TBEN_C_DATA[58])MOV(0,TBEN_C_DATA[59]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.2)MOV(0,TBEN_C_DATA[57])MOV(3,TBEN_C_DATA[58])MOV(3,TBEN_C_DATA[59]);]]>
 </Text>
 </Rung>
 <Rung Number="79" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.3)MOV(3,TBEN_C_DATA[73]);]]>
 </Text>
 </Rung>
 <Rung Number="80" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.3)MOV(0,TBEN_C_DATA[73])MOV(0,TBEN_C_DATA[74])MOV(0,TBEN_C_DATA[75]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.3)MOV(0,TBEN_C_DATA[73])MOV(3,TBEN_C_DATA[74])MOV(3,TBEN_C_DATA[75]);]]>
 </Text>
 </Rung>
 <Rung Number="81" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.4)MOV(3,TBEN_C_DATA[89]);]]>
 </Text>
 </Rung>
 <Rung Number="82" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.4)MOV(0,TBEN_C_DATA[89])MOV(0,TBEN_C_DATA[90])MOV(0,TBEN_C_DATA[91]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.4)MOV(0,TBEN_C_DATA[89])MOV(3,TBEN_C_DATA[90])MOV(3,TBEN_C_DATA[91]);]]>
 </Text>
 </Rung>
 <Rung Number="83" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.5)MOV(3,TBEN_C_DATA[105]);]]>
 </Text>
 </Rung>
 <Rung Number="84" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.5)MOV(0,TBEN_C_DATA[105])MOV(0,TBEN_C_DATA[106])MOV(0,TBEN_C_DATA[107]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.5)MOV(0,TBEN_C_DATA[105])MOV(3,TBEN_C_DATA[106])MOV(3,TBEN_C_DATA[107]);]]>
 </Text>
 </Rung>
 <Rung Number="85" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.6)MOV(3,TBEN_C_DATA[121]);]]>
 </Text>
 </Rung>
 <Rung Number="86" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.6)MOV(0,TBEN_C_DATA[121])MOV(0,TBEN_C_DATA[122])MOV(0,TBEN_C_DATA[123]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.6)MOV(0,TBEN_C_DATA[121])MOV(3,TBEN_C_DATA[122])MOV(3,TBEN_C_DATA[123]);]]>
 </Text>
 </Rung>
 <Rung Number="87" Type="N">
+<Comment>
+<![CDATA[Deactivate Diagnostics for unused port]]>
+</Comment>
 <Text>
 <![CDATA[XIO(Common_Data.Port_in_Use.7)MOV(3,TBEN_C_DATA[137]);]]>
 </Text>
 </Rung>
 <Rung Number="88" Type="N">
+<Comment>
+<![CDATA[Enable Diagnostics + In/Out Mapping: Swap All]]>
+</Comment>
 <Text>
-<![CDATA[XIC(Common_Data.Port_in_Use.7)MOV(0,TBEN_C_DATA[137])MOV(0,TBEN_C_DATA[138])MOV(0,TBEN_C_DATA[139]);]]>
+<![CDATA[XIC(Common_Data.Port_in_Use.7)MOV(0,TBEN_C_DATA[137])MOV(3,TBEN_C_DATA[138])MOV(3,TBEN_C_DATA[139]);]]>
 </Text>
 </Rung>
 <Rung Number="89" Type="N">
+<Comment>
+<![CDATA[Port in Use returns back to 0 if an IOL Device AOI is remvoed]]>
+</Comment>
 <Text>
 <![CDATA[MOV(0,Common_Data.Port_in_Use);]]>
 </Text>
 </Rung>
 <Rung Number="90" Type="N">
+<Comment>
+<![CDATA[If there is a VID on a port = Device is connected]]>
+</Comment>
 <Text>
 <![CDATA[NEQ(Common_Data.Vendor_IDs[0],0)OTE(IOLDevice_PORT1);]]>
 </Text>
