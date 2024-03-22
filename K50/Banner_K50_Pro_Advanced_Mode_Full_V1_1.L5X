@@ -1,0 +1,924 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="23.00" TargetName="Banner_K50_Pro_Advanced_Mode_Full" TargetType="AddOnInstructionDefinition" TargetRevision="1.1 " TargetLastEdited="2024-03-22T04:18:14.752Z" ContainsContext="true" Owner="TURCK, TURCK" ExportDate="Thu Mar 21 23:25:05 2024" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="SLX">
+<DataTypes Use="Context">
+<DataType Name="Generic_16_Words" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Data" DataType="INT" Dimension="16" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="Turck_IOLink_Common_Data" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZTurck_IOLi0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="None"/>
+<Member Name="Read" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="0" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Write" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="1" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Reset" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="2" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="3" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Error" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="4" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Port_in_Use" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Each bit is set to show that a port is in use. If it's not in use the port diagnostics will be disabled so IO-Link can still be used but won't throw a red light if no device plugged]]>
+</Description>
+</Member>
+<Member Name="Port" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Index" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SubIndex" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Length" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="TicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Status" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="NextTicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="ReceiveData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SendData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Vendor_IDs" DataType="INT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Device_IDs" DataType="DINT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="WriteData" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Input_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Output_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+</Dependencies>
+</DataType>
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="Banner_K50_Pro_Advanced_Mode_Full" Revision="1.1" Vendor="Turck" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2020-09-30T06:53:42.498Z" CreatedBy="NIDLAB01\Turck User" EditedDate="2024-03-22T04:18:14.752Z" EditedBy="NIDLAB01\Turck User"
+ SoftwareRevision="v23.00">
+<RevisionNote>
+<![CDATA[V1_1 - Added Comments, allowed retrigger of reading of custom color index writes, updated to V0.3 Common Data, read value of custom colors before writing, remapped Process Data to Swap All
+V1_0 - Initial Release
+]]>
+</RevisionNote>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="Custom_Color_1_Red" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 88 - Subindex 1 - 0-255 Amount of Red]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Custom_Color_1_Green" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 88 - Subindex 2 - 0-255 Amount of Green]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Custom_Color_1_Blue" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 88 - Subindex 3 - 0-255 Amount of Blue]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Custom_Color_2_Red" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 89 - Subindex 1 - 0-255 Amount of Red]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Custom_Color_2_Green" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 89 - Subindex 2 - 0-255 - Amount of Green]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Custom_Color_2_Blue" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Index 89 - Subindex 3 - 0-255 - Amount of Blue]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Port" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="true" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Common_Data" TagType="Base" DataType="Turck_IOLink_Common_Data" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="Animation_Type" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = Off
+1 = Steady
+2 = Flash
+3 = Two Color Flash
+4 = 50/50
+5 = 50/50 Rotate
+6 = Chase
+7 = Intensity Sweep
+8 = Color Sweep
+9 = Sequence]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Animation_Direction" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = CCW, 1 = CW]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Animation_Pattern" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = Flash, 1 = Strobe, 2 = Three Pulse, 3 = SOS, 4 = Random]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Animation_Speed" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = Slow, 1 = Medium, 2 = Fast, 3 = Custom]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Vibration_Feedback" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = Off, 1 = On, 2 = Animation Pattern]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Dynamic_Sequence" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0-255]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Sequence_Start_Location" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = LED1
+1 = LED2
+2 = LED3
+3 = LED4
+4 = LED5
+5 = LED6
+6 = LED7
+7 = LED8]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Color_1" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = Green
+1 = Red
+2 = Orange
+3 = Amber
+4 = Yellow
+5 = Lime Green
+6 = Spring Green
+7 = Cyan
+8 = Sky Blue
+9 = Blue
+10 = Violet
+11 = Magenta
+12 = Rose
+13 = White
+14 = Custom1
+15 = Custom2]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Color_1_Intensity" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = High, 1 = Medium, 2 = Low, 3 = Off, 4 = Custom]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Color_2" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = Green
+1 = Red
+2 = Orange
+3 = Amber
+4 = Yellow
+5 = Lime Green
+6 = Spring Green
+7 = Cyan
+8 = Sky Blue
+9 = Blue
+10 = Violet
+11 = Magenta
+12 = Rose
+13 = White
+14 = Custom1
+15 = Custom2]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Color_2_Intensity" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0 = High, 1 = Medium, 2 = Low, 3 = Off, 4 = Custom]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Output_State" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[0 = Inactive, 1 = Active]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Wrong_or_Missing_Device" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 451
+Device ID: 393220]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="Port_Less_One" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Port_Bit" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Output_Mode" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Custom_Color_1_Red_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Custom_Color_1_Green_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Done" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Error" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Active" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Pending" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Pending_or_Active" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Write" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="WriteRequest" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Custom_Color_1_Blue_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Custom_Color_2_Green_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Custom_Color_2_Blue_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Custom_Color_2_Red_Prev" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="StartupDone" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Read_ONS" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Error_DINT" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="StartupCount" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="MyTicketNum" DataType="DINT" Dimensions="32" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ReadRequest" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="DoneCount" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Status" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="ErrorCount" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Write_ONS" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Device_Connected_ONS" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Reread_ONS" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Read_ONS_2" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Read_ONS_3" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[SUB(Port,1,Port_Less_One)XPY(2,Port_Less_One,Port_Bit)OR(Common_Data.Port_in_Use,Port_Bit,Common_Data.Port_in_Use);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[[NEQ(Common_Data.Vendor_IDs[Port-1],451) ,NEQ(Common_Data.Device_IDs[Port-1],393220) ]OTE(Wrong_or_Missing_Device);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[MOV(0,Common_Data.Process_Output_Data[Port_Less_One].Data[0])MOV(0,Common_Data.Process_Output_Data[Port_Less_One].Data[1])MOV(0,Common_Data.Process_Output_Data[Port_Less_One].Data[2])MOV(0,Common_Data.Process_Output_Data[Port_Less_One].Data[3]);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[BTD(Animation_Type,0,Common_Data.Process_Output_Data[Port_Less_One].Data[0],0,4);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(Animation_Direction)OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].4);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[BTD(Animation_Pattern,0,Common_Data.Process_Output_Data[Port_Less_One].Data[0],5,3);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[BTD(Animation_Speed,0,Common_Data.Process_Output_Data[Port_Less_One].Data[0],8,2);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[BTD(Vibration_Feedback,0,Common_Data.Process_Output_Data[Port_Less_One].Data[0],10,2);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[BTD(Dynamic_Sequence,0,Common_Data.Process_Output_Data[Port_Less_One].Data[2],0,8);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[BTD(Sequence_Start_Location,0,Common_Data.Process_Output_Data[Port_Less_One].Data[2],8,3);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[BTD(Color_1,0,Common_Data.Process_Output_Data[Port_Less_One].Data[3],0,5);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[BTD(Color_1_Intensity,0,Common_Data.Process_Output_Data[Port_Less_One].Data[3],5,3);]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[BTD(Color_2,0,Common_Data.Process_Output_Data[Port_Less_One].Data[3],8,5);]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[BTD(Color_2_Intensity,0,Common_Data.Process_Output_Data[Port_Less_One].Data[3],13,3);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].0)OTE(Output_State);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[XIC(S:FS)OTU(StartupDone);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[[XIO(StartupDone) ,XIC(Wrong_or_Missing_Device) ]MOV(0,Read_ONS)MOV(0,Read_ONS_2)MOV(0,Read_ONS_3)MOV(0,Reread_ONS)MOV(0,Done)MOV(0,Error_DINT)MOV(0,Active)MOV(0,Pending)MOV(0,Pending_or_Active)MOV(0,Write)MOV(0,WriteRequest);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)ADD(StartupCount,1,StartupCount);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Read 0 - Operation Mode - Index 80
+Must be set to 2 for Process Data breakdown to work
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[0]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[[XIO(StartupDone) ONS(Read_ONS.0) ,XIC(Done.1) ONS(Reread_ONS.0) ,XIO(Wrong_or_Missing_Device) ONS(Read_ONS_2.0) ]OTL(ReadRequest.0);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Text>
+<![CDATA[XIC(ReadRequest.0)XIO(Pending_or_Active.0)XIC(StartupDone)[OTU(Active.0) ,OTL(Pending.0) ,OTL(Pending_or_Active.0) ,OTU(ReadRequest.0) ];]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[XIC(Pending.0)EQU(Common_Data.TicketNum,MyTicketNum[0])[OTU(Done.0) ,OTU(Error_DINT.0) ,OTL(Active.0) ,OTU(Pending.0) ,MOV(Port,Common_Data.Port) ,MOV(80,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,OTL(Common_Data.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Text>
+<![CDATA[XIC(Active.0)XIC(Common_Data.Done)[OTL(Done.0) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.0) ,OTU(Active.0) ,OTU(Pending.0) ,OTU(Pending_or_Active.0) ,OTU(Common_Data.Done) ,COP(Common_Data.ReceiveData[10],Output_Mode,1) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Text>
+<![CDATA[XIC(Active.0)XIC(Common_Data.Error)[OTU(Done.0) ,OTL(Error_DINT.0) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.0) ,OTU(Pending.0) ,OTU(Pending_or_Active.0) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="25" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Write 1 if Necessary - Operation Mode - Index 80
+Must be set to 2 for Process Data breakdown to work
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[1]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="26" Type="N">
+<Text>
+<![CDATA[NEQ(Output_Mode,2)XIC(Done.0)OTE(Write.1);]]>
+</Text>
+</Rung>
+<Rung Number="27" Type="N">
+<Text>
+<![CDATA[XIC(Write.1)ONS(Write_ONS.1)OTL(WriteRequest.1);]]>
+</Text>
+</Rung>
+<Rung Number="28" Type="N">
+<Text>
+<![CDATA[XIC(WriteRequest.1)XIO(Pending_or_Active.1)XIC(StartupDone)[OTU(Active.1) ,OTL(Pending.1) ,OTL(Pending_or_Active.1) ,OTU(WriteRequest.1) ];]]>
+</Text>
+</Rung>
+<Rung Number="29" Type="N">
+<Text>
+<![CDATA[XIC(Pending.1)EQU(Common_Data.TicketNum,MyTicketNum[1])[OTU(Done.1) ,OTU(Error_DINT.1) ,OTL(Active.1) ,OTU(Pending.1) ,MOV(Port,Common_Data.Port) ,MOV(80,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,MOV(2,Common_Data.SendData[11]) ,MOV(1,Common_Data.Length) ,OTL(Common_Data.Write) ];]]>
+</Text>
+</Rung>
+<Rung Number="30" Type="N">
+<Text>
+<![CDATA[XIC(Active.1)XIC(Common_Data.Done)[OTL(Done.1) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.1) ,OTU(Active.1) ,OTU(Pending.1) ,OTU(Pending_or_Active.1) ,OTU(Common_Data.Done) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="31" Type="N">
+<Text>
+<![CDATA[XIC(Active.1)XIC(Common_Data.Error)[OTU(Done.1) ,OTL(Error_DINT.1) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.1) ,OTU(Pending.1) ,OTU(Pending_or_Active.1) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="32" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Read 4 - Custom Color 1 - Index 88
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[4]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="33" Type="N">
+<Text>
+<![CDATA[XIO(Wrong_or_Missing_Device)[XIO(StartupDone) ONS(Read_ONS.4) ,XIC(Done.2) ONS(Reread_ONS.4) ,ONS(Read_ONS_2.4) ,[NEQ(Custom_Color_1_Red,Custom_Color_1_Red_Prev) ,NEQ(Custom_Color_1_Green,Custom_Color_1_Green_Prev) ,NEQ(Custom_Color_1_Blue,Custom_Color_1_Blue_Prev) ] ONS(Read_ONS_3.4) ]OTL(ReadRequest.4);]]>
+</Text>
+</Rung>
+<Rung Number="34" Type="N">
+<Text>
+<![CDATA[XIC(ReadRequest.4)XIO(Pending_or_Active.4)XIC(StartupDone)[OTU(Active.4) ,OTL(Pending.4) ,OTL(Pending_or_Active.4) ,OTU(ReadRequest.4) ];]]>
+</Text>
+</Rung>
+<Rung Number="35" Type="N">
+<Text>
+<![CDATA[XIC(Pending.4)EQU(Common_Data.TicketNum,MyTicketNum[4])[OTU(Done.4) ,OTU(Error_DINT.4) ,OTL(Active.4) ,OTU(Pending.4) ,MOV(Port,Common_Data.Port) ,MOV(88,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,OTL(Common_Data.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="36" Type="N">
+<Text>
+<![CDATA[XIC(Active.4)XIC(Common_Data.Done)[OTL(Done.4) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.4) ,OTU(Active.4) ,OTU(Pending.4) ,OTU(Pending_or_Active.4) ,OTU(Common_Data.Done) ,COP(Common_Data.ReceiveData[12],Custom_Color_1_Red_Prev,1) ,COP(Common_Data.ReceiveData[11],Custom_Color_1_Green_Prev,1) ,COP(Common_Data.ReceiveData[10],Custom_Color_1_Blue_Prev,1) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="37" Type="N">
+<Text>
+<![CDATA[XIC(Active.4)XIC(Common_Data.Error)[OTU(Done.4) ,OTL(Error_DINT.4) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.4) ,OTU(Pending.4) ,OTU(Pending_or_Active.4) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="38" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Write 2 - Custom Color 1 -  Index 88 
+***************************************************************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[2]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="39" Type="N">
+<Text>
+<![CDATA[[NEQ(Custom_Color_1_Red,Custom_Color_1_Red_Prev) ,NEQ(Custom_Color_1_Green,Custom_Color_1_Green_Prev) ,NEQ(Custom_Color_1_Blue,Custom_Color_1_Blue_Prev) ]XIC(Done.4)OTE(Write.2);]]>
+</Text>
+</Rung>
+<Rung Number="40" Type="N">
+<Text>
+<![CDATA[XIC(Write.2)ONS(Write_ONS.2)OTL(WriteRequest.2);]]>
+</Text>
+</Rung>
+<Rung Number="41" Type="N">
+<Text>
+<![CDATA[XIC(WriteRequest.2)XIO(Pending_or_Active.2)XIC(StartupDone)[OTU(Active.2) ,OTL(Pending.2) ,OTL(Pending_or_Active.2) ,OTU(WriteRequest.2) ];]]>
+</Text>
+</Rung>
+<Rung Number="42" Type="N">
+<Text>
+<![CDATA[XIC(Pending.2)EQU(Common_Data.TicketNum,MyTicketNum[2])[OTU(Done.2) ,OTU(Error_DINT.2) ,OTL(Active.2) ,OTU(Pending.2) ,MOV(Port,Common_Data.Port) ,MOV(88,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,COP(Custom_Color_1_Red,Common_Data.SendData[13],1) ,COP(Custom_Color_1_Green,Common_Data.SendData[12],1) ,COP(Custom_Color_1_Blue,Common_Data.SendData[11],1) ,MOV(3,Common_Data.Length) ,OTL(Common_Data.Write) ];]]>
+</Text>
+</Rung>
+<Rung Number="43" Type="N">
+<Text>
+<![CDATA[XIC(Active.2)XIC(Common_Data.Done)[OTL(Done.2) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.2) ,OTU(Active.2) ,OTU(Pending.2) ,OTU(Pending_or_Active.2) ,OTU(Common_Data.Done) ,MOV(0,Status) ,MOV(Custom_Color_1_Red,Custom_Color_1_Red_Prev) ,MOV(Custom_Color_1_Green,Custom_Color_1_Green_Prev) ,MOV(Custom_Color_1_Blue,Custom_Color_1_Blue_Prev) ];]]>
+</Text>
+</Rung>
+<Rung Number="44" Type="N">
+<Text>
+<![CDATA[XIC(Active.2)XIC(Common_Data.Error)[OTU(Done.2) ,OTL(Error_DINT.2) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.2) ,OTU(Pending.2) ,OTU(Pending_or_Active.2) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="45" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Read 5 - Custom Color 1 - Index 88
+***************************************************************************************************************************
+]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[5]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="46" Type="N">
+<Text>
+<![CDATA[XIO(Wrong_or_Missing_Device)[XIO(StartupDone) ONS(Read_ONS.5) ,XIC(Done.3) ONS(Reread_ONS.5) ,ONS(Read_ONS_2.5) ,[NEQ(Custom_Color_2_Red,Custom_Color_2_Red_Prev) ,NEQ(Custom_Color_2_Green,Custom_Color_2_Green_Prev) ,NEQ(Custom_Color_2_Blue,Custom_Color_2_Blue_Prev) ] ONS(Read_ONS_3.5) ]OTL(ReadRequest.5);]]>
+</Text>
+</Rung>
+<Rung Number="47" Type="N">
+<Text>
+<![CDATA[XIC(ReadRequest.5)XIO(Pending_or_Active.5)XIC(StartupDone)[OTU(Active.5) ,OTL(Pending.5) ,OTL(Pending_or_Active.5) ,OTU(ReadRequest.5) ];]]>
+</Text>
+</Rung>
+<Rung Number="48" Type="N">
+<Text>
+<![CDATA[XIC(Pending.5)EQU(Common_Data.TicketNum,MyTicketNum[5])[OTU(Done.5) ,OTU(Error_DINT.5) ,OTL(Active.5) ,OTU(Pending.5) ,MOV(Port,Common_Data.Port) ,MOV(89,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,OTL(Common_Data.Read) ];]]>
+</Text>
+</Rung>
+<Rung Number="49" Type="N">
+<Text>
+<![CDATA[XIC(Active.5)XIC(Common_Data.Done)[OTL(Done.5) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.5) ,OTU(Active.5) ,OTU(Pending.5) ,OTU(Pending_or_Active.5) ,OTU(Common_Data.Done) ,COP(Common_Data.ReceiveData[12],Custom_Color_2_Red_Prev,1) ,COP(Common_Data.ReceiveData[11],Custom_Color_2_Green_Prev,1) ,COP(Common_Data.ReceiveData[10],Custom_Color_2_Blue_Prev,1) ,MOV(0,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="50" Type="N">
+<Text>
+<![CDATA[XIC(Active.5)XIC(Common_Data.Error)[OTU(Done.5) ,OTL(Error_DINT.5) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.5) ,OTU(Pending.5) ,OTU(Pending_or_Active.5) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="51" Type="N">
+<Comment>
+<![CDATA[***************************************************************************************************************************
+Write 3 - Custom Color 2 - Index 89
+***************************************************************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[XIO(StartupDone)[MOV(Common_Data.NextTicketNum,MyTicketNum[3]) ,ADD(Common_Data.NextTicketNum,1,Common_Data.NextTicketNum) ,EQU(Common_Data.NextTicketNum,30000) MOV(0,Common_Data.NextTicketNum) ];]]>
+</Text>
+</Rung>
+<Rung Number="52" Type="N">
+<Text>
+<![CDATA[[NEQ(Custom_Color_2_Red,Custom_Color_2_Red_Prev) ,NEQ(Custom_Color_2_Green,Custom_Color_2_Green_Prev) ,NEQ(Custom_Color_2_Blue,Custom_Color_2_Blue_Prev) ]XIC(Done.5)OTE(Write.3);]]>
+</Text>
+</Rung>
+<Rung Number="53" Type="N">
+<Text>
+<![CDATA[XIC(Write.3)ONS(Write_ONS.3)OTL(WriteRequest.3);]]>
+</Text>
+</Rung>
+<Rung Number="54" Type="N">
+<Text>
+<![CDATA[XIC(WriteRequest.3)XIO(Pending_or_Active.3)XIC(StartupDone)[OTU(Active.3) ,OTL(Pending.3) ,OTL(Pending_or_Active.3) ,OTU(WriteRequest.3) ];]]>
+</Text>
+</Rung>
+<Rung Number="55" Type="N">
+<Text>
+<![CDATA[XIC(Pending.3)EQU(Common_Data.TicketNum,MyTicketNum[3])[OTU(Done.3) ,OTU(Error_DINT.3) ,OTL(Active.3) ,OTU(Pending.3) ,MOV(Port,Common_Data.Port) ,MOV(89,Common_Data.Index) ,MOV(0,Common_Data.SubIndex) ,COP(Custom_Color_2_Red,Common_Data.SendData[13],1) ,COP(Custom_Color_2_Green,Common_Data.SendData[12],1) ,COP(Custom_Color_2_Blue,Common_Data.SendData[11],1) ,MOV(3,Common_Data.Length) ,OTL(Common_Data.Write) ];]]>
+</Text>
+</Rung>
+<Rung Number="56" Type="N">
+<Text>
+<![CDATA[XIC(Active.3)XIC(Common_Data.Done)[OTL(Done.3) ,ADD(DoneCount,1,DoneCount) ,OTU(Error_DINT.3) ,OTU(Active.3) ,OTU(Pending.3) ,OTU(Pending_or_Active.3) ,OTU(Common_Data.Done) ,MOV(0,Status) ,MOV(Custom_Color_2_Red,Custom_Color_2_Red_Prev) ,MOV(Custom_Color_2_Green,Custom_Color_2_Green_Prev) ,MOV(Custom_Color_2_Blue,Custom_Color_2_Blue_Prev) ];]]>
+</Text>
+</Rung>
+<Rung Number="57" Type="N">
+<Text>
+<![CDATA[XIC(Active.3)XIC(Common_Data.Error)[OTU(Done.3) ,OTL(Error_DINT.3) ,ADD(ErrorCount,1,ErrorCount) ,OTU(Active.3) ,OTU(Pending.3) ,OTU(Pending_or_Active.3) ,OTU(Common_Data.Error) ,MOV(Common_Data.Status,Status) ];]]>
+</Text>
+</Rung>
+<Rung Number="58" Type="N">
+<Text>
+<![CDATA[XIO(StartupDone)OTL(StartupDone);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="Prescan" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[MOV(0,Done)MOV(0,Error)MOV(0,Active)MOV(0,Pending)MOV(0,Pending_or_Active)MOV(0,Write)MOV(0,WriteRequest);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Turck_IOLink_Common_Data"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>
