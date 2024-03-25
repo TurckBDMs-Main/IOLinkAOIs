@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--Automatically identifies the IO-Link Discrete Hub connected and routes the IO the same regardless which is connected.-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="23.00" TargetName="Turck_IOL_Universal_Discrete_Hub" TargetType="AddOnInstructionDefinition" TargetRevision="1.2 " TargetLastEdited="2024-03-25T20:49:05.719Z" ContainsContext="true" Owner="TURCK, TURCK" ExportDate="Mon Mar 25 15:50:57 2024" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="SLX">
+<DataTypes Use="Context">
+<DataType Name="Generic_16_Words" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Data" DataType="INT" Dimension="16" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="Turck_IOLink_Common_Data" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZTurck_IOLi0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="None"/>
+<Member Name="Read" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="0" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Write" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="1" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Reset" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="2" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="3" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Error" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="4" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Port_in_Use" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Each bit is set to show that a port is in use. If it's not in use the port diagnostics will be disabled so IO-Link can still be used but won't throw a red light if no device plugged]]>
+</Description>
+</Member>
+<Member Name="Port" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Index" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SubIndex" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Length" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="TicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Status" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="NextTicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="ReceiveData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SendData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Vendor_IDs" DataType="INT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Device_IDs" DataType="DINT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="WriteData" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Input_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Output_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+</Dependencies>
+</DataType>
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="Turck_IOL_Universal_Discrete_Hub" Revision="1.2" Vendor="Turck" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2023-08-25T04:19:48.293Z" CreatedBy="NIDLAB01\Turck User" EditedDate="2024-03-25T20:49:05.719Z" EditedBy="NIDLAB01\Turck User"
+ SoftwareRevision="v23.00">
+<Description>
+<![CDATA[Automatically identifies the IO-Link Discrete Hub connected and routes the IO the same regardless which is connected.]]>
+</Description>
+<RevisionNote>
+<![CDATA[V1_2 - Sanitized for incorrect Port Input values outside 1-8, don't evaluate Process Data if incorrect device connected.Renamed with Turck_IOL prefix to match other generic AOIs
+V1_1 - Added Comments, upgraded to 0.3 Common Data, added TBIL-S, TBIL-Aux, and FIL20 devices, closed issue #12 (Test TBIL IDs), Issue #14 (Tested other ports), Issue #13 (adding devices), Issue #17
+V1_0 - Initial Release]]>
+</RevisionNote>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="Port" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="true" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Common_Data" TagType="Base" DataType="Turck_IOLink_Common_Data" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="C0_00_or_7A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C0_01_or_7B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C1_02_or_5A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C1_03_or_5B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C2_04_or_3A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C2_05_or_3B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C3_06_or_1A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C3_07_or_1B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C4_08_or_8A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C4_09_or_8B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C5_10_or_6A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C5_11_or_6B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C6_12_or_4A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C6_13_or_4B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C7_14_or_2A_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C7_15_or_2B_Out" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C0_00_or_7A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C0_01_or_7B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C1_02_or_5A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C1_03_or_5B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C2_04_or_3A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C2_05_or_3B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C3_06_or_1A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C3_07_or_1B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C4_08_or_8A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C4_09_or_8B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C5_10_or_6A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C5_11_or_6B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C6_12_or_4A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C6_13_or_4B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C7_14_or_2A_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C7_15_or_2B_In" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C0_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C1_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C2_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C3_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C4_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C5_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C6_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="C7_Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_00_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_01_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_02_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_03_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_04_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_05_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_06_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_07_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_08_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_09_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_10_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_11_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_12_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_13_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_14_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_15_Out" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Undervoltage_Supply_V1" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Undervoltage_Supply_V2" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Undervoltage_Supply_VIOL" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overvoltage_Supply" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Diagnostics_Available" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_M1_16DIP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1978371]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_M1_16DXP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1979139]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_M1_16DXP_B" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 2011907]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_M1_8DOP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1966595]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_L4_16DXP_AUX" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1979147]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_L5_16DXP_AUX" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1979151]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_LL_16DXP_AUX" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1979143]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_S3_8DIP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317 Device ID: 1974291]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_S3_8DXP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1974803]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_S4_8DIP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1974295]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="TBIL_S4_8DXP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1974807]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="FIL20_8DXP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1974811]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="FIL20_16DXP" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Vendor ID: 317
+Device ID: 1979167]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Known_Device_Connected" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Unknown_Device_or_Missing" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Overcurrent_Vaux" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Invalid_Port" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="Port_Less_One" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="One" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Port_Bit" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Two" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="TBIL_Aux" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="TBIL_S_DXP" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="TBIL_S_DIP" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="TBIL_Aux_or_16DXP_B" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="_8DXP" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="_16DXP" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[SUB(Port,1,Port_Less_One)[LES(Port_Less_One,0) ,GRT(Port_Less_One,7) ]MOV(0,Port_Less_One)OTE(Invalid_Port);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)XPY(2,Port_Less_One,Port_Bit)OR(Common_Data.Port_in_Use,Port_Bit,Common_Data.Port_in_Use);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1979147)OTE(TBIL_L4_16DXP_AUX);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1979151)OTE(TBIL_L5_16DXP_AUX);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1979143)OTE(TBIL_LL_16DXP_AUX);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1966595)OTE(TBIL_M1_8DOP);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1978371)OTE(TBIL_M1_16DIP);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1979139)OTE(TBIL_M1_16DXP);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],2011907)OTE(TBIL_M1_16DXP_B);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1974291)OTE(TBIL_S3_8DIP);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1974803)OTE(TBIL_S3_8DXP);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1974295)OTE(TBIL_S4_8DIP);]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1974807)OTE(TBIL_S4_8DXP);]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1974811)OTE(FIL20_8DXP);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)EQU(Common_Data.Vendor_IDs[Port_Less_One],317)EQU(Common_Data.Device_IDs[Port_Less_One],1979167)OTE(FIL20_16DXP);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[XIO(TBIL_L4_16DXP_AUX)XIO(TBIL_L5_16DXP_AUX)XIO(TBIL_LL_16DXP_AUX)XIO(TBIL_M1_8DOP)XIO(TBIL_M1_16DIP)XIO(TBIL_M1_16DXP)XIO(TBIL_M1_16DXP_B)XIO(TBIL_S3_8DIP)XIO(TBIL_S3_8DXP)XIO(TBIL_S4_8DIP)XIO(TBIL_S4_8DXP)XIO(FIL20_8DXP)XIO(FIL20_16DXP)OTE(Unknown_Device_or_Missing);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[XIO(Unknown_Device_or_Missing)OTE(Known_Device_Connected);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_L4_16DXP_AUX) ,XIC(TBIL_L5_16DXP_AUX) ,XIC(TBIL_LL_16DXP_AUX) ]OTE(TBIL_Aux);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux) ,XIC(TBIL_M1_16DXP_B) ]OTE(TBIL_Aux_or_16DXP_B);]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) ,XIC(FIL20_16DXP) ]OTE(_16DXP);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_S3_8DXP) ,XIC(TBIL_S4_8DXP) ]OTE(TBIL_S_DXP);]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_S_DXP) ,XIC(FIL20_8DXP) ]OTE(_8DXP);]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_S3_8DIP) ,XIC(TBIL_S4_8DIP) ]OTE(TBIL_S_DIP);]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].4) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].8) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].8) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].0) ]OTE(C0_00_or_7A_In);]]>
+</Text>
+</Rung>
+<Rung Number="25" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].5) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].9) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].9) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].1) ]OTE(C0_01_or_7B_In);]]>
+</Text>
+</Rung>
+<Rung Number="26" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].0) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].10) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].10) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].2) ]OTE(C1_02_or_5A_In);]]>
+</Text>
+</Rung>
+<Rung Number="27" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].1) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].11) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].11) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].3) ]OTE(C1_03_or_5B_In);]]>
+</Text>
+</Rung>
+<Rung Number="28" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].12) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].12) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].12) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].4) ]OTE(C2_04_or_3A_In);]]>
+</Text>
+</Rung>
+<Rung Number="29" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].13) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].13) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].13) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].5) ]OTE(C2_05_or_3B_In);]]>
+</Text>
+</Rung>
+<Rung Number="30" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].8) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].14) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].14) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].6) ]OTE(C3_06_or_1A_In);]]>
+</Text>
+</Rung>
+<Rung Number="31" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].9) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].15) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].15) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].7) ]OTE(C3_07_or_1B_In);]]>
+</Text>
+</Rung>
+<Rung Number="32" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].6) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].0) ]OTE(C4_08_or_8A_In);]]>
+</Text>
+</Rung>
+<Rung Number="33" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].7) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].1) ]OTE(C4_09_or_8B_In);]]>
+</Text>
+</Rung>
+<Rung Number="34" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].2) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].2) ]OTE(C5_10_or_6A_In);]]>
+</Text>
+</Rung>
+<Rung Number="35" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].3) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].3) ]OTE(C5_11_or_6B_In);]]>
+</Text>
+</Rung>
+<Rung Number="36" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].14) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].4) ]OTE(C6_12_or_4A_In);]]>
+</Text>
+</Rung>
+<Rung Number="37" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].15) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].5) ]OTE(C6_13_or_4B_In);]]>
+</Text>
+</Rung>
+<Rung Number="38" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].10) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].6) ]OTE(C7_14_or_2A_In);]]>
+</Text>
+</Rung>
+<Rung Number="39" Type="N">
+<Text>
+<![CDATA[[[XIC(TBIL_M1_16DXP) ,XIC(TBIL_M1_16DIP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].11) ,XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[2].7) ]OTE(C7_15_or_2B_In);]]>
+</Text>
+</Rung>
+<Rung Number="40" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C1_02_or_5A_Out) ,XIC(_8DXP) XIC(C0_00_or_7A_Out) ,XIC(_16DXP) XIC(C4_08_or_8A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].0);]]>
+</Text>
+</Rung>
+<Rung Number="41" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C1_03_or_5B_Out) ,XIC(_8DXP) XIC(C0_01_or_7B_Out) ,XIC(_16DXP) XIC(C4_09_or_8B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].1);]]>
+</Text>
+</Rung>
+<Rung Number="42" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C5_10_or_6A_Out) ,XIC(_8DXP) XIC(C1_02_or_5A_Out) ,XIC(_16DXP) XIC(C5_10_or_6A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].2);]]>
+</Text>
+</Rung>
+<Rung Number="43" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C5_11_or_6B_Out) ,XIC(_8DXP) XIC(C1_03_or_5B_Out) ,XIC(_16DXP) XIC(C5_11_or_6B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].3);]]>
+</Text>
+</Rung>
+<Rung Number="44" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C0_00_or_7A_Out) ,XIC(_8DXP) XIC(C2_04_or_3A_Out) ,XIC(_16DXP) XIC(C6_12_or_4A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].4);]]>
+</Text>
+</Rung>
+<Rung Number="45" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C0_01_or_7B_Out) ,XIC(_8DXP) XIC(C2_05_or_3B_Out) ,XIC(_16DXP) XIC(C6_13_or_4B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].5);]]>
+</Text>
+</Rung>
+<Rung Number="46" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C4_08_or_8A_Out) ,XIC(_8DXP) XIC(C3_06_or_1A_Out) ,XIC(_16DXP) XIC(C7_14_or_2A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].6);]]>
+</Text>
+</Rung>
+<Rung Number="47" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C4_09_or_8B_Out) ,XIC(_8DXP) XIC(C3_07_or_1B_Out) ,XIC(_16DXP) XIC(C7_15_or_2B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].7);]]>
+</Text>
+</Rung>
+<Rung Number="48" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C3_06_or_1A_Out) ,XIC(_16DXP) XIC(C0_00_or_7A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].8);]]>
+</Text>
+</Rung>
+<Rung Number="49" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C3_07_or_1B_Out) ,XIC(_16DXP) XIC(C0_01_or_7B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].9);]]>
+</Text>
+</Rung>
+<Rung Number="50" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C7_14_or_2A_Out) ,XIC(_16DXP) XIC(C1_02_or_5A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].10);]]>
+</Text>
+</Rung>
+<Rung Number="51" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C7_15_or_2B_Out) ,XIC(_16DXP) XIC(C1_03_or_5B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].11);]]>
+</Text>
+</Rung>
+<Rung Number="52" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C2_04_or_3A_Out) ,XIC(_16DXP) XIC(C2_04_or_3A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].12);]]>
+</Text>
+</Rung>
+<Rung Number="53" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C2_05_or_3B_Out) ,XIC(_16DXP) XIC(C2_05_or_3B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].13);]]>
+</Text>
+</Rung>
+<Rung Number="54" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C6_12_or_4A_Out) ,XIC(_16DXP) XIC(C3_06_or_1A_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].14);]]>
+</Text>
+</Rung>
+<Rung Number="55" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_M1_16DXP) XIC(C6_13_or_4B_Out) ,XIC(_16DXP) XIC(C3_07_or_1B_Out) ]OTE(Common_Data.Process_Output_Data[Port_Less_One].Data[0].15);]]>
+</Text>
+</Rung>
+<Rung Number="56" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].11) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].3) ,[XIC(TBIL_M1_16DXP_B) ,XIC(FIL20_16DXP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].10) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].10) ]OTE(Undervoltage_Supply_V1);]]>
+</Text>
+</Rung>
+<Rung Number="57" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].12) ,[XIC(TBIL_M1_16DXP_B) ,XIC(FIL20_16DXP) ] XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].11) ]OTE(Undervoltage_Supply_V2);]]>
+</Text>
+</Rung>
+<Rung Number="58" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].15) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].7) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].15) ]OTE(Diagnostics_Available);]]>
+</Text>
+</Rung>
+<Rung Number="59" Type="N">
+<Text>
+<![CDATA[XIC(TBIL_Aux)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].10)OTE(Undervoltage_Supply_VIOL);]]>
+</Text>
+</Rung>
+<Rung Number="60" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].8) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].2) ]OTE(Overvoltage_Supply);]]>
+</Text>
+</Rung>
+<Rung Number="61" Type="N">
+<Text>
+<![CDATA[XIC(FIL20_8DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].8)OTE(Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="62" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].0) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].8) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].0) ]OTE(C0_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="63" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].1) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].9) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].1) ]OTE(C1_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="64" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].2) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].10) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].2) ]OTE(C2_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="65" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].3) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].11) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].3) ]OTE(C3_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="66" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].4) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].12) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].4) ]OTE(C4_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="67" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].5) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].13) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].5) ]OTE(C5_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="68" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].6) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].14) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].6) ]OTE(C6_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="69" Type="N">
+<Text>
+<![CDATA[[XIC(TBIL_Aux_or_16DXP_B) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[1].7) ,XIC(TBIL_S_DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].15) ,XIC(TBIL_S_DIP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].7) ]OTE(C7_Overcurrent_Vaux);]]>
+</Text>
+</Rung>
+<Rung Number="70" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].8) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].0) ]OTE(Overcurrent_00_Out);]]>
+</Text>
+</Rung>
+<Rung Number="71" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].9) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].1) ]OTE(Overcurrent_01_Out);]]>
+</Text>
+</Rung>
+<Rung Number="72" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].10) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].2) ]OTE(Overcurrent_02_Out);]]>
+</Text>
+</Rung>
+<Rung Number="73" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].11) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].3) ]OTE(Overcurrent_03_Out);]]>
+</Text>
+</Rung>
+<Rung Number="74" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].12) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].4) ]OTE(Overcurrent_04_Out);]]>
+</Text>
+</Rung>
+<Rung Number="75" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].13) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].5) ]OTE(Overcurrent_05_Out);]]>
+</Text>
+</Rung>
+<Rung Number="76" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].14) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].6) ]OTE(Overcurrent_06_Out);]]>
+</Text>
+</Rung>
+<Rung Number="77" Type="N">
+<Text>
+<![CDATA[[XIC(_16DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].15) ,XIC(_8DXP) XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].7) ]OTE(Overcurrent_07_Out);]]>
+</Text>
+</Rung>
+<Rung Number="78" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].0)OTE(Overcurrent_08_Out);]]>
+</Text>
+</Rung>
+<Rung Number="79" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].1)OTE(Overcurrent_09_Out);]]>
+</Text>
+</Rung>
+<Rung Number="80" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].2)OTE(Overcurrent_10_Out);]]>
+</Text>
+</Rung>
+<Rung Number="81" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].3)OTE(Overcurrent_11_Out);]]>
+</Text>
+</Rung>
+<Rung Number="82" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].4)OTE(Overcurrent_12_Out);]]>
+</Text>
+</Rung>
+<Rung Number="83" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].5)OTE(Overcurrent_13_Out);]]>
+</Text>
+</Rung>
+<Rung Number="84" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].6)OTE(Overcurrent_14_Out);]]>
+</Text>
+</Rung>
+<Rung Number="85" Type="N">
+<Text>
+<![CDATA[XIC(_16DXP)XIC(Common_Data.Process_Input_Data[Port_Less_One].Data[0].7)OTE(Overcurrent_15_Out);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Turck_IOLink_Common_Data"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>
