@@ -1,2 +1,4 @@
 V1_0 Initial Release
 V1_1 Fix bugs (TON Delay for Ticket Handling)
+V1_2 Adding Descriptors for Tags
+V1_3 Adding Turck_ Prefix, Deactivate DS, others...
