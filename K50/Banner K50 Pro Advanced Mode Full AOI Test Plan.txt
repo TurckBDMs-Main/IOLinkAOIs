@@ -1,0 +1,26 @@
+
+1. Set Animation Type to 1, light turns on solid green. Rotate through all color 1 options, end with it on 1 (red).
+2. Set Color 1 Intensity to 2, light goes dimmer
+3. Animation type to 2, light flashes
+4. Animation Pattern to 1,2,3,4, back to 0
+5. Animation Speed to 1,2, back to 0
+6. Animation Type to 3, light blinks red and green
+7. Color 2 Intensity
+8. Color 2 options
+9. Animation type to 6, lights chase
+10. Animation Direction to 1, rotation reverses
+11. Touch button, Output state comes on
+12. Vibration Feedback to 1, Touch button, vibrates
+13. Vibration Feedback to 2, touch button, vibrates in pattern
+14. Animation Type to 3, Color 1 to 14, Color 2 to 15
+
+Index Testing
+1. Plug light to another port, use IODD Configurator to set the Mode away from Advanced mode
+2. Plug light back to original port, use IODD configurator to verify AOI reset mode back to Advanced.
+3. Change the following Index values in AOI,  verify change was written from IODD Configurator and color should update on light
+	- Custom Color 1 Red
+	- Custom Color 1 Green
+	- Custom Color 1 Blue
+	- Custom Color 2 Red
+	- Custom Color 2 Green
+	- Custom Color 2 Blue
