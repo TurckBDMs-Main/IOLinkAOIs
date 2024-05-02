@@ -1,0 +1,7 @@
+Turn on Output 1A in AOI, verify Output 1A physically on
+Input 1A is on in AOI
+Turn on Output 8B in AOI, verify Output 8B turns on physically
+Input 8B on in AOI
+
+
+

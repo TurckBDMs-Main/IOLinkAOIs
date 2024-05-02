@@ -1,0 +1,9 @@
+1. Plug PS+ into another port, use IODD Configurator to change Output 2 Mode to Analog and Process Data Profile to Profile 1.
+2. Plug PS+ back into original port, use IODD Configurator to verify AOI reset Output 2 Mode to not be Analog and Profile Data Profile to Profile 3.
+3. Put pressure on device, verify the pressure in bar matches between display and AOI.
+4. Change Units to 1, display changes to PSI. 
+5. Verify PSI value on display matches AOI.
+6. Change Display Rotation to 1, verify display rotates.
+7. Go into menu and change the units to bar
+8. Change menu lock to 1, try to change the units again, should only be able to view.
+9. Use IODD Configurator and verify the Min and Max seen pressures match.

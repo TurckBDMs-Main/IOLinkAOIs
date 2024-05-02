@@ -1,0 +1,1 @@
+This AOI is tested in conjunction with IO-Link IO Block Testing.

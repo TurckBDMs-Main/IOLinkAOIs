@@ -1,0 +1,12 @@
+Plug in TBIL-M1-16DXP
+Turn on Output 1A in AOI, verify Output 1A physically on
+Input 1A is on in AOI
+Turn on Output 8B in AOI, verify Output 8B turns on physically
+Input 8B on in AOI
+Turn on 4B and 5A on in AOI
+Verify both on Physically as well as Inputs in AOI
+Unplug 16DXP, plug in each Hub available in turn. List each hub tested below:
+
+
+
+
