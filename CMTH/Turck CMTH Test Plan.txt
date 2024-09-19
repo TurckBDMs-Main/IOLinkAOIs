@@ -1,0 +1,7 @@
+1. Check Temperature and Humidity values.  Compare to webserver.
+2. Check Outputs for Temperature and Humidty.  Compare to webserver.  Cause the outputs to change states.
+3. Check Operating Hours, Max Temperature, Max Humidity, Min Temperature, Min Humidity.  Compare to webserver.
+4. Check Device Status.  Force a change by causing humidity to exceed 100% (i.e. breath on sensor to raise humidity).  Compare to webserver.
+5. Check Reset_Max and Reset_Min by changing value from 0 to 1.  Reset_Done should turn On when complete and Min and Max Values should reset.
+6. Set Display_DegF to 1 and verify temperature values change from Celsius to Fahrenheit. Reset back to 0 and verify temperature values go back to Celsius.
+

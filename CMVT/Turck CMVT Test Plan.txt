@@ -1,0 +1,11 @@
+1. Check vibration on the X-Axis.  Compare to webserver.
+2. Check vibration on the Y-Axis.  Compare to webserver.
+3. Check vibration on the Z-Axis.  Compare to webserver.
+4. Check the magnitude of the vibrations.  Compare to webserver.
+5. Check the temperature. Compare to webserver.
+6. Check Output1 and Output2.  Compare to webserver.  Cause the outputs to change states.
+7. Check Operating Hours, Max Temperature, Min Temperature.  Compare to webserver.
+8. Set Display_DegF to 1 and verify temperature values change from Celsius to Fahrenheit. Reset back to 0 and verify temperature values go back to Celsius.
+9. Go into Controller tags to .DataConfig.  Change the value (0..7) and check the webserver Process Data Configuration parameter.  It should match.
+10. Go into Controller tags to .DataConfig.  Change the value < 0 or > 7.  Make sure value reverts to last state and does not change Process Data Configuration parameter in the webserver.
+
