@@ -1,0 +1,2 @@
+V1.0:	8/28/2024	AJM	Test Release
+V1_1: 	8/29/2024	AJM	Fixed issues with acyclic data freezing, acyclic write errors, Reset Device_Status on Missing or Wrong Device, Zero Temp & Humidty on Device Fault
