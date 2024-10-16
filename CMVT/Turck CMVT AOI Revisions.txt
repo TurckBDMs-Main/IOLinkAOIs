@@ -1,1 +1,2 @@
 V1.0:	9/4/2024	AJM	Initial Release
+V1_1: 	10/16/24	AJM	Added BTD to X, Y, Z Axis, and Magnitude Calc.
