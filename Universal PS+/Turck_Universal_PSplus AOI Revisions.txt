@@ -1,0 +1,22 @@
+V1_0: Initial Release
+V1_1: Added PS3xx-10V
+
+List of compatible devices:
+PS3xx-0V
+PS3xx-1
+PS3xx-1A
+PS3xx-1V
+PS3xx-2.5A
+PS3xx-2.5V
+PS3xx-10V
+PS5xx-10A
+PS5xx-10V
+PS5xx-16A
+PS5xx-16V
+PS5xx-25A
+PS5xx-25V
+PS5xx-40V
+PS5xx-100
+PS5xx-250
+PS5xx-400
+PS5xx-600
