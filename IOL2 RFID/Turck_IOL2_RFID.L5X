@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="23.00" TargetName="Turck_IOL2_RFID" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2024-10-30T14:39:27.817Z" ContainsContext="true" Owner="TURCK, TURCK" ExportDate="Wed Oct 30 09:43:39 2024" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="IOL_AOI_DEV">
+<DataTypes Use="Context">
+<DataType Name="Generic_28_Bytes" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Data_0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_1" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_2" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_3" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_4" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_5" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_6" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_7" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_8" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_9" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_10" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_11" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_12" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_13" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_14" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_15" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_16" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_17" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_18" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_19" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_20" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_21" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_22" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_23" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_24" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_25" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_26" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Data_27" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="Generic_16_Words" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Data" DataType="INT" Dimension="16" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="Turck_IOLink_Common_Data" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZTurck_IOLi0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="None"/>
+<Member Name="Read" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="0" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Write" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="1" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Reset" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="2" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="3" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Error" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZTurck_IOLi0" BitNumber="4" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Port_in_Use" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Each bit is set to show that a port is in use. If it's not in use the port diagnostics will be disabled so IO-Link can still be used but won't throw a red light if no device plugged]]>
+</Description>
+</Member>
+<Member Name="Port" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Index" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SubIndex" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Length" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="TicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Status" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="NextTicketNum" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="ReceiveData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="SendData" DataType="SINT" Dimension="255" Radix="Decimal" Hidden="false" ExternalAccess="None">
+<Description>
+<![CDATA[For internal use to integrate IOLRead and IOWrite with IOLService]]>
+</Description>
+</Member>
+<Member Name="Vendor_IDs" DataType="INT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Device_IDs" DataType="DINT" Dimension="8" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="WriteData" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Input_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Process_Output_Data" DataType="Generic_16_Words" Dimension="8" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+<Dependency Type="DataType" Name="Generic_16_Words"/>
+</Dependencies>
+</DataType>
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Use="Target" Name="Turck_IOL2_RFID" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2024-09-20T15:49:04.914Z" CreatedBy="NIDLAB01\Turck User" EditedDate="2024-10-30T14:39:27.817Z" EditedBy="NIDLAB01\Turck User" SoftwareRevision="v23.00"
+>
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Input - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only">
+<Description>
+<![CDATA[Enable Output - System Defined Parameter]]>
+</Description>
+</Parameter>
+<Parameter Name="Port" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Common_Data" TagType="Base" DataType="Turck_IOLink_Common_Data" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="Read_Data_Buffer" TagType="Base" DataType="Generic_28_Bytes" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="Write_Data_Buffer" TagType="Base" DataType="Generic_28_Bytes" Usage="InOut" Required="true" Visible="true" Constant="false"/>
+<Parameter Name="Start" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Command_Code" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Tag_Memory_Address" TagType="Base" DataType="SINT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<Description>
+<![CDATA[Starting address for read/write access of tag user data]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Memory_Block_Count" TagType="Base" DataType="INT" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Number of
+memory blocks
+of the tag for
+read/write
+access. Typically 4Bytes/block for EEPROM tags and 8 Bytes/block for FRAM]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="RF_Field_Active" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0: RF field switched off
+1: RF field switched on]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Tag_Present" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0: No tag within the detection range
+1: Tag present at read/write head]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Ready_Flag" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Change of state (0->1),(1->0) Command executed, new data available
+0 or 1: No new data available]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Error" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[0: Command executed error-free
+1: Command executed with error]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Error_Code" TagType="Base" DataType="INT" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[1: Command Not Suported
+2: Format Error
+3: option not supported
+5: Command Problem
+6: CommTagError
+15: Tag Error
+16: No Memory Block
+18: Block Protected 
+27: AppLOGError
+30: Tag Comm Error
+255: App General Error]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Alarm_1" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Alarm_2" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Current_Address" TagType="Base" DataType="INT" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Tag 
+User Memory Address that was most recently accessed]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Time_of_Detection" TagType="Base" DataType="INT" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[System time at which the data was detected]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Time_in_Detection_Range" TagType="Base" DataType="INT" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Time in which the tag is located in the detection range]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="RSSI" TagType="Base" DataType="INT" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Relative Signal Strength Indicator]]>
+</Description>
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Disable_RF_Field" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Switch off the R/W Head's read/write field]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="IDLE" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[R/W Head is IDLE]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="AUTO_READ" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[R/W Head is in AUTO READ mode]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="AUTO_WRITE" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[R/W Head is in AUTO WRITE mode]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="READ" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="Read Only">
+<Description>
+<![CDATA[R/W Head is in single-shot READ mode]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="WRITE" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<Description>
+<![CDATA[R/W Head is in single-shot WRITE mode]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="READ_UID" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="true" ExternalAccess="None">
+<Description>
+<![CDATA[R/W is in READ_UID mode and will report the 8 byte UID of the tag presented to the reader]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="Excpected_Vendor_ID" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>3D 01</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="317"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Input_Status_Word_Swapped" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Output_Control_Word_Swapped" DataType="INT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Command_Code_Echo" DataType="SINT" Radix="Decimal" ExternalAccess="None">
+<Description>
+<![CDATA[CMDCPY (Shows Active Command Code)
+
+0: None
+1: Auto Read
+2: Auto Write 
+3. Read
+4. Write
+5. UID]]>
+</Description>
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="SINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Expected_Device_ID" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>03 00 21 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="2162691"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Port_Less_One" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Invalid_Port" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Port_Bit" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00 00 00 00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Wrong_or_Missing_Device" DataType="BOOL" Radix="Decimal" ExternalAccess="None">
+<DefaultData>00</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[SUB(Port,1,Port_Less_One)[LES(Port_Less_One,0) ,GRT(Port_Less_One,7) ]MOV(0,Port_Less_One)OTE(Invalid_Port);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XPY(2,Port_Less_One,Port_Bit)OR(Common_Data.Port_in_Use,Port_Bit,Common_Data.Port_in_Use);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[XIO(Invalid_Port)[NEQ(Common_Data.Vendor_IDs[Port_Less_One],317) ,NEQ(Common_Data.Device_IDs[Port_Less_One],Expected_Device_ID) NEQ(Common_Data.Device_IDs[Port_Less_One],66102) ]OTE(Wrong_or_Missing_Device);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[SWPB(Common_Data.Process_Input_Data[Port_Less_One].Data[15],WORD,Input_Status_Word_Swapped);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[BTD(Input_Status_Word_Swapped,0,Command_Code_Echo,0,3);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[EQU(Command_Code_Echo,0)OTE(IDLE);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[EQU(Command_Code_Echo,1)OTE(AUTO_READ);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[EQU(Command_Code_Echo,2)OTE(AUTO_WRITE);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[EQU(Command_Code_Echo,3)OTE(READ);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[EQU(Command_Code_Echo,4)OTE(WRITE);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[EQU(Command_Code_Echo,5)OTE(READ_UID);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[XIC(Input_Status_Word_Swapped.4)OTE(RF_Field_Active);]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[XIC(Input_Status_Word_Swapped.5)OTE(Tag_Present);]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[XIC(Input_Status_Word_Swapped.6)OTE(Error);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[XIC(Input_Status_Word_Swapped.7)OTE(Ready_Flag);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[BTD(Input_Status_Word_Swapped,10,Error_Code,0,6);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[XIC(Input_Status_Word_Swapped.8)OTE(Alarm_1);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Text>
+<![CDATA[XIC(Input_Status_Word_Swapped.9)OTE(Alarm_2);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Text>
+<![CDATA[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[14],0,Current_Address,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[14],8,RSSI,0,8);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Text>
+<![CDATA[BTD(Command_Code,0,Output_Control_Word_Swapped,0,4);]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[BTD(Tag_Memory_Address,0,Common_Data.Process_Output_Data[Port_Less_One].Data[14],0,8);]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Text>
+<![CDATA[XIC(Disable_RF_Field)OTE(Output_Control_Word_Swapped.4);]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Text>
+<![CDATA[XIC(Start)OTE(Output_Control_Word_Swapped.7);]]>
+</Text>
+</Rung>
+<Rung Number="25" Type="N">
+<Text>
+<![CDATA[SWPB(Output_Control_Word_Swapped,WORD,Common_Data.Process_Output_Data[Port_Less_One].Data[15]);]]>
+</Text>
+</Rung>
+<Rung Number="26" Type="N">
+<Text>
+<![CDATA[BTD(Memory_Block_Count,0,Common_Data.Process_Output_Data[Port_Less_One].Data[15],0,3);]]>
+</Text>
+</Rung>
+<Rung Number="27" Type="N">
+<Comment>
+<![CDATA[_______________________________
+_______________________________
+
+Swap and Reorder Incoming Tag Data into Read_Data_Buffer object. 
+_______________________________
+_______________________________]]>
+</Comment>
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[13],8,Read_Data_Buffer.Data_0,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[13],0,Read_Data_Buffer.Data_1,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="28" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[12],8,Read_Data_Buffer.Data_2,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[12],0,Read_Data_Buffer.Data_3,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="29" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[11],8,Read_Data_Buffer.Data_4,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[11],0,Read_Data_Buffer.Data_5,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="30" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[10],8,Read_Data_Buffer.Data_6,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[10],0,Read_Data_Buffer.Data_7,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="31" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[9],8,Read_Data_Buffer.Data_8,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[9],0,Read_Data_Buffer.Data_9,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="32" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[8],8,Read_Data_Buffer.Data_10,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[8],0,Read_Data_Buffer.Data_11,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="33" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[7],8,Read_Data_Buffer.Data_12,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[7],0,Read_Data_Buffer.Data_13,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="34" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[6],8,Read_Data_Buffer.Data_14,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[6],0,Read_Data_Buffer.Data_15,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="35" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[5],8,Read_Data_Buffer.Data_16,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[5],0,Read_Data_Buffer.Data_17,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="36" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[4],8,Read_Data_Buffer.Data_18,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[4],0,Read_Data_Buffer.Data_19,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="37" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[3],8,Read_Data_Buffer.Data_20,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[3],0,Read_Data_Buffer.Data_21,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="38" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[2],8,Read_Data_Buffer.Data_22,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[2],0,Read_Data_Buffer.Data_23,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="39" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[1],8,Read_Data_Buffer.Data_24,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[1],0,Read_Data_Buffer.Data_25,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="40" Type="N">
+<Text>
+<![CDATA[[BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[0],8,Read_Data_Buffer.Data_26,0,8) ,BTD(Common_Data.Process_Input_Data[Port_Less_One].Data[0],0,Read_Data_Buffer.Data_27,0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="41" Type="N">
+<Comment>
+<![CDATA[_______________________________
+_______________________________
+]]>
+</Comment>
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="42" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_27,0,Common_Data.Process_Output_Data[Port_Less_One].Data[0],0,8) ,BTD(Write_Data_Buffer.Data_26,0,Common_Data.Process_Output_Data[Port_Less_One].Data[0],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="43" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_25,0,Common_Data.Process_Output_Data[Port_Less_One].Data[1],0,8) ,BTD(Write_Data_Buffer.Data_24,0,Common_Data.Process_Output_Data[Port_Less_One].Data[1],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="44" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_23,0,Common_Data.Process_Output_Data[Port_Less_One].Data[2],0,8) ,BTD(Write_Data_Buffer.Data_22,0,Common_Data.Process_Output_Data[Port_Less_One].Data[2],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="45" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_21,0,Common_Data.Process_Output_Data[Port_Less_One].Data[3],0,8) ,BTD(Write_Data_Buffer.Data_20,0,Common_Data.Process_Output_Data[Port_Less_One].Data[3],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="46" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_19,0,Common_Data.Process_Output_Data[Port_Less_One].Data[4],0,8) ,BTD(Write_Data_Buffer.Data_18,0,Common_Data.Process_Output_Data[Port_Less_One].Data[4],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="47" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_17,0,Common_Data.Process_Output_Data[Port_Less_One].Data[5],0,8) ,BTD(Write_Data_Buffer.Data_16,0,Common_Data.Process_Output_Data[Port_Less_One].Data[5],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="48" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_15,0,Common_Data.Process_Output_Data[Port_Less_One].Data[6],0,8) ,BTD(Write_Data_Buffer.Data_14,0,Common_Data.Process_Output_Data[Port_Less_One].Data[6],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="49" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_13,0,Common_Data.Process_Output_Data[Port_Less_One].Data[7],8,8) ,BTD(Write_Data_Buffer.Data_12,0,Common_Data.Process_Output_Data[Port_Less_One].Data[7],0,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="50" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_11,0,Common_Data.Process_Output_Data[Port_Less_One].Data[8],0,8) ,BTD(Write_Data_Buffer.Data_10,0,Common_Data.Process_Output_Data[Port_Less_One].Data[8],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="51" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_9,0,Common_Data.Process_Output_Data[Port_Less_One].Data[9],0,8) ,BTD(Write_Data_Buffer.Data_8,0,Common_Data.Process_Output_Data[Port_Less_One].Data[9],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="52" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_7,0,Common_Data.Process_Output_Data[Port_Less_One].Data[10],0,8) ,BTD(Write_Data_Buffer.Data_6,0,Common_Data.Process_Output_Data[Port_Less_One].Data[10],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="53" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_5,0,Common_Data.Process_Output_Data[Port_Less_One].Data[11],0,8) ,BTD(Write_Data_Buffer.Data_4,0,Common_Data.Process_Output_Data[Port_Less_One].Data[11],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="54" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_3,0,Common_Data.Process_Output_Data[Port_Less_One].Data[12],0,8) ,BTD(Write_Data_Buffer.Data_2,0,Common_Data.Process_Output_Data[Port_Less_One].Data[12],8,8) ];]]>
+</Text>
+</Rung>
+<Rung Number="55" Type="N">
+<Text>
+<![CDATA[[BTD(Write_Data_Buffer.Data_1,0,Common_Data.Process_Output_Data[Port_Less_One].Data[13],0,8) ,BTD(Write_Data_Buffer.Data_0,0,Common_Data.Process_Output_Data[Port_Less_One].Data[13],8,8) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+<Dependencies>
+<Dependency Type="DataType" Name="Turck_IOLink_Common_Data"/>
+<Dependency Type="DataType" Name="Generic_28_Bytes"/>
+</Dependencies>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>
